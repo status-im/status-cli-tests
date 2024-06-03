@@ -45,12 +45,8 @@ jobs:
 
     - name: Copy status-cli binary to test repo root
       run: |
-        if [ -f status-go/build/bin/status-cli ]; then
-          cp status-go/build/bin/status-cli .
-        else
-          echo "status-cli binary not found! Check issues with Build status-cli step"
-          exit 1
-        fi
+        ls status-go/build/bin/
+        cp status-go/build/bin/status-cli .
 
     - name: Run tests
       run: |
