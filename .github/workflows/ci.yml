@@ -48,6 +48,9 @@ jobs:
       run: |
         cd status-go/cmd/status-cli
         go build
+        ls
+        cp status-cli ../../../status-cli
+
 
     # - name: Install Nix package manager
     #   run: sh <(curl -L https://nixos.org/nix/install) --no-daemon
@@ -60,9 +63,7 @@ jobs:
     #     nix-shell --pure --run 'make status-cli'
 
     - name: Copy status-cli binary to test repo root
-      run: |
-        ls status-go/build/bin/
-        cp status-go/build/bin/status-cli .
+      run: cp status-go/cmd/status-cli/status-cli .
 
     - name: Run tests
       run: |
