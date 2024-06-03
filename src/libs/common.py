@@ -32,4 +32,3 @@ def attach_allure_file(file):
 def delay(num_seconds):
     logger.debug(f"Sleeping for {num_seconds} seconds")
     sleep(num_seconds)
-

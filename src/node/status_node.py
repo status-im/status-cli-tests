@@ -10,6 +10,7 @@ from src.node.rpc_client import StatusNodeRPC
 
 logger = get_custom_logger(__name__)
 
+
 class StatusNode:
     def __init__(self, name, port, pubkey=None):
         try:
@@ -24,17 +25,12 @@ class StatusNode:
         self.logs = []
 
     def start(self):
-        command = ['./status-cli', 'serve', '-n', self.name, '-p', self.port]
+        command = ["./status-cli", "serve", "-n", self.name, "-p", self.port]
         logger.info(f"Starting node with command: {command}")
         if self.pubkey:
-            command += ['-a', self.pubkey]
-        
-        self.process = subprocess.Popen(
-            command,
-            stdout=subprocess.PIPE,
-            stderr=subprocess.STDOUT,
-            text=True
-        )
+            command += ["-a", self.pubkey]
+
+        self.process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
         self._capture_logs()
         self.api = StatusNodeRPC(self.port)
 
@@ -72,7 +68,7 @@ class StatusNode:
 
     @retry(stop=stop_after_delay(10), wait=wait_fixed(0.1), reraise=True)
     def get_pubkey(self):
-        pubkey = self.search_logs(regex_pattern=r'public key: (\b0x[0-9a-fA-F]+\b)')
+        pubkey = self.search_logs(regex_pattern=r"public key: (\b0x[0-9a-fA-F]+\b)")
         assert pubkey is not None, f"{self.name}'s public key was not found."
         return pubkey
 

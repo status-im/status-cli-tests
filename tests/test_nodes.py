@@ -3,7 +3,6 @@ from src.steps.common import StepsCommon
 
 
 class TestNodes(StepsCommon):
-
     def test_one_to_one_messages(self):
         num_messages = 15  # Set the number of messages to send
 
@@ -23,10 +22,7 @@ class TestNodes(StepsCommon):
             messages.append((timestamp_alice, message_alice, "alice"))
 
         # Validate that all messages were received
-        missing_messages = {
-            "alice": [],
-            "charlie": []
-        }
+        missing_messages = {"alice": [], "charlie": []}
 
         for timestamp, message, sender in messages:
             if sender == "charlie":
