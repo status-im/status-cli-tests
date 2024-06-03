@@ -90,7 +90,7 @@ jobs:
         echo "- **Event**: ${{ github.event_name }}" >> $GITHUB_STEP_SUMMARY
         echo "- **Actor**: ${{ github.actor }}" >> $GITHUB_STEP_SUMMARY
         echo "## Test Results" >> $GITHUB_STEP_SUMMARY
-        echo "Allure report will be available at: https://github.com/status-im/status-cli-tests/${{ github.run_number }}" >> $GITHUB_STEP_SUMMARY
+        echo "Allure report will be available at: https://status-im.github.io/status-cli-tests/${{ github.run_number }}" >> $GITHUB_STEP_SUMMARY
         {
           echo 'JOB_SUMMARY<<EOF'
           cat $GITHUB_STEP_SUMMARY
