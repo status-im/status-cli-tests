@@ -33,6 +33,11 @@ jobs:
         repository: status-im/status-go
         path: status-go
 
+    - name: Install Nix package manager
+      run: |
+        sh <(curl -L https://nixos.org/nix/install) --no-daemon
+        . /home/runner/.nix-profile/etc/profile.d/nix.sh
+
     - name: Build status-cli binary
       run: |
         cd status-go
