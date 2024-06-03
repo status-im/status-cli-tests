@@ -38,12 +38,9 @@ jobs:
         sh <(curl -L https://nixos.org/nix/install) --no-daemon
         echo ". /home/runner/.nix-profile/etc/profile.d/nix.sh" >> $GITHUB_ENV
 
-    - name: Load Nix environment
+    - name: Source Nix environment and build status-cli binary
       run: |
         . /home/runner/.nix-profile/etc/profile.d/nix.sh
-
-    - name: Build status-cli binary
-      run: |
         cd status-go
         nix-shell --pure --run 'make status-cli'
 
@@ -55,43 +52,43 @@ jobs:
       run: |
         pytest --alluredir=allure-results
 
-    - name: Get allure history
-      if: always()
-      uses: actions/checkout@v4
-      with:
-        ref: gh-pages
-        path: gh-pages
+    # - name: Get allure history
+    #   if: always()
+    #   uses: actions/checkout@v4
+    #   with:
+    #     ref: gh-pages
+    #     path: gh-pages
 
-    - name: Setup allure report
-      uses: simple-elf/allure-report-action@master
-      if: always()
-      id: allure-report
-      with:
-        allure_results: allure-results
-        gh_pages: gh-pages
-        allure_history: allure-history
-        keep_reports: 30
+    # - name: Setup allure report
+    #   uses: simple-elf/allure-report-action@master
+    #   if: always()
+    #   id: allure-report
+    #   with:
+    #     allure_results: allure-results
+    #     gh_pages: gh-pages
+    #     allure_history: allure-history
+    #     keep_reports: 30
 
-    - name: Deploy report to Github Pages
-      uses: peaceiris/actions-gh-pages@v3
-      if: always()
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_branch: gh-pages
-        publish_dir: allure-history
+    # - name: Deploy report to Github Pages
+    #   uses: peaceiris/actions-gh-pages@v3
+    #   if: always()
+    #   with:
+    #     github_token: ${{ secrets.GITHUB_TOKEN }}
+    #     publish_branch: gh-pages
+    #     publish_dir: allure-history
 
-    - name: Create job summary
-      if: always()
-      env:
-        JOB_STATUS: ${{ job.status }}
-      run: |
-        echo "## Run Information" >> $GITHUB_STEP_SUMMARY
-        echo "- **Event**: ${{ github.event_name }}" >> $GITHUB_STEP_SUMMARY
-        echo "- **Actor**: ${{ github.actor }}" >> $GITHUB_STEP_SUMMARY
-        echo "## Test Results" >> $GITHUB_STEP_SUMMARY
-        echo "Allure report will be available at: https://github.com/status-im/status-cli-tests/${{ github.run_number }}" >> $GITHUB_STEP_SUMMARY
-        {
-          echo 'JOB_SUMMARY<<EOF'
-          cat $GITHUB_STEP_SUMMARY
-          echo EOF
-        } >> $GITHUB_ENV
+    # - name: Create job summary
+    #   if: always()
+    #   env:
+    #     JOB_STATUS: ${{ job.status }}
+    #   run: |
+    #     echo "## Run Information" >> $GITHUB_STEP_SUMMARY
+    #     echo "- **Event**: ${{ github.event_name }}" >> $GITHUB_STEP_SUMMARY
+    #     echo "- **Actor**: ${{ github.actor }}" >> $GITHUB_STEP_SUMMARY
+    #     echo "## Test Results" >> $GITHUB_STEP_SUMMARY
+    #     echo "Allure report will be available at: https://github.com/status-im/status-cli-tests/${{ github.run_number }}" >> $GITHUB_STEP_SUMMARY
+    #     {
+    #       echo 'JOB_SUMMARY<<EOF'
+    #       cat $GITHUB_STEP_SUMMARY
+    #       echo EOF
+    #     } >> $GITHUB_ENV
