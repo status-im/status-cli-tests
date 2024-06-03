@@ -36,7 +36,8 @@ jobs:
     - name: Install Nix package manager
       run: sh <(curl -L https://nixos.org/nix/install) --no-daemon
 
-    - name: Source Nix environment and build status-cli binary
+    - name: Build status-cli
+      continue-on-error: true
       run: |
         . /home/runner/.nix-profile/etc/profile.d/nix.sh
         cd status-go
@@ -44,7 +45,12 @@ jobs:
 
     - name: Copy status-cli binary to test repo root
       run: |
-        cp status-go/status-cli .
+        if [ -f status-go/status-cli ]; then
+          cp status-go/status-cli .
+        else
+          echo "status-cli binary not found! Check issues with Build status-cli step"
+          exit 1
+        fi
 
     - name: Run tests
       run: |
