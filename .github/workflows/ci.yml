@@ -36,12 +36,16 @@ jobs:
     - name: Install Nix package manager
       run: |
         sh <(curl -L https://nixos.org/nix/install) --no-daemon
+        echo ". /home/runner/.nix-profile/etc/profile.d/nix.sh" >> $GITHUB_ENV
+
+    - name: Load Nix environment
+      run: |
         . /home/runner/.nix-profile/etc/profile.d/nix.sh
 
     - name: Build status-cli binary
       run: |
         cd status-go
-        make status-cli
+        nix-shell --pure --run 'make status-cli'
 
     - name: Copy status-cli binary to test repo root
       run: |
