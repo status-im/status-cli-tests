@@ -33,20 +33,34 @@ jobs:
         repository: status-im/status-go
         path: status-go
 
-    - name: Install Nix package manager
-      run: sh <(curl -L https://nixos.org/nix/install) --no-daemon
+    - name: Set up Go
+      uses: actions/setup-go@v4
+      with:
+        go-version: '1.18'
 
     - name: Build status-cli binary
-      continue-on-error: true
       run: |
-        . /home/runner/.nix-profile/etc/profile.d/nix.sh
-        cd status-go
-        nix-shell --pure --run 'make status-cli'
+        cd status-go/cmd/status-cli
+        go build
 
     - name: Copy status-cli binary to test repo root
       run: |
-        ls status-go/build/bin/
-        cp status-go/build/bin/status-cli .
+        cp status-go/cmd/status-cli/status-cli .
+
+    # - name: Install Nix package manager
+    #   run: sh <(curl -L https://nixos.org/nix/install) --no-daemon
+
+    # - name: Build status-cli binary
+    #   continue-on-error: true
+    #   run: |
+    #     . /home/runner/.nix-profile/etc/profile.d/nix.sh
+    #     cd status-go
+    #     nix-shell --pure --run 'make status-cli'
+
+    # - name: Copy status-cli binary to test repo root
+    #   run: |
+    #     ls status-go/build/bin/
+    #     cp status-go/build/bin/status-cli .
 
     - name: Run tests
       run: |
