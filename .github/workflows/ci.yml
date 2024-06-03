@@ -34,9 +34,7 @@ jobs:
         path: status-go
 
     - name: Install Nix package manager
-      run: |
-        sh <(curl -L https://nixos.org/nix/install) --no-daemon
-        echo ". /home/runner/.nix-profile/etc/profile.d/nix.sh" >> $GITHUB_ENV
+      run: sh <(curl -L https://nixos.org/nix/install) --no-daemon
 
     - name: Source Nix environment and build status-cli binary
       run: |
