@@ -1,10 +1,11 @@
 from time import sleep
+from src.env_vars import DELAY_BETWEEN_MESSAGES, NUM_MESSAGES
 from src.steps.common import StepsCommon
 
 
 class TestNodes(StepsCommon):
     def test_one_to_one_messages(self):
-        num_messages = 15  # Set the number of messages to send
+        num_messages = NUM_MESSAGES  # Set the number of messages to send
 
         # Send contact request from Charlie to Alice
         self.node_charlie.send_contact_request(self.alice_pubkey, "test1")
@@ -15,9 +16,9 @@ class TestNodes(StepsCommon):
         # Send messages from Charlie to Alice and from Alice to Charlie
         for i in range(num_messages):
             timestamp_charlie, message_charlie = self.send_message_with_timestamp(self.node_charlie, self.alice_pubkey, f"message_from_charlie_{i}")
-            sleep(2)
+            sleep(DELAY_BETWEEN_MESSAGES)
             timestamp_alice, message_alice = self.send_message_with_timestamp(self.node_alice, self.charlie_pubkey, f"message_from_alice_{i}")
-            sleep(2)
+            sleep(DELAY_BETWEEN_MESSAGES)
             messages.append((timestamp_charlie, message_charlie, "charlie"))
             messages.append((timestamp_alice, message_alice, "alice"))
 
