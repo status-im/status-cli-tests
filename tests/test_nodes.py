@@ -15,9 +15,9 @@ class TestNodes(StepsCommon):
         # Send messages from Charlie to Alice and from Alice to Charlie
         for i in range(num_messages):
             timestamp_charlie, message_charlie = self.send_message_with_timestamp(self.node_charlie, self.alice_pubkey, f"message_from_charlie_{i}")
-            sleep(2)
+            sleep(4)
             timestamp_alice, message_alice = self.send_message_with_timestamp(self.node_alice, self.charlie_pubkey, f"message_from_alice_{i}")
-            sleep(2)
+            sleep(4)
             messages.append((timestamp_charlie, message_charlie, "charlie"))
             messages.append((timestamp_alice, message_alice, "alice"))
 
