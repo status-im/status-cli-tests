@@ -42,7 +42,7 @@ class StepsCommon:
         process.wait()
 
         # Print the return code
-        logger.debug("Return code:", process.returncode)
+        logger.debug(f"Return code: {process.returncode}")
         yield
         self.node_alice.stop()
         self.node_charlie.stop()
