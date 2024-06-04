@@ -1,6 +1,6 @@
 import logging
 
-max_log_line_length = 5000
+max_log_line_length = 10000
 
 
 def log_length_filter(max_length):

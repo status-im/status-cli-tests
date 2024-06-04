@@ -14,8 +14,9 @@ source .venv/bin/activate
 pip install -r requirements.txt
 pre-commit install
 (optional) Overwrite default vars from src/env_vars.py via cli env vars or by adding a .env file
-pytest
-```
+pytest (for all test)
+pytest -k "test_one_to_one_with_latency" (for single test)
+``` 
 
 
 
