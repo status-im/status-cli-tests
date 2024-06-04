@@ -28,7 +28,7 @@ class StepsCommon:
         request.cls.node_charlie = self.node_charlie
         # Run the shell script
         # Define the command
-        command = "sudo tc qdisc add dev eth0 root netem delay 10ms"
+        command = "sudo tc qdisc add dev eth0 root netem delay 10000ms"
 
         # Run the command
         process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, universal_newlines=True)
