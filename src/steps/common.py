@@ -13,8 +13,8 @@ class StepsCommon:
     def common_setup(self):
         logger.debug(f"Running fixture setup: {inspect.currentframe().f_code.co_name}")
 
-    @pytest.fixture(scope="class", autouse=True)
-    def start_2_nodes(self, common_setup, request):
+    @pytest.fixture(scope="function", autouse=True)
+    def start_2_nodes(self):
         logger.debug(f"Running fixture setup: {inspect.currentframe().f_code.co_name}")
         self.node_alice = StatusNode(name="alice", port="8545")
         self.node_alice.start()
@@ -22,21 +22,36 @@ class StepsCommon:
         self.node_charlie.start()
         self.node_alice.wait_fully_started()
         self.node_charlie.wait_fully_started()
-        request.cls.alice_pubkey = self.node_alice.get_pubkey()
-        request.cls.node_alice = self.node_alice
-        request.cls.charlie_pubkey = self.node_charlie.get_pubkey()
-        request.cls.node_charlie = self.node_charlie
-        # subprocess.Popen("sudo tc qdisc add dev eth0 root netem loss 20% 25%", shell=True)
-        # sudo tc qdisc add dev eth0 root netem delay 1s 100ms distribution normal
-        # 1 sec disconnects
-        # subprocess.Popen("sudo tc qdisc add dev eth0 root tbf rate 50kbit burst 16kbit latency 200ms", shell=True)
-        # subprocess.Popen("sudo tc qdisc add dev eth0 root tbf rate 0kbit burst 0kbit", shell=True)
-        subprocess.Popen("sudo tc qdisc add dev eth0 root tbf rate 1bit burst 1bit", shell=True)
-
+        self.alice_pubkey = self.node_alice.get_pubkey()
+        self.charlie_pubkey = self.node_charlie.get_pubkey()
         yield
-        subprocess.Popen("sudo tc qdisc del dev eth0 root netem", shell=True)
+        logger.debug(f"Running fixture teardown: {inspect.currentframe().f_code.co_name}")
         self.node_alice.stop()
         self.node_charlie.stop()
+
+    @pytest.fixture(scope="function", autouse=False)
+    def add_latency(self, start_2_nodes):
+        logger.debug(f"Running fixture setup: {inspect.currentframe().f_code.co_name}")
+        subprocess.Popen("sudo tc qdisc add dev eth0 root netem delay 1s 100ms distribution normal", shell=True)
+        yield
+        logger.debug(f"Running fixture teardown: {inspect.currentframe().f_code.co_name}")
+        subprocess.Popen("sudo tc qdisc del dev eth0 root", shell=True)
+
+    @pytest.fixture(scope="function", autouse=False)
+    def add_packet_loss(self, start_2_nodes):
+        logger.debug(f"Running fixture setup: {inspect.currentframe().f_code.co_name}")
+        subprocess.Popen("sudo tc qdisc add dev eth0 root netem loss 20% 25%", shell=True)
+        yield
+        logger.debug(f"Running fixture teardown: {inspect.currentframe().f_code.co_name}")
+        subprocess.Popen("sudo tc qdisc del dev eth0 root netem", shell=True)
+
+    @pytest.fixture(scope="function", autouse=False)
+    def add_low_bandwith(self, start_2_nodes):
+        logger.debug(f"Running fixture setup: {inspect.currentframe().f_code.co_name}")
+        subprocess.Popen("sudo tc qdisc add dev eth0 root tbf rate 1bit burst 1bit", shell=True)
+        yield
+        logger.debug(f"Running fixture teardown: {inspect.currentframe().f_code.co_name}")
+        subprocess.Popen("sudo tc qdisc del dev eth0 root", shell=True)
 
     def send_message_with_timestamp(self, sender_node, receiver_pubkey, message):
         timestamp = datetime.now().strftime("%H:%M:%S")

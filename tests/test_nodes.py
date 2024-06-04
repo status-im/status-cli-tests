@@ -3,8 +3,8 @@ from src.env_vars import DELAY_BETWEEN_MESSAGES, NUM_MESSAGES
 from src.steps.common import StepsCommon
 
 
-class TestNodes(StepsCommon):
-    def test_one_to_one_messages(self):
+class TestOneToOneMessages(StepsCommon):
+    def test_baseline(self):
         num_messages = NUM_MESSAGES  # Set the number of messages to send
 
         # Send contact request from Charlie to Alice
@@ -45,3 +45,6 @@ class TestNodes(StepsCommon):
         # Raise a combined assertion error if there are any missing messages
         if errors:
             raise AssertionError("\n".join(errors))
+
+    def test_baseline(self, add_latency):
+        self.test_baseline()
