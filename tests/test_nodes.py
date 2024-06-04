@@ -46,5 +46,5 @@ class TestOneToOneMessages(StepsCommon):
         if errors:
             raise AssertionError("\n".join(errors))
 
-    def test_baseline(self, add_latency):
+    def test_with_latency(self, add_latency):
         self.test_baseline()
