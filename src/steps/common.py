@@ -31,7 +31,7 @@ class StepsCommon:
         # 1 sec disconnects
         # subprocess.Popen("sudo tc qdisc add dev eth0 root tbf rate 50kbit burst 16kbit latency 200ms", shell=True)
         # subprocess.Popen("sudo tc qdisc add dev eth0 root tbf rate 0kbit burst 0kbit", shell=True)
-        subprocess.Popen("sudo tc qdisc add dev eth0 root tbf rate 1bit burst 1kbit", shell=True)
+        subprocess.Popen("sudo tc qdisc add dev eth0 root tbf rate 1bit burst 10bit", shell=True)
 
         yield
         subprocess.Popen("sudo tc qdisc del dev eth0 root netem", shell=True)
