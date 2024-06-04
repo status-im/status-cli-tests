@@ -26,28 +26,9 @@ class StepsCommon:
         request.cls.node_alice = self.node_alice
         request.cls.charlie_pubkey = self.node_charlie.get_pubkey()
         request.cls.node_charlie = self.node_charlie
-        # Run the shell script
-        # Define the command
-        command = "sudo tc qdisc add dev eth0 root netem delay 10000ms"
-
-        # Run the command
-        process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, universal_newlines=True)
-
-        # Read and print stdout and stderr line by line
-        for stdout_line in iter(process.stdout.readline, ""):
-            logger.debug(stdout_line)
-            # Do something with the stdout_line if needed
-
-        for stderr_line in iter(process.stderr.readline, ""):
-            logger.debug(stderr_line)
-            # Do something with the stderr_line if needed
-
-        # Wait for the process to terminate and get the return code
-        process.wait()
-
-        # Print the return code
-        logger.debug(f"Return code: {process.returncode}")
+        subprocess.Popen("sudo tc qdisc add dev eth0 root netem delay 1000ms", shell=True)
         yield
+        subprocess.Popen("sudo tc qdisc del dev eth0 root netem", shell=True)
         self.node_alice.stop()
         self.node_charlie.stop()
 
