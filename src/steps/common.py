@@ -40,7 +40,7 @@ class StepsCommon:
     @pytest.fixture(scope="function", autouse=False)
     def add_packet_loss(self, start_2_nodes):
         logger.debug(f"Running fixture setup: {inspect.currentframe().f_code.co_name}")
-        subprocess.Popen("sudo tc qdisc add dev eth0 root netem loss 20% 25%", shell=True)
+        subprocess.Popen("sudo tc qdisc add dev eth0 root netem loss 50%", shell=True)
         yield
         logger.debug(f"Running fixture teardown: {inspect.currentframe().f_code.co_name}")
         subprocess.Popen("sudo tc qdisc del dev eth0 root netem", shell=True)
