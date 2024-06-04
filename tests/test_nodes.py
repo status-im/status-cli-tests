@@ -48,3 +48,9 @@ class TestOneToOneMessages(StepsCommon):
 
     def test_with_latency(self, add_latency):
         self.test_baseline()
+
+    def test_with_packet_loss(self, add_packet_loss):
+        self.test_baseline()
+
+    def test_with_low_bandwith(self, add_low_bandwith):
+        self.test_baseline()

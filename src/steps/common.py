@@ -48,7 +48,7 @@ class StepsCommon:
     @pytest.fixture(scope="function", autouse=False)
     def add_low_bandwith(self, start_2_nodes):
         logger.debug(f"Running fixture setup: {inspect.currentframe().f_code.co_name}")
-        subprocess.Popen("sudo tc qdisc add dev eth0 root tbf rate 1bit burst 1bit", shell=True)
+        subprocess.Popen("sudo tc qdisc add dev eth0 root tbf rate 1kbit burst 1kbit", shell=True)
         yield
         logger.debug(f"Running fixture teardown: {inspect.currentframe().f_code.co_name}")
         subprocess.Popen("sudo tc qdisc del dev eth0 root", shell=True)
