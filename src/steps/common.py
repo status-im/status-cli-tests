@@ -29,7 +29,7 @@ class StepsCommon:
         # subprocess.Popen("sudo tc qdisc add dev eth0 root netem loss 90%", shell=True)
         # sudo tc qdisc add dev eth0 root netem delay 1s 100ms distribution normal
         # 1 sec disconnects
-        subprocess.Popen("sudo tc qdisc add dev eth0 root tbf rate 1kbit latency 100ms burst 1540", shell=True)
+        subprocess.Popen("sudo tc qdisc add dev eth0 root tbf rate 5kbit latency 100ms burst 1540", shell=True)
         yield
         subprocess.Popen("sudo tc qdisc del dev eth0 root netem", shell=True)
         self.node_alice.stop()
