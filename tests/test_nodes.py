@@ -47,10 +47,10 @@ class TestOneToOneMessages(StepsCommon):
             raise AssertionError("\n".join(errors))
 
     def test_one_to_one_with_latency(self, add_latency):
-        self.test_baseline()
+        self.test_one_to_one_baseline()
 
     def test_one_to_one_with_packet_loss(self, add_packet_loss):
-        self.test_baseline()
+        self.test_one_to_one_baseline()
 
     def test_one_to_one_with_low_bandwith(self, add_low_bandwith):
-        self.test_baseline()
+        self.test_one_to_one_baseline()

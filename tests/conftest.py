@@ -37,13 +37,6 @@ def set_allure_env_variables():
 
 
 @pytest.fixture(scope="function", autouse=True)
-def test_id(request):
-    # setting up an unique test id to be used where needed
-    logger.debug(f"Running fixture setup: {inspect.currentframe().f_code.co_name}")
-    request.cls.test_id = f"{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}__{str(uuid4())}"
-
-
-@pytest.fixture(scope="function", autouse=True)
 def attach_logs_on_fail(request):
     yield
     if env_vars.RUNNING_IN_CI and hasattr(request.node, "rep_call") and request.node.rep_call.failed:
