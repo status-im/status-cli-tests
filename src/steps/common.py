@@ -26,7 +26,7 @@ class StepsCommon:
         request.cls.node_alice = self.node_alice
         request.cls.charlie_pubkey = self.node_charlie.get_pubkey()
         request.cls.node_charlie = self.node_charlie
-        subprocess.Popen("sudo tc qdisc add dev eth0 root netem delay 1000ms", shell=True)
+        subprocess.Popen("sudo tc qdisc add dev eth0 root netem loss 20%", shell=True)
         yield
         subprocess.Popen("sudo tc qdisc del dev eth0 root netem", shell=True)
         self.node_alice.stop()
