@@ -26,7 +26,11 @@ class StepsCommon:
         request.cls.node_alice = self.node_alice
         request.cls.charlie_pubkey = self.node_charlie.get_pubkey()
         request.cls.node_charlie = self.node_charlie
-        subprocess.Popen("sudo tc qdisc add dev eth0 root netem loss 90%", shell=True)
+        # subprocess.Popen("sudo tc qdisc add dev eth0 root netem loss 90%", shell=True)
+        # sudo tc qdisc add dev eth0 root netem delay 1s 100ms distribution normal
+        # 1 sec disconnects
+        subprocess.Popen("sudo tc qdisc add dev eth0 root handle 1:0 netem delay 200ms 50ms distribution normal", shell=True)
+        subprocess.Popen("sudo tc qdisc add dev eth0 parent 1:1 handle 10: tbf rate 200kbit burst 32kbit latency 200ms", shell=True)
         yield
         subprocess.Popen("sudo tc qdisc del dev eth0 root netem", shell=True)
         self.node_alice.stop()
