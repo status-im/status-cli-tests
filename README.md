@@ -23,7 +23,7 @@ pytest -k "test_one_to_one_with_latency" (for single test)
 ## CI
 
 - Test runs via github actions
-<!-- - [Allure Test Reports](https://status-im.github.io/status-cli-tests/19/) are published via github pages -->
+<!-- - [Allure Test Reports](https://status-im.github.io/status-cli-tests/49/) are published via github pages -->
 
 ## License
 
