@@ -27,7 +27,11 @@ class StepsCommon:
         request.cls.charlie_pubkey = self.node_charlie.get_pubkey()
         request.cls.node_charlie = self.node_charlie
         # Run the shell script
-        process = subprocess.Popen(["./aaaa.sh"], stdout=subprocess.PIPE, stderr=subprocess.PIPE, universal_newlines=True)
+        # Define the command
+        command = "sudo tc qdisc add dev eth0 root netem delay 10ms"
+
+        # Run the command
+        process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, universal_newlines=True)
 
         # Read and print stdout and stderr line by line
         for stdout_line in iter(process.stdout.readline, ""):
