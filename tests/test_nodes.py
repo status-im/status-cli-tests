@@ -38,9 +38,9 @@ class TestOneToOneMessages(StepsCommon):
         # Check for missing messages and collect assertion errors
         errors = []
         if missing_messages["alice"]:
-            errors.append(f"Alice didn't receive the following messages from Charlie: {missing_messages['alice']}")
+            errors.append(f"Alice didn't receive {len(missing_messages['alice'])} messages from Charlie: {missing_messages['alice']}")
         if missing_messages["charlie"]:
-            errors.append(f"Charlie didn't receive the following messages from Alice: {missing_messages['charlie']}")
+            errors.append(f"Charlie didn't receive {len(missing_messages['charlie'])} messages from Alice: {missing_messages['charlie']}")
 
         # Raise a combined assertion error if there are any missing messages
         if errors:
