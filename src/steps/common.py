@@ -55,5 +55,11 @@ class StepsCommon:
 
     def send_message_with_timestamp(self, sender_node, receiver_pubkey, message):
         timestamp = datetime.now().strftime("%H:%M:%S")
-        sender_node.send_message(receiver_pubkey, message)
-        return timestamp, message
+        response = sender_node.send_message(receiver_pubkey, message)
+        response_messages = response["result"]["messages"]
+        message_id = None
+        for m in response_messages:
+            if m["text"] == message:
+                message_id = m["id"]
+                break
+        return timestamp, message, message_id
