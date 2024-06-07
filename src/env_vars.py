@@ -9,6 +9,11 @@ def get_env_var(var_name, default=None):
     if env_var in [None, ""]:
         print(f"{var_name} is not set; using default value: {default}")
         env_var = default
+    else:
+        try:
+            env_var = int(env_var)
+        except ValueError:
+            pass
     print(f"{var_name}: {env_var}")
     return env_var
 

@@ -15,12 +15,16 @@ class TestOneToOneMessages(StepsCommon):
 
         # Send messages from Charlie to Alice and from Alice to Charlie
         for i in range(num_messages):
-            timestamp_charlie, message_charlie = self.send_message_with_timestamp(self.node_charlie, self.alice_pubkey, f"message_from_charlie_{i}")
+            timestamp_charlie, message_charlie, message_id_charlie = self.send_message_with_timestamp(
+                self.node_charlie, self.alice_pubkey, f"message_from_charlie_{i}"
+            )
             delay(DELAY_BETWEEN_MESSAGES)
-            timestamp_alice, message_alice = self.send_message_with_timestamp(self.node_alice, self.charlie_pubkey, f"message_from_alice_{i}")
+            timestamp_alice, message_alice, message_id_alice = self.send_message_with_timestamp(
+                self.node_alice, self.charlie_pubkey, f"message_from_alice_{i}"
+            )
             delay(DELAY_BETWEEN_MESSAGES)
-            messages.append((timestamp_charlie, message_charlie, "charlie"))
-            messages.append((timestamp_alice, message_alice, "alice"))
+            messages.append((timestamp_charlie, message_charlie, message_id_charlie, "charlie"))
+            messages.append((timestamp_alice, message_alice, message_id_alice, "alice"))
 
         # Wait for 10 seconds to give all messages time to be received
         delay(10)
@@ -28,15 +32,15 @@ class TestOneToOneMessages(StepsCommon):
         # Validate that all messages were received
         missing_messages = {"alice": [], "charlie": []}
 
-        for timestamp, message, sender in messages:
+        for timestamp, message, message_id, sender in messages:
             if sender == "charlie":
                 log_message = f"message received: {message}"
                 if not self.node_alice.search_logs(log_message):
-                    missing_messages["alice"].append((timestamp, message))
+                    missing_messages["alice"].append((timestamp, message, message_id))
             elif sender == "alice":
                 log_message = f"message received: {message}"
                 if not self.node_charlie.search_logs(log_message):
-                    missing_messages["charlie"].append((timestamp, message))
+                    missing_messages["charlie"].append((timestamp, message, message_id))
 
         # Check for missing messages and collect assertion errors
         errors = []
