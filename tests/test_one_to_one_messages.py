@@ -1,8 +1,10 @@
+import pytest
 from src.env_vars import DELAY_BETWEEN_MESSAGES, NUM_MESSAGES
 from src.libs.common import delay
 from src.steps.common import StepsCommon
 
 
+@pytest.mark.usefixtures("start_2_nodes")
 class TestOneToOneMessages(StepsCommon):
     def test_one_to_one_baseline(self):
         num_messages = NUM_MESSAGES  # Set the number of messages to send
@@ -15,13 +17,11 @@ class TestOneToOneMessages(StepsCommon):
 
         # Send messages from Charlie to Alice and from Alice to Charlie
         for i in range(num_messages):
-            timestamp_charlie, message_charlie, message_id_charlie = self.send_message_with_timestamp(
-                self.node_charlie, self.alice_pubkey, f"message_from_charlie_{i}"
-            )
+            message_charlie = f"message_from_charlie_{i}"
+            message_alice = f"message_from_alice_{i}"
+            timestamp_charlie, message_id_charlie = self.send_with_timestamp(self.node_charlie.send_message, self.alice_pubkey, message_charlie)
             delay(DELAY_BETWEEN_MESSAGES)
-            timestamp_alice, message_alice, message_id_alice = self.send_message_with_timestamp(
-                self.node_alice, self.charlie_pubkey, f"message_from_alice_{i}"
-            )
+            timestamp_alice, message_id_alice = self.send_with_timestamp(self.node_alice.send_message, self.charlie_pubkey, message_alice)
             delay(DELAY_BETWEEN_MESSAGES)
             messages.append((timestamp_charlie, message_charlie, message_id_charlie, "charlie"))
             messages.append((timestamp_alice, message_alice, message_id_alice, "alice"))

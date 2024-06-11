@@ -13,7 +13,7 @@ class StepsCommon:
     def common_setup(self):
         logger.debug(f"Running fixture setup: {inspect.currentframe().f_code.co_name}")
 
-    @pytest.fixture(scope="function", autouse=True)
+    @pytest.fixture(scope="function", autouse=False)
     def start_2_nodes(self):
         logger.debug(f"Running fixture setup: {inspect.currentframe().f_code.co_name}")
         self.node_alice = StatusNode(name="alice", port="8545")
@@ -53,13 +53,13 @@ class StepsCommon:
         logger.debug(f"Running fixture teardown: {inspect.currentframe().f_code.co_name}")
         subprocess.Popen("sudo tc qdisc del dev eth0 root", shell=True)
 
-    def send_message_with_timestamp(self, sender_node, receiver_pubkey, message):
+    def send_with_timestamp(self, send_method, receiver_pubkey, message):
         timestamp = datetime.now().strftime("%H:%M:%S")
-        response = sender_node.send_message(receiver_pubkey, message)
+        response = send_method(receiver_pubkey, message)
         response_messages = response["result"]["messages"]
         message_id = None
         for m in response_messages:
             if m["text"] == message:
                 message_id = m["id"]
                 break
-        return timestamp, message, message_id
+        return timestamp, message_id

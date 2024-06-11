@@ -76,6 +76,23 @@ class StatusNode:
     def wait_fully_started(self):
         assert self.search_logs(string="retrieve messages...")
 
+    def wait_for_logs(self, strings=None, timeout=10):
+        if strings is not None and not isinstance(strings, list):
+            raise ValueError("strings must be a list")
+        start_time = time.time()
+        while time.time() - start_time < timeout:
+            all_found = True
+            if strings:
+                for string in strings:
+                    logs = self.search_logs(string=string)
+                    if not logs:  # If any string is not found
+                        all_found = False
+                        break
+            if all_found:
+                return True
+            time.sleep(0.5)
+        return False  # Return False if not all logs were found within the timeout period
+
     def waku_info(self):
         return self.api.send_rpc_request("waku_info")
 
