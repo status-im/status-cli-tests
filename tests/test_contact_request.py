@@ -35,3 +35,12 @@ class TestContacRequest(StepsCommon):
                 missing_contact_requests.append((timestamp, contact_request_message, message_id))
 
         assert not missing_contact_requests, "Some contact requests didn't reach the peer node"
+
+    def test_contact_request_with_latency(self, add_latency):
+        self.test_contact_request_baseline()
+
+    def test_contact_request_with_packet_loss(self, add_packet_loss):
+        self.test_contact_request_baseline()
+
+    def test_contact_request_with_low_bandwith(self, add_low_bandwith):
+        self.test_contact_request_baseline()
