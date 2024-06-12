@@ -20,10 +20,6 @@ class StepsCommon:
         self.second_node.wait_fully_started()
         self.first_node_pubkey = self.first_node.get_pubkey()
         self.second_node_pubkey = self.second_node.get_pubkey()
-        yield
-        logger.debug(f"Running fixture teardown: {inspect.currentframe().f_code.co_name}")
-        self.first_node.stop()
-        self.second_node.stop()
 
     @pytest.fixture(scope="function", autouse=False)
     def add_latency(self):

@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import inspect
 import glob
+from src.data_storage import DS
 from src.libs.custom_logger import get_custom_logger
 import os
 import pytest
@@ -44,3 +45,16 @@ def attach_logs_on_fail(request):
         logger.debug("Test failed, attempting to attach logs to the allure reports")
         for file in glob.glob("*.log"):
             attach_allure_file(file)
+
+
+@pytest.fixture(scope="function", autouse=True)
+def clear_open_nodes(attach_logs_on_fail):
+    DS.nodes = []
+    yield
+    logger.debug(f"Running fixture teardown: {inspect.currentframe().f_code.co_name}")
+    for node in DS.nodes:
+        try:
+            node.stop()
+        except Exception as ex:
+            logger.error(f"Failed to stop node because of error {ex}")
+        node.clear_logs()

@@ -35,7 +35,8 @@ class TestContacRequest(StepsCommon):
         if missing_contact_requests:
             formatted_missing_requests = [f"Timestamp: {ts}, Message: {msg}, ID: {mid}" for ts, msg, mid in missing_contact_requests]
             raise AssertionError(
-                f"{len(missing_contact_requests)} contact requests didn't reach the peer node: " + "\n".join(formatted_missing_requests)
+                f"{len(missing_contact_requests)} contact requests out of {num_contact_requests} didn't reach the peer node: "
+                + "\n".join(formatted_missing_requests)
             )
 
     def test_contact_request_with_latency(self, add_latency):

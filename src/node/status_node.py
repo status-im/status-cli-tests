@@ -8,6 +8,7 @@ import threading
 import time
 from tenacity import retry, stop_after_delay, wait_fixed
 
+from src.data_storage import DS
 from src.libs.custom_logger import get_custom_logger
 from src.node.rpc_client import StatusNodeRPC
 
@@ -36,6 +37,7 @@ class StatusNode:
         self.process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
         self._capture_logs()
         self.api = StatusNodeRPC(self.port)
+        DS.nodes.append(self)
 
     def _capture_logs(self):
         def read_output(process, logs):
@@ -55,16 +57,21 @@ class StatusNode:
             logger.info(f"Stopping node with name: {self.name}")
             self.process.kill()
             self.log_thread.join()  # Ensure log thread finishes
-        try:
-            shutil.rmtree(f"test-{self.name}")
-        except Exception as ex:
-            logger.warning(f"Couldn't delete dir with name test-{self.name} because of {str(ex)}")
+            node_dir = f"test-{self.name}"
+            if os.path.exists(node_dir):
+                try:
+                    shutil.rmtree(node_dir)
+                except Exception as ex:
+                    logger.warning(f"Couldn't delete node dir {node_dir} because of {str(ex)}")
+            self.process = None
 
     def clear_logs(self):
-        try:
-            os.remove(f"{self.name}.log")
-        except Exception as ex:
-            logger.warning(f"Couldn't delete log with name {self.name}.log because of {str(ex)}")
+        log_name = f"{self.name}.log"
+        if os.path.exists(log_name):
+            try:
+                os.remove(log_name)
+            except Exception as ex:
+                logger.warning(f"Couldn't delete log {log_name}.log because of {str(ex)}")
 
     def search_logs(self, string=None, regex_pattern=None):
         if string:
