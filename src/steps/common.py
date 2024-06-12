@@ -9,10 +9,6 @@ logger = get_custom_logger(__name__)
 
 
 class StepsCommon:
-    @pytest.fixture(scope="class", autouse=True)
-    def common_setup(self):
-        logger.debug(f"Running fixture setup: {inspect.currentframe().f_code.co_name}")
-
     @pytest.fixture(scope="function", autouse=False)
     def start_2_nodes(self):
         logger.debug(f"Running fixture setup: {inspect.currentframe().f_code.co_name}")
@@ -30,7 +26,7 @@ class StepsCommon:
         self.node_charlie.stop()
 
     @pytest.fixture(scope="function", autouse=False)
-    def add_latency(self, start_2_nodes):
+    def add_latency(self):
         logger.debug(f"Running fixture setup: {inspect.currentframe().f_code.co_name}")
         subprocess.Popen("sudo tc qdisc add dev eth0 root netem delay 1s 100ms distribution normal", shell=True)
         yield
@@ -38,7 +34,7 @@ class StepsCommon:
         subprocess.Popen("sudo tc qdisc del dev eth0 root", shell=True)
 
     @pytest.fixture(scope="function", autouse=False)
-    def add_packet_loss(self, start_2_nodes):
+    def add_packet_loss(self):
         logger.debug(f"Running fixture setup: {inspect.currentframe().f_code.co_name}")
         subprocess.Popen("sudo tc qdisc add dev eth0 root netem loss 50%", shell=True)
         yield
@@ -46,7 +42,7 @@ class StepsCommon:
         subprocess.Popen("sudo tc qdisc del dev eth0 root netem", shell=True)
 
     @pytest.fixture(scope="function", autouse=False)
-    def add_low_bandwith(self, start_2_nodes):
+    def add_low_bandwith(self):
         logger.debug(f"Running fixture setup: {inspect.currentframe().f_code.co_name}")
         subprocess.Popen("sudo tc qdisc add dev eth0 root tbf rate 1kbit burst 1kbit", shell=True)
         yield
