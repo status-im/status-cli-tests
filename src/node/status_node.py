@@ -1,4 +1,7 @@
 import os
+import random
+import shutil
+import string
 import subprocess
 import re
 import threading
@@ -12,13 +15,13 @@ logger = get_custom_logger(__name__)
 
 
 class StatusNode:
-    def __init__(self, name, port, pubkey=None):
+    def __init__(self, name=None, port=None, pubkey=None):
         try:
             os.remove(f"{name}.log")
         except:
             pass
-        self.name = name
-        self.port = port
+        self.name = self.random_node_name() if not name else name.lower()
+        self.port = str(random.randint(1024, 65535)) if not port else port
         self.pubkey = pubkey
         self.process = None
         self.log_thread = None
@@ -52,6 +55,16 @@ class StatusNode:
             logger.info(f"Stopping node with name: {self.name}")
             self.process.kill()
             self.log_thread.join()  # Ensure log thread finishes
+        try:
+            shutil.rmtree(f"test-{self.name}")
+        except Exception as ex:
+            logger.warning(f"Couldn't delete dir with name test-{self.name} because of {str(ex)}")
+
+    def clear_logs(self):
+        try:
+            os.remove(f"{self.name}.log")
+        except Exception as ex:
+            logger.warning(f"Couldn't delete log with name {self.name}.log because of {str(ex)}")
 
     def search_logs(self, string=None, regex_pattern=None):
         if string:
@@ -102,3 +115,7 @@ class StatusNode:
     def send_message(self, pubkey, message):
         params = [{"id": pubkey, "message": message}]
         return self.api.send_rpc_request("wakuext_sendOneToOneMessage", params)
+
+    def random_node_name(self, length=10):
+        allowed_chars = string.ascii_lowercase + string.digits + "_-"
+        return "".join(random.choice(allowed_chars) for _ in range(length))

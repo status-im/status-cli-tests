@@ -12,18 +12,18 @@ class StepsCommon:
     @pytest.fixture(scope="function", autouse=False)
     def start_2_nodes(self):
         logger.debug(f"Running fixture setup: {inspect.currentframe().f_code.co_name}")
-        self.node_alice = StatusNode(name="alice", port="8545")
-        self.node_alice.start()
-        self.node_charlie = StatusNode(name="charlie", port="8565")
-        self.node_charlie.start()
-        self.node_alice.wait_fully_started()
-        self.node_charlie.wait_fully_started()
-        self.alice_pubkey = self.node_alice.get_pubkey()
-        self.charlie_pubkey = self.node_charlie.get_pubkey()
+        self.first_node = StatusNode(name="first_node")
+        self.first_node.start()
+        self.second_node = StatusNode(name="second_node")
+        self.second_node.start()
+        self.first_node.wait_fully_started()
+        self.second_node.wait_fully_started()
+        self.first_node_pubkey = self.first_node.get_pubkey()
+        self.second_node_pubkey = self.second_node.get_pubkey()
         yield
         logger.debug(f"Running fixture teardown: {inspect.currentframe().f_code.co_name}")
-        self.node_alice.stop()
-        self.node_charlie.stop()
+        self.first_node.stop()
+        self.second_node.stop()
 
     @pytest.fixture(scope="function", autouse=False)
     def add_latency(self):

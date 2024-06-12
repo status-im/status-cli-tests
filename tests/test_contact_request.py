@@ -12,11 +12,9 @@ class TestContacRequest(StepsCommon):
 
         for index in range(num_contact_requests):
             contact_requests_successful = False
-            first_node_name = f"alice_{index}"
-            second_node_name = f"charlie_{index}"
-            first_node = StatusNode(name=first_node_name, port="8545")
+            first_node = StatusNode()
             first_node.start()
-            second_node = StatusNode(name=second_node_name, port="8565")
+            second_node = StatusNode()
             second_node.start()
             first_node.wait_fully_started()
             second_node.wait_fully_started()
@@ -29,14 +27,15 @@ class TestContacRequest(StepsCommon):
             second_node.stop()
             if contact_requests_successful:
                 # removing logs of nodes where contact request went fine
-                os.remove(f"{first_node_name}.log")
-                os.remove(f"{second_node_name}.log")
+                first_node.clear_logs()
+                second_node.clear_logs()
             else:
                 missing_contact_requests.append((timestamp, contact_request_message, message_id))
 
         if missing_contact_requests:
+            formatted_missing_requests = [f"Timestamp: {ts}, Message: {msg}, ID: {mid}" for ts, msg, mid in missing_contact_requests]
             raise AssertionError(
-                f"{len(missing_contact_requests)} contact requests didn't reach the peer node: " + "\n".join(missing_contact_requests)
+                f"{len(missing_contact_requests)} contact requests didn't reach the peer node: " + "\n".join(formatted_missing_requests)
             )
 
     def test_contact_request_with_latency(self, add_latency):

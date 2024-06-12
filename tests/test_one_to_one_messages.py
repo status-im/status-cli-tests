@@ -9,47 +9,51 @@ class TestOneToOneMessages(StepsCommon):
     def test_one_to_one_baseline(self):
         num_messages = NUM_MESSAGES  # Set the number of messages to send
 
-        # Send contact request from Charlie to Alice
-        self.node_charlie.send_contact_request(self.alice_pubkey, "test1")
+        # Send contact request from second_node to first_node
+        self.second_node.send_contact_request(self.first_node_pubkey, "test1")
         delay(4)
 
         messages = []
 
-        # Send messages from Charlie to Alice and from Alice to Charlie
+        # Send messages from second_node to first_node and from first_node to second_node
         for i in range(num_messages):
-            message_charlie = f"message_from_charlie_{i}"
-            message_alice = f"message_from_alice_{i}"
-            timestamp_charlie, message_id_charlie = self.send_with_timestamp(self.node_charlie.send_message, self.alice_pubkey, message_charlie)
+            message_second_node = f"message_from_second_node_{i}"
+            message_first_node = f"message_from_first_node_{i}"
+            timestamp_second_node, message_id_second_node = self.send_with_timestamp(
+                self.second_node.send_message, self.first_node_pubkey, message_second_node
+            )
             delay(DELAY_BETWEEN_MESSAGES)
-            timestamp_alice, message_id_alice = self.send_with_timestamp(self.node_alice.send_message, self.charlie_pubkey, message_alice)
+            timestamp_first_node, message_id_first_node = self.send_with_timestamp(
+                self.first_node.send_message, self.second_node_pubkey, message_first_node
+            )
             delay(DELAY_BETWEEN_MESSAGES)
-            messages.append((timestamp_charlie, message_charlie, message_id_charlie, "charlie"))
-            messages.append((timestamp_alice, message_alice, message_id_alice, "alice"))
+            messages.append((timestamp_second_node, message_second_node, message_id_second_node, "second_node"))
+            messages.append((timestamp_first_node, message_first_node, message_id_first_node, "first_node"))
 
         # Wait for 10 seconds to give all messages time to be received
         delay(10)
 
         # Validate that all messages were received
-        missing_messages = {"alice": [], "charlie": []}
+        missing_messages = {"first_node": [], "second_node": []}
 
         for timestamp, message, message_id, sender in messages:
-            if sender == "charlie":
+            if sender == "second_node":
                 log_message = f"message received: {message}"
-                if not self.node_alice.search_logs(log_message):
-                    missing_messages["alice"].append((timestamp, message, message_id))
-            elif sender == "alice":
+                if not self.first_node.search_logs(log_message):
+                    missing_messages["first_node"].append((timestamp, message, message_id))
+            elif sender == "first_node":
                 log_message = f"message received: {message}"
-                if not self.node_charlie.search_logs(log_message):
-                    missing_messages["charlie"].append((timestamp, message, message_id))
+                if not self.second_node.search_logs(log_message):
+                    missing_messages["second_node"].append((timestamp, message, message_id))
 
         # Check for missing messages and collect assertion errors
         errors = []
-        if missing_messages["alice"]:
+        if missing_messages["first_node"]:
             errors.append(
-                f"Alice didn't receive {len(missing_messages['alice'])} out of {num_messages} messages from Charlie: {missing_messages['alice']}"
+                f"first_node didn't receive {len(missing_messages['first_node'])} out of {num_messages} messages from second_node: {missing_messages['first_node']}"
             )
             errors.append(
-                f"Charlie didn't receive {len(missing_messages['charlie'])} out of {num_messages} messages from Alice: {missing_messages['charlie']}"
+                f"second_node didn't receive {len(missing_messages['second_node'])} out of {num_messages} messages from first_node: {missing_messages['second_node']}"
             )
 
         # Raise a combined assertion error if there are any missing messages
