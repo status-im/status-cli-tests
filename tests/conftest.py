@@ -38,7 +38,7 @@ def set_allure_env_variables():
 
 
 @pytest.fixture(scope="function", autouse=True)
-def attach_logs_on_fail(request):
+def attach_logs_on_fail(request, clear_open_nodes):
     yield
     if env_vars.RUNNING_IN_CI and hasattr(request.node, "rep_call") and request.node.rep_call.failed:
         logger.debug(f"Running fixture teardown: {inspect.currentframe().f_code.co_name}")
@@ -48,7 +48,7 @@ def attach_logs_on_fail(request):
 
 
 @pytest.fixture(scope="function", autouse=True)
-def clear_open_nodes(attach_logs_on_fail):
+def clear_open_nodes():
     DS.nodes = []
     yield
     logger.debug(f"Running fixture teardown: {inspect.currentframe().f_code.co_name}")
