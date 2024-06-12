@@ -1,12 +1,12 @@
 import os
-from src.env_vars import NUM_MESSAGES
+from src.env_vars import NUM_CONTACT_REQUESTS
 from src.node.status_node import StatusNode
 from src.steps.common import StepsCommon
 
 
 class TestContacRequest(StepsCommon):
     def test_contact_request_baseline(self):
-        num_contact_requests = NUM_MESSAGES  # Set the number of contact requests to send
+        num_contact_requests = NUM_CONTACT_REQUESTS  # Set the number of contact requests to send
 
         missing_contact_requests = []
 
@@ -34,7 +34,10 @@ class TestContacRequest(StepsCommon):
             else:
                 missing_contact_requests.append((timestamp, contact_request_message, message_id))
 
-        assert not missing_contact_requests, "Some contact requests didn't reach the peer node"
+        if missing_contact_requests:
+            raise AssertionError(
+                f"{len(missing_contact_requests)} contact requests didn't reach the peer node: " + "\n".join(missing_contact_requests)
+            )
 
     def test_contact_request_with_latency(self, add_latency):
         self.test_contact_request_baseline()
