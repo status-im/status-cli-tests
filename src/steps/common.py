@@ -22,16 +22,8 @@ class StepsCommon:
         self.first_node_pubkey = self.first_node.get_pubkey()
         self.second_node_pubkey = self.second_node.get_pubkey()
 
-    @pytest.fixture(scope="function", autouse=False)
-    def add_latency_fixt(self):
-        logger.debug(f"Running fixture setup: {inspect.currentframe().f_code.co_name}")
-        subprocess.Popen("sudo tc qdisc add dev eth0 root netem delay 1s 100ms distribution normal", shell=True)
-        yield
-        logger.debug(f"Running fixture teardown: {inspect.currentframe().f_code.co_name}")
-        subprocess.Popen("sudo tc qdisc del dev eth0 root", shell=True)
-
     @contextmanager
-    def add_latency_ctx(self):
+    def add_latency(self):
         logger.debug("Entering context manager: add_latency")
         subprocess.Popen("sudo tc qdisc add dev eth0 root netem delay 1s 100ms distribution normal", shell=True)
         try:
@@ -40,21 +32,25 @@ class StepsCommon:
             logger.debug(f"Exiting context manager: add_latency")
             subprocess.Popen("sudo tc qdisc del dev eth0 root", shell=True)
 
-    @pytest.fixture(scope="function", autouse=False)
+    @contextmanager
     def add_packet_loss(self):
-        logger.debug(f"Running fixture setup: {inspect.currentframe().f_code.co_name}")
+        logger.debug("Entering context manager: add_packet_loss")
         subprocess.Popen("sudo tc qdisc add dev eth0 root netem loss 50%", shell=True)
-        yield
-        logger.debug(f"Running fixture teardown: {inspect.currentframe().f_code.co_name}")
-        subprocess.Popen("sudo tc qdisc del dev eth0 root netem", shell=True)
+        try:
+            yield
+        finally:
+            logger.debug(f"Exiting context manager: add_packet_loss")
+            subprocess.Popen("sudo tc qdisc del dev eth0 root netem", shell=True)
 
-    @pytest.fixture(scope="function", autouse=False)
+    @contextmanager
     def add_low_bandwith(self):
-        logger.debug(f"Running fixture setup: {inspect.currentframe().f_code.co_name}")
+        logger.debug("Entering context manager: add_low_bandwith")
         subprocess.Popen("sudo tc qdisc add dev eth0 root tbf rate 1kbit burst 1kbit", shell=True)
-        yield
-        logger.debug(f"Running fixture teardown: {inspect.currentframe().f_code.co_name}")
-        subprocess.Popen("sudo tc qdisc del dev eth0 root", shell=True)
+        try:
+            yield
+        finally:
+            logger.debug(f"Exiting context manager: add_low_bandwith")
+            subprocess.Popen("sudo tc qdisc del dev eth0 root", shell=True)
 
     def send_with_timestamp(self, send_method, receiver_pubkey, message):
         timestamp = datetime.now().strftime("%H:%M:%S")

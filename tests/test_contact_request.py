@@ -39,11 +39,14 @@ class TestContacRequest(StepsCommon):
                 + "\n".join(formatted_missing_requests)
             )
 
-    def test_contact_request_with_latency(self, add_latency_fixt):
-        self.test_contact_request_baseline()
+    def test_contact_request_with_latency(self):
+        with self.add_latency():
+            self.test_contact_request_baseline()
 
-    def test_contact_request_with_packet_loss(self, add_packet_loss):
-        self.test_contact_request_baseline()
+    def test_contact_request_with_packet_loss(self):
+        with self.add_packet_loss():
+            self.test_contact_request_baseline()
 
-    def test_contact_request_with_low_bandwith(self, add_low_bandwith):
-        self.test_contact_request_baseline()
+    def test_contact_request_with_low_bandwith(self):
+        with self.add_low_bandwith():
+            self.test_contact_request_baseline()

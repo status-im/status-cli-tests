@@ -123,6 +123,12 @@ class StatusNode:
         params = [{"id": pubkey, "message": message}]
         return self.api.send_rpc_request("wakuext_sendOneToOneMessage", params)
 
+    def create_group_chat_with_members(self, pubkey_list, group_chat_name):
+        if not isinstance(pubkey_list, list):
+            raise TypeError("pubkey_list needs to be list")
+        params = [None, group_chat_name, pubkey_list]
+        return self.api.send_rpc_request("wakuext_createGroupChatWithMembers", params)
+
     def random_node_name(self, length=10):
         allowed_chars = string.ascii_lowercase + string.digits + "_-"
         return "".join(random.choice(allowed_chars) for _ in range(length))
