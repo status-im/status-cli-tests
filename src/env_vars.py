@@ -20,5 +20,6 @@ def get_env_var(var_name, default=None):
 
 # Configuration constants. Need to be upercase to appear in reports
 NUM_MESSAGES = get_env_var("NUM_MESSAGES", 50)
+NUM_CONTACT_REQUESTS = get_env_var("NUM_CONTACT_REQUESTS", 10)
 DELAY_BETWEEN_MESSAGES = get_env_var("DELAY_BETWEEN_MESSAGES", 2)
 RUNNING_IN_CI = get_env_var("CI")

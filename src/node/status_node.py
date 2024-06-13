@@ -1,10 +1,14 @@
 import os
+import random
+import shutil
+import string
 import subprocess
 import re
 import threading
 import time
 from tenacity import retry, stop_after_delay, wait_fixed
 
+from src.data_storage import DS
 from src.libs.custom_logger import get_custom_logger
 from src.node.rpc_client import StatusNodeRPC
 
@@ -12,13 +16,13 @@ logger = get_custom_logger(__name__)
 
 
 class StatusNode:
-    def __init__(self, name, port, pubkey=None):
+    def __init__(self, name=None, port=None, pubkey=None):
         try:
             os.remove(f"{name}.log")
         except:
             pass
-        self.name = name
-        self.port = port
+        self.name = self.random_node_name() if not name else name.lower()
+        self.port = str(random.randint(1024, 65535)) if not port else port
         self.pubkey = pubkey
         self.process = None
         self.log_thread = None
@@ -33,6 +37,7 @@ class StatusNode:
         self.process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
         self._capture_logs()
         self.api = StatusNodeRPC(self.port)
+        DS.nodes.append(self)
 
     def _capture_logs(self):
         def read_output(process, logs):
@@ -52,6 +57,21 @@ class StatusNode:
             logger.info(f"Stopping node with name: {self.name}")
             self.process.kill()
             self.log_thread.join()  # Ensure log thread finishes
+            node_dir = f"test-{self.name}"
+            if os.path.exists(node_dir):
+                try:
+                    shutil.rmtree(node_dir)
+                except Exception as ex:
+                    logger.warning(f"Couldn't delete node dir {node_dir} because of {str(ex)}")
+            self.process = None
+
+    def clear_logs(self):
+        log_name = f"{self.name}.log"
+        if os.path.exists(log_name):
+            try:
+                os.remove(log_name)
+            except Exception as ex:
+                logger.warning(f"Couldn't delete log {log_name}.log because of {str(ex)}")
 
     def search_logs(self, string=None, regex_pattern=None):
         if string:
@@ -76,6 +96,22 @@ class StatusNode:
     def wait_fully_started(self):
         assert self.search_logs(string="retrieve messages...")
 
+    def wait_for_logs(self, strings=None, timeout=10):
+        if not isinstance(strings, list):
+            raise ValueError("strings must be a list")
+        start_time = time.time()
+        while time.time() - start_time < timeout:
+            all_found = True
+            for string in strings:
+                logs = self.search_logs(string=string)
+                if not logs:  # If any string is not found
+                    all_found = False
+                    break
+            if all_found:
+                return True
+            time.sleep(0.5)
+        return False  # Return False if not all logs were found within the timeout period
+
     def waku_info(self):
         return self.api.send_rpc_request("waku_info")
 
@@ -86,3 +122,7 @@ class StatusNode:
     def send_message(self, pubkey, message):
         params = [{"id": pubkey, "message": message}]
         return self.api.send_rpc_request("wakuext_sendOneToOneMessage", params)
+
+    def random_node_name(self, length=10):
+        allowed_chars = string.ascii_lowercase + string.digits + "_-"
+        return "".join(random.choice(allowed_chars) for _ in range(length))

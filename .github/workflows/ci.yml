@@ -52,7 +52,7 @@ jobs:
 
     - name: Run tests
       run: |
-        pytest --alluredir=allure-results
+        pytest tests/ --alluredir=allure-results
 
     - name: Get allure history
       if: always()
