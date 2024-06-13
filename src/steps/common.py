@@ -62,3 +62,14 @@ class StepsCommon:
                 message_id = m["id"]
                 break
         return timestamp, message_id
+
+    def create_group_chat_with_timestamp(self, sender_node, member_list, private_group_name):
+        timestamp = datetime.now().strftime("%H:%M:%S")
+        response = sender_node.create_group_chat_with_members(member_list, private_group_name)
+        response_messages = response["result"]["messages"]
+        message_id = None
+        for m in response_messages:
+            if private_group_name in m["text"]:
+                message_id = m["id"]
+                break
+        return timestamp, message_id
