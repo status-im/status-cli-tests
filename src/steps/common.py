@@ -31,7 +31,7 @@ class StepsCommon:
         subprocess.Popen("sudo tc qdisc del dev eth0 root", shell=True)
 
     @contextmanager
-    def add_latency_ctx():
+    def add_latency_ctx(self):
         logger.debug("Entering context manager: add_latency")
         subprocess.Popen("sudo tc qdisc add dev eth0 root netem delay 1s 100ms distribution normal", shell=True)
         try:
