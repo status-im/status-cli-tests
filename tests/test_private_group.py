@@ -7,7 +7,7 @@ from src.steps.common import StepsCommon
 @pytest.mark.usefixtures("start_2_nodes")
 class TestPrivateGroup(StepsCommon):
     def test_create_group_chat(self):
-        num_private_groups = 4  # Set the number of private groups to create
+        num_private_groups = NUM_MESSAGES  # Set the number of private groups to create
 
         private_groups = []
 
