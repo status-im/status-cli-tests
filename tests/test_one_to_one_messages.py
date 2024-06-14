@@ -61,20 +61,17 @@ class TestOneToOneMessages(StepsCommon):
             raise AssertionError("\n".join(errors))
 
     def test_one_to_one_with_latency(self):
-        self.second_node.send_contact_request(self.first_node_pubkey, "hi")
-        assert self.second_node.wait_for_logs(["accepted your contact request"], timeout=20)
+        self.accept_contact_request()
         # we want to set latency only on the message sending requests
         with self.add_latency():
             self.test_one_to_one_baseline()
 
     def test_one_to_one_with_packet_loss(self):
-        self.second_node.send_contact_request(self.first_node_pubkey, "hi")
-        assert self.second_node.wait_for_logs(["accepted your contact request"], timeout=20)
+        self.accept_contact_request()
         with self.add_packet_loss():
             self.test_one_to_one_baseline()
 
     def test_one_to_one_with_low_bandwith(self):
-        self.second_node.send_contact_request(self.first_node_pubkey, "hi")
-        assert self.second_node.wait_for_logs(["accepted your contact request"], timeout=20)
+        self.accept_contact_request()
         with self.add_low_bandwith():
             self.test_one_to_one_baseline()

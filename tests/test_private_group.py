@@ -11,8 +11,7 @@ class TestPrivateGroup(StepsCommon):
 
         private_groups = []
 
-        self.second_node.send_contact_request(self.first_node_pubkey, "hi")
-        assert self.second_node.wait_for_logs(["accepted your contact request"], timeout=20)
+        self.accept_contact_request()
 
         for i in range(num_private_groups):
             private_group_name = f"private_group_{i}"
@@ -35,20 +34,17 @@ class TestPrivateGroup(StepsCommon):
             )
 
     def test_create_group_chat_with_latency(self):
-        self.second_node.send_contact_request(self.first_node_pubkey, "hi")
-        assert self.second_node.wait_for_logs(["accepted your contact request"], timeout=20)
+        self.accept_contact_request()
         # we want to set latency only on the group creation requests
         with self.add_latency():
             self.test_create_group_chat()
 
     def test_create_group_chat_with_packet_loss(self):
-        self.second_node.send_contact_request(self.first_node_pubkey, "hi")
-        assert self.second_node.wait_for_logs(["accepted your contact request"], timeout=20)
+        self.accept_contact_request()
         with self.add_packet_loss():
             self.test_create_group_chat()
 
     def test_create_group_chat_with_low_bandwith(self):
-        self.second_node.send_contact_request(self.first_node_pubkey, "hi")
-        assert self.second_node.wait_for_logs(["accepted your contact request"], timeout=20)
+        self.accept_contact_request()
         with self.add_low_bandwith():
             self.test_create_group_chat()

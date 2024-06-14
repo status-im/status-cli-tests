@@ -5,6 +5,7 @@ import pytest
 from src.libs.custom_logger import get_custom_logger
 from src.node.status_node import StatusNode
 from datetime import datetime
+from tenacity import retry, stop_after_delay, wait_fixed
 
 logger = get_custom_logger(__name__)
 
@@ -73,3 +74,12 @@ class StepsCommon:
                 message_id = m["id"]
                 break
         return timestamp, message_id
+
+    @retry(stop=stop_after_delay(40), wait=wait_fixed(0.5), reraise=True)
+    def accept_contact_request(self, sending_node=None, receiving_node_pk=None):
+        if not sending_node:
+            sending_node = self.second_node
+        if not receiving_node_pk:
+            receiving_node_pk = self.first_node_pubkey
+        sending_node.send_contact_request(receiving_node_pk, "hi")
+        assert sending_node.wait_for_logs(["accepted your contact request"], timeout=10)
