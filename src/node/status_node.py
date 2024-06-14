@@ -93,7 +93,7 @@ class StatusNode:
         assert pubkey is not None, f"{self.name}'s public key was not found."
         return pubkey
 
-    @retry(stop=stop_after_delay(10), wait=wait_fixed(0.1), reraise=True)
+    @retry(stop=stop_after_delay(20), wait=wait_fixed(0.1), reraise=True)
     def wait_fully_started(self):
         assert self.search_logs(string="retrieve messages...")
 
