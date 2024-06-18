@@ -1,9 +1,11 @@
+from contextlib import contextmanager
 import inspect
 import subprocess
 import pytest
 from src.libs.custom_logger import get_custom_logger
 from src.node.status_node import StatusNode
 from datetime import datetime
+from tenacity import retry, stop_after_delay, wait_fixed
 
 logger = get_custom_logger(__name__)
 
@@ -21,29 +23,35 @@ class StepsCommon:
         self.first_node_pubkey = self.first_node.get_pubkey()
         self.second_node_pubkey = self.second_node.get_pubkey()
 
-    @pytest.fixture(scope="function", autouse=False)
+    @contextmanager
     def add_latency(self):
-        logger.debug(f"Running fixture setup: {inspect.currentframe().f_code.co_name}")
+        logger.debug("Entering context manager: add_latency")
         subprocess.Popen("sudo tc qdisc add dev eth0 root netem delay 1s 100ms distribution normal", shell=True)
-        yield
-        logger.debug(f"Running fixture teardown: {inspect.currentframe().f_code.co_name}")
-        subprocess.Popen("sudo tc qdisc del dev eth0 root", shell=True)
+        try:
+            yield
+        finally:
+            logger.debug(f"Exiting context manager: add_latency")
+            subprocess.Popen("sudo tc qdisc del dev eth0 root", shell=True)
 
-    @pytest.fixture(scope="function", autouse=False)
+    @contextmanager
     def add_packet_loss(self):
-        logger.debug(f"Running fixture setup: {inspect.currentframe().f_code.co_name}")
+        logger.debug("Entering context manager: add_packet_loss")
         subprocess.Popen("sudo tc qdisc add dev eth0 root netem loss 50%", shell=True)
-        yield
-        logger.debug(f"Running fixture teardown: {inspect.currentframe().f_code.co_name}")
-        subprocess.Popen("sudo tc qdisc del dev eth0 root netem", shell=True)
+        try:
+            yield
+        finally:
+            logger.debug(f"Exiting context manager: add_packet_loss")
+            subprocess.Popen("sudo tc qdisc del dev eth0 root netem", shell=True)
 
-    @pytest.fixture(scope="function", autouse=False)
+    @contextmanager
     def add_low_bandwith(self):
-        logger.debug(f"Running fixture setup: {inspect.currentframe().f_code.co_name}")
+        logger.debug("Entering context manager: add_low_bandwith")
         subprocess.Popen("sudo tc qdisc add dev eth0 root tbf rate 1kbit burst 1kbit", shell=True)
-        yield
-        logger.debug(f"Running fixture teardown: {inspect.currentframe().f_code.co_name}")
-        subprocess.Popen("sudo tc qdisc del dev eth0 root", shell=True)
+        try:
+            yield
+        finally:
+            logger.debug(f"Exiting context manager: add_low_bandwith")
+            subprocess.Popen("sudo tc qdisc del dev eth0 root", shell=True)
 
     def send_with_timestamp(self, send_method, receiver_pubkey, message):
         timestamp = datetime.now().strftime("%H:%M:%S")
@@ -55,3 +63,35 @@ class StepsCommon:
                 message_id = m["id"]
                 break
         return timestamp, message_id
+
+    def create_group_chat_with_timestamp(self, sender_node, member_list, private_group_name):
+        timestamp = datetime.now().strftime("%H:%M:%S")
+        response = sender_node.create_group_chat_with_members(member_list, private_group_name)
+        response_messages = response["result"]["messages"]
+        message_id = None
+        for m in response_messages:
+            if private_group_name in m["text"]:
+                message_id = m["id"]
+                break
+        return timestamp, message_id
+
+    @retry(stop=stop_after_delay(40), wait=wait_fixed(0.5), reraise=True)
+    def accept_contact_request(self, sending_node=None, receiving_node_pk=None):
+        if not sending_node:
+            sending_node = self.second_node
+        if not receiving_node_pk:
+            receiving_node_pk = self.first_node_pubkey
+        sending_node.send_contact_request(receiving_node_pk, "hi")
+        assert sending_node.wait_for_logs(["accepted your contact request"], timeout=10)
+
+    @retry(stop=stop_after_delay(40), wait=wait_fixed(0.5), reraise=True)
+    def join_private_group(self, sending_node=None, members_list=None):
+        if not sending_node:
+            sending_node = self.second_node
+        if not members_list:
+            members_list = [self.first_node_pubkey]
+        response = sending_node.create_group_chat_with_members(members_list, "new_group")
+        receiving_node = self.first_node if sending_node == self.second_node else self.second_node
+        assert receiving_node.wait_for_logs(["created the group new_group"], timeout=10)
+        self.private_group_id = response["result"]["chats"][0]["id"]
+        return self.private_group_id

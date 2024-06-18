@@ -9,6 +9,7 @@ import time
 from tenacity import retry, stop_after_delay, wait_fixed
 
 from src.data_storage import DS
+from src.libs.common import delay
 from src.libs.custom_logger import get_custom_logger
 from src.node.rpc_client import StatusNodeRPC
 
@@ -50,7 +51,7 @@ class StatusNode:
 
         self.log_thread = threading.Thread(target=read_output, args=(self.process, self.logs))
         self.log_thread.start()
-        time.sleep(2)  # Allow some time for the node to start and generate output
+        delay(2)  # Allow some time for the node to start and generate output
 
     def stop(self):
         if self.process:
@@ -92,7 +93,7 @@ class StatusNode:
         assert pubkey is not None, f"{self.name}'s public key was not found."
         return pubkey
 
-    @retry(stop=stop_after_delay(10), wait=wait_fixed(0.1), reraise=True)
+    @retry(stop=stop_after_delay(20), wait=wait_fixed(0.1), reraise=True)
     def wait_fully_started(self):
         assert self.search_logs(string="retrieve messages...")
 
@@ -109,7 +110,7 @@ class StatusNode:
                     break
             if all_found:
                 return True
-            time.sleep(0.5)
+            delay(0.5)
         return False  # Return False if not all logs were found within the timeout period
 
     def waku_info(self):
@@ -122,6 +123,16 @@ class StatusNode:
     def send_message(self, pubkey, message):
         params = [{"id": pubkey, "message": message}]
         return self.api.send_rpc_request("wakuext_sendOneToOneMessage", params)
+
+    def create_group_chat_with_members(self, pubkey_list, group_chat_name):
+        if not isinstance(pubkey_list, list):
+            raise TypeError("pubkey_list needs to be list")
+        params = [None, group_chat_name, pubkey_list]
+        return self.api.send_rpc_request("wakuext_createGroupChatWithMembers", params)
+
+    def send_group_chat_message(self, group_id, message):
+        params = [{"id": group_id, "message": message}]
+        return self.api.send_rpc_request("wakuext_sendGroupChatMessage", params)
 
     def random_node_name(self, length=10):
         allowed_chars = string.ascii_lowercase + string.digits + "_-"

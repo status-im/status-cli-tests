@@ -20,7 +20,7 @@ class TestContacRequest(StepsCommon):
             second_node.wait_fully_started()
             first_node_pubkey = first_node.get_pubkey()
             contact_request_message = f"contact_request_{index}"
-            timestamp, message_id = self.send_with_timestamp(second_node.send_contact_request, first_node_pubkey, f"contact_request_{index}")
+            timestamp, message_id = self.send_with_timestamp(second_node.send_contact_request, first_node_pubkey, contact_request_message)
             if first_node.wait_for_logs([f"message received: {contact_request_message}", "AcceptContactRequest"]):
                 contact_requests_successful = True
             first_node.stop()
@@ -39,11 +39,14 @@ class TestContacRequest(StepsCommon):
                 + "\n".join(formatted_missing_requests)
             )
 
-    def test_contact_request_with_latency(self, add_latency):
-        self.test_contact_request_baseline()
+    def test_contact_request_with_latency(self):
+        with self.add_latency():
+            self.test_contact_request_baseline()
 
-    def test_contact_request_with_packet_loss(self, add_packet_loss):
-        self.test_contact_request_baseline()
+    def test_contact_request_with_packet_loss(self):
+        with self.add_packet_loss():
+            self.test_contact_request_baseline()
 
-    def test_contact_request_with_low_bandwith(self, add_low_bandwith):
-        self.test_contact_request_baseline()
+    def test_contact_request_with_low_bandwith(self):
+        with self.add_low_bandwith():
+            self.test_contact_request_baseline()
