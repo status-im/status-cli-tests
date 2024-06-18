@@ -83,3 +83,15 @@ class StepsCommon:
             receiving_node_pk = self.first_node_pubkey
         sending_node.send_contact_request(receiving_node_pk, "hi")
         assert sending_node.wait_for_logs(["accepted your contact request"], timeout=10)
+
+    @retry(stop=stop_after_delay(40), wait=wait_fixed(0.5), reraise=True)
+    def join_private_group(self, sending_node=None, members_list=None):
+        if not sending_node:
+            sending_node = self.second_node
+        if not members_list:
+            members_list = [self.first_node_pubkey]
+        response = sending_node.create_group_chat_with_members(members_list, "new_group")
+        receiving_node = self.first_node if sending_node == self.second_node else self.second_node
+        assert receiving_node.wait_for_logs(["created the group new_group"], timeout=10)
+        self.private_group_id = response["result"]["chats"][0]["id"]
+        return self.private_group_id
