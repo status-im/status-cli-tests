@@ -134,6 +134,14 @@ class StatusNode:
         params = [{"id": group_id, "message": message}]
         return self.api.send_rpc_request("wakuext_sendGroupChatMessage", params)
 
+    def create_community(self, name):
+        params = [{"membership": 3, "name": name, "color": "#ffffff", "description": name}]
+        return self.api.send_rpc_request("wakuext_createCommunity", params)
+
+    def fetch_community(self, community_key):
+        params = [{"communityKey": community_key, "waitForResponse": True, "tryDatabase": True}]
+        return self.api.send_rpc_request("wakuext_fetchCommunity", params)
+
     def random_node_name(self, length=10):
         allowed_chars = string.ascii_lowercase + string.digits + "_-"
         return "".join(random.choice(allowed_chars) for _ in range(length))
