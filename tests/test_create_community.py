@@ -1,5 +1,5 @@
 import pytest
-from src.env_vars import NUM_MESSAGES
+from src.env_vars import NUM_COMMUNITIES
 from src.steps.common import StepsCommon
 from datetime import datetime
 
@@ -7,7 +7,7 @@ from datetime import datetime
 @pytest.mark.usefixtures("start_2_nodes")
 class TestCreateCommunity(StepsCommon):
     def test_create_and_fetch_community_baseline(self):
-        num_communities = NUM_MESSAGES  # Set the number of communities to create
+        num_communities = NUM_COMMUNITIES  # Set the number of communities to create
 
         community_fetch_failed = []
 

@@ -95,3 +95,17 @@ class StepsCommon:
         assert receiving_node.wait_for_logs(["created the group new_group"], timeout=10)
         self.private_group_id = response["result"]["chats"][0]["id"]
         return self.private_group_id
+
+    @retry(stop=stop_after_delay(40), wait=wait_fixed(0.5), reraise=True)
+    def create_communities(self, num_communities, creating_node=None):
+        if not creating_node:
+            creating_node = self.first_node
+        self.community_id_list = []
+        for i in range(num_communities):
+            name = f"community_{i}"
+            response = creating_node.create_community(name)
+            community_id = response["result"]["communities"][0]["id"]
+            response = self.second_node.fetch_community(community_id)
+            assert response["result"]["name"] == name
+            self.community_id_list.append(community_id)
+        return self.community_id_list

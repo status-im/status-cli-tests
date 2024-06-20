@@ -37,7 +37,7 @@ class StatusNode:
 
         self.process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
         self._capture_logs()
-        self.api = StatusNodeRPC(self.port)
+        self.api = StatusNodeRPC(self.port, self.name)
         DS.nodes.append(self)
 
     def _capture_logs(self):
@@ -141,6 +141,14 @@ class StatusNode:
     def fetch_community(self, community_key):
         params = [{"communityKey": community_key, "waitForResponse": True, "tryDatabase": True}]
         return self.api.send_rpc_request("wakuext_fetchCommunity", params)
+
+    def request_to_join_community(self, community_id):
+        params = [{"communityId": community_id}]
+        return self.api.send_rpc_request("wakuext_requestToJoinCommunity", params)
+
+    def accept_request_to_join_community(self, request_to_join_id):
+        params = [{"id": request_to_join_id}]
+        return self.api.send_rpc_request("wakuext_acceptRequestToJoinCommunity", params)
 
     def random_node_name(self, length=10):
         allowed_chars = string.ascii_lowercase + string.digits + "_-"

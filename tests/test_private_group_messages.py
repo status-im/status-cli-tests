@@ -1,5 +1,5 @@
 import pytest
-from src.env_vars import DELAY_BETWEEN_MESSAGES, NUM_MESSAGES
+from src.env_vars import DELAY_BETWEEN_MESSAGES, PRIVATE_GROUPS
 from src.libs.common import delay
 from src.steps.common import StepsCommon
 
@@ -7,7 +7,7 @@ from src.steps.common import StepsCommon
 @pytest.mark.usefixtures("start_2_nodes")
 class TestPrivateGroupMessages(StepsCommon):
     def test_group_chat_messages_baseline(self):
-        num_private_groups = NUM_MESSAGES  # Set the number of private messages to send
+        num_private_groups = PRIVATE_GROUPS  # Set the number of private messages to send
 
         self.accept_contact_request()
         try:
