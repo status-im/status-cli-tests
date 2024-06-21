@@ -45,16 +45,16 @@ class TestJoinCommunity(StepsCommon):
             raise AssertionError(f"{len(failed_community_joins)} community joins out of {num_joins}: " + "\n".join(formatted_missing_requests))
 
     def test_join_community_with_latency(self):
-        self.create_communities(num_joins, creating_node=self.first_node)
+        self.create_communities(num_joins)
         with self.add_latency():
             self.test_join_community_baseline()
 
     def test_join_community_with_packet_loss(self):
-        self.create_communities(num_joins, creating_node=self.first_node)
+        self.create_communities(num_joins)
         with self.add_packet_loss():
             self.test_join_community_baseline()
 
     def test_join_communityy_with_low_bandwith(self):
-        self.create_communities(num_joins, creating_node=self.first_node)
+        self.create_communities(num_joins)
         with self.add_low_bandwith():
             self.test_join_community_baseline()

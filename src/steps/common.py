@@ -2,6 +2,7 @@ from contextlib import contextmanager
 import inspect
 import subprocess
 import pytest
+from src.libs.common import delay
 from src.libs.custom_logger import get_custom_logger
 from src.node.status_node import StatusNode
 from datetime import datetime
@@ -97,15 +98,27 @@ class StepsCommon:
         return self.private_group_id
 
     @retry(stop=stop_after_delay(40), wait=wait_fixed(0.5), reraise=True)
-    def create_communities(self, num_communities, creating_node=None):
-        if not creating_node:
-            creating_node = self.first_node
+    def create_communities(self, num_communities):
         self.community_id_list = []
         for i in range(num_communities):
             name = f"community_{i}"
-            response = creating_node.create_community(name)
+            response = self.first_node.create_community(name)
             community_id = response["result"]["communities"][0]["id"]
             response = self.second_node.fetch_community(community_id)
             assert response["result"]["name"] == name
             self.community_id_list.append(community_id)
         return self.community_id_list
+
+    def join_created_communities(self):
+        community_join_requests = []
+        for community_id in self.community_id_list:
+            response_to_join = self.second_node.request_to_join_community(community_id)
+            request_to_join_id = response_to_join["result"]["requestsToJoinCommunity"][0]["id"]
+            community_join_requests.append(request_to_join_id)
+        delay(4)
+        self.chat_id_list = []
+        for request_to_join_id in community_join_requests:
+            response = self.first_node.accept_request_to_join_community(request_to_join_id)
+            chats = response["result"]["communities"][0]["chats"]
+            chat_id = list(chats.keys())[0]
+            self.chat_id_list.append(chat_id)

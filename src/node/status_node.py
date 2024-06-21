@@ -150,6 +150,14 @@ class StatusNode:
         params = [{"id": request_to_join_id}]
         return self.api.send_rpc_request("wakuext_acceptRequestToJoinCommunity", params)
 
+    def send_community_chat_message(self, chat_id, message):
+        params = [{"chatId": chat_id, "text": message, "contentType": 1}]
+        return self.api.send_rpc_request("wakuext_sendChatMessage", params)
+
+    def leave_community(self, community_id):
+        params = [community_id]
+        return self.api.send_rpc_request("wakuext_leaveCommunity", params)
+
     def random_node_name(self, length=10):
         allowed_chars = string.ascii_lowercase + string.digits + "_-"
         return "".join(random.choice(allowed_chars) for _ in range(length))
