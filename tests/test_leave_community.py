@@ -8,7 +8,7 @@ num_joins = NUM_COMMUNITIES  # Set the number of cummunities to join
 
 
 @pytest.mark.usefixtures("start_2_nodes")
-class TestJoinCommunity(StepsCommon):
+class TestLeaveCommunity(StepsCommon):
     def test_leave_community_baseline(self):
         try:
             self.community_id_list
