@@ -54,9 +54,9 @@ class StepsCommon:
             logger.debug(f"Exiting context manager: add_low_bandwith")
             subprocess.Popen("sudo tc qdisc del dev eth0 root", shell=True)
 
-    def send_with_timestamp(self, send_method, receiver_pubkey, message):
+    def send_with_timestamp(self, send_method, id, message):
         timestamp = datetime.now().strftime("%H:%M:%S")
-        response = send_method(receiver_pubkey, message)
+        response = send_method(id, message)
         response_messages = response["result"]["messages"]
         message_id = None
         for m in response_messages:

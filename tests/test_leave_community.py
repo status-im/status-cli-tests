@@ -48,7 +48,7 @@ class TestLeaveCommunity(StepsCommon):
         with self.add_packet_loss():
             self.test_leave_community_baseline()
 
-    def test_leave_communityy_with_low_bandwith(self):
+    def test_leave_community_with_low_bandwith(self):
         self.create_communities(num_joins)
         self.join_created_communities()
         with self.add_low_bandwith():

@@ -54,7 +54,7 @@ class TestJoinCommunity(StepsCommon):
         with self.add_packet_loss():
             self.test_join_community_baseline()
 
-    def test_join_communityy_with_low_bandwith(self):
+    def test_join_community_with_low_bandwith(self):
         self.create_communities(num_joins)
         with self.add_low_bandwith():
             self.test_join_community_baseline()
