@@ -13,7 +13,7 @@ class TestCommunityMessages(StepsCommon):
             self.create_communities(1)
             self.join_created_communities()
 
-        delay(5)
+        delay(10)
 
         messages = []
         message_chat_id = self.community_id_list[0] + self.chat_id_list[0]

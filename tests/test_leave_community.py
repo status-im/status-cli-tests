@@ -16,7 +16,7 @@ class TestLeaveCommunity(StepsCommon):
             self.create_communities(num_joins)
             self.join_created_communities()
 
-        delay(5)
+        delay(10)
 
         failed_community_leave = []
         for community_id in self.community_id_list:
