@@ -13,7 +13,7 @@ class TestJoinCommunity(StepsCommon):
         try:
             self.community_id_list
         except:
-            self.create_communities(num_joins, creating_node=self.first_node)
+            self.create_communities(num_joins)
 
         community_join_requests = []
         for community_id in self.community_id_list:
