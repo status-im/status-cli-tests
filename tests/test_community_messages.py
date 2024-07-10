@@ -50,19 +50,19 @@ class TestCommunityMessages(StepsCommon):
             )
 
     def test_community_messages_with_latency(self):
-        self.create_communities(1)
+        self.setup_community_nodes()
         self.join_created_communities()
         with self.add_latency():
             self.test_community_messages_baseline()
 
     def test_community_messages_with_packet_loss(self):
-        self.create_communities(1)
+        self.setup_community_nodes()
         self.join_created_communities()
         with self.add_packet_loss():
             self.test_community_messages_baseline()
 
     def test_community_messages_with_low_bandwith(self):
-        self.create_communities(1)
+        self.setup_community_nodes()
         self.join_created_communities()
         with self.add_low_bandwith():
             self.test_community_messages_baseline()
