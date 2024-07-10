@@ -27,14 +27,25 @@ class StatusNode:
         self.pubkey = pubkey
         self.process = None
         self.log_thread = None
+        self.capture_logs = True
         self.logs = []
 
-    def start(self):
+    def start(self, capture_logs=True):
+        self.capture_logs = capture_logs
         command = ["./status-cli", "serve", "-n", self.name, "-p", self.port]
         logger.info(f"Starting node with command: {command}")
         if self.pubkey:
             command += ["-a", self.pubkey]
 
+        self.process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
+        if self.capture_logs:
+            self._capture_logs()
+        self.api = StatusNodeRPC(self.port, self.name)
+        DS.nodes.append(self)
+
+    def serve_account(self, key_uuid):
+        command = ["./status-cli", "serve-account", "-n", self.name, "-kid", key_uuid]
+        logger.info(f"Serving node with command: {command}")
         self.process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
         self._capture_logs()
         self.api = StatusNodeRPC(self.port, self.name)
@@ -53,13 +64,14 @@ class StatusNode:
         self.log_thread.start()
         delay(2)  # Allow some time for the node to start and generate output
 
-    def stop(self):
+    def stop(self, remove_local_data=True):
         if self.process:
             logger.info(f"Stopping node with name: {self.name}")
             self.process.kill()
-            self.log_thread.join()  # Ensure log thread finishes
+            if self.capture_logs:
+                self.log_thread.join()  # Ensure log thread finishes
             node_dir = f"test-{self.name}"
-            if os.path.exists(node_dir):
+            if remove_local_data and os.path.exists(node_dir):
                 try:
                     shutil.rmtree(node_dir)
                 except Exception as ex:
