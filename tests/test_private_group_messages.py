@@ -1,13 +1,13 @@
 import pytest
-from src.env_vars import DELAY_BETWEEN_MESSAGES, NUM_MESSAGES
+from src.env_vars import DELAY_BETWEEN_MESSAGES, PRIVATE_GROUPS
 from src.libs.common import delay
 from src.steps.common import StepsCommon
 
 
 @pytest.mark.usefixtures("start_2_nodes")
 class TestPrivateGroupMessages(StepsCommon):
-    def test_group_chat_messages(self):
-        num_private_groups = NUM_MESSAGES  # Set the number of private messages to send
+    def test_group_chat_messages_baseline(self):
+        num_private_groups = PRIVATE_GROUPS  # Set the number of private messages to send
 
         self.accept_contact_request()
         try:
@@ -51,16 +51,16 @@ class TestPrivateGroupMessages(StepsCommon):
         self.join_private_group()
         # we want to set latency only on the group creation requests
         with self.add_latency():
-            self.test_group_chat_messages()
+            self.test_group_chat_messages_baseline()
 
     def test_group_chat_messages_with_packet_loss(self):
         self.accept_contact_request()
         self.join_private_group()
         with self.add_packet_loss():
-            self.test_group_chat_messages()
+            self.test_group_chat_messages_baseline()
 
     def test_group_chat_messages_with_low_bandwith(self):
         self.accept_contact_request()
         self.join_private_group()
         with self.add_low_bandwith():
-            self.test_group_chat_messages()
+            self.test_group_chat_messages_baseline()
