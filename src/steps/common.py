@@ -63,6 +63,16 @@ class StepsCommon:
             logger.debug(f"Exiting context manager: add_low_bandwith")
             subprocess.Popen("sudo tc qdisc del dev eth0 root", shell=True)
 
+    @contextmanager
+    def node_pause(self, node):
+        logger.debug("Entering context manager: node_pause")
+        node.pause_process()
+        try:
+            yield
+        finally:
+            logger.debug(f"Exiting context manager: node_pause")
+            node.resume_process()
+
     def send_with_timestamp(self, send_method, id, message):
         timestamp = datetime.now().strftime("%H:%M:%S")
         response = send_method(id, message)
@@ -118,7 +128,8 @@ class StepsCommon:
             self.community_id_list.append(community_id)
         return self.community_id_list
 
-    def setup_community_nodes(self):
+    def setup_community_nodes(self, node_limit=None):
+        # Use node_limit if you just need a limited number of nodes
         # Extract the tar file
         command = "tar -xvf resources/nodes.tar -C ./"
         subprocess.run(command, shell=True, check=True)
@@ -137,6 +148,8 @@ class StepsCommon:
                             port = node_name.split("_")[1]
                             status_node = StatusNode(name=node_name, port=port)
                             self.community_nodes.append({"node_uid": node_uid, "community_id": community_id, "status_node": status_node})
+                if node_limit and len(self.community_nodes) == node_limit:
+                    break
 
         # Start all nodes
         for _, community_node in enumerate(self.community_nodes):

@@ -1,4 +1,5 @@
 import os
+from uuid import uuid4
 from src.env_vars import NUM_CONTACT_REQUESTS
 from src.node.status_node import StatusNode
 from src.steps.common import StepsCommon
@@ -50,3 +51,9 @@ class TestContacRequest(StepsCommon):
     def test_contact_request_with_low_bandwith(self):
         with self.add_low_bandwith():
             self.test_contact_request_baseline()
+
+    def test_contact_request_with_node_pause(self, start_2_nodes):
+        with self.node_pause(self.second_node):
+            message = str(uuid4())
+            self.first_node.send_contact_request(self.second_node_pubkey, message)
+        assert self.second_node.wait_for_logs([message])
