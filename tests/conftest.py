@@ -40,6 +40,15 @@ def set_allure_env_variables():
 @pytest.fixture(scope="function", autouse=True)
 def attach_logs_on_fail(request, clear_open_nodes):
     yield
+    test_name = request.node.name.lower()
+    class_name = request.node.cls.__name__.lower() if request.node.cls else ""
+
+    if "community" in test_name or "community" in class_name:
+        logger.warn(
+            f"Skipping log attachment for {class_name}.{test_name} due to Community tests generating very large log files. Rerun test locally to capture the logs"
+        )
+        return
+
     if env_vars.RUNNING_IN_CI and hasattr(request.node, "rep_call") and request.node.rep_call.failed:
         logger.debug(f"Running fixture teardown: {inspect.currentframe().f_code.co_name}")
         logger.debug("Test failed, attempting to attach logs to the allure reports")
