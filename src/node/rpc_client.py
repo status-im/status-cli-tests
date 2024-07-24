@@ -14,12 +14,12 @@ class StatusNodeRPC:
         self.node_name = node_name
 
     @retry(stop=stop_after_delay(10), wait=wait_fixed(0.1), reraise=True)
-    def send_rpc_request(self, method, params=None):
+    def send_rpc_request(self, method, params=None, timeout=API_REQUEST_TIMEOUT):
         if params is None:
             params = []
         payload = {"jsonrpc": "2.0", "method": method, "params": params, "id": 1}
         logger.debug(f"Node: {self.node_name} sends request at address: {self.base_url} with payload: {json.dumps(payload)}")
-        response = requests.post(self.base_url, headers={"Content-Type": "application/json"}, data=json.dumps(payload), timeout=API_REQUEST_TIMEOUT)
+        response = requests.post(self.base_url, headers={"Content-Type": "application/json"}, data=json.dumps(payload), timeout=timeout)
         logger.debug(f"Received response: {response.text}")
         assert "result" in response.json()
         return response.json()

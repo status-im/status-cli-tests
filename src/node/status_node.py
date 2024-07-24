@@ -163,9 +163,10 @@ class StatusNode:
         params = [{"membership": 3, "name": name, "color": "#ffffff", "description": name}]
         return self.api.send_rpc_request("wakuext_createCommunity", params)
 
+    @retry(stop=stop_after_delay(10), wait=wait_fixed(0.1), reraise=True)
     def fetch_community(self, community_key):
         params = [{"communityKey": community_key, "waitForResponse": True, "tryDatabase": True}]
-        return self.api.send_rpc_request("wakuext_fetchCommunity", params)
+        return self.api.send_rpc_request("wakuext_fetchCommunity", params, timeout=2)
 
     def request_to_join_community(self, community_id):
         params = [{"communityId": community_id}]
