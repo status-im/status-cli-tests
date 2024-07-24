@@ -129,10 +129,18 @@ class StepsCommon:
         return self.community_id_list
 
     def setup_community_nodes(self, node_limit=None):
+        resources_folder = "./resources"
+        tar_files = [f for f in os.listdir(resources_folder) if f.endswith(".tar")]
+
         # Use node_limit if you just need a limited number of nodes
-        # Extract the tar file
-        command = "tar -xvf resources/nodes.tar -C ./"
-        subprocess.run(command, shell=True, check=True)
+        if node_limit is not None:
+            tar_files = tar_files[:node_limit]
+
+        # Extract the nodes from the tar file
+        for tar_file in tar_files:
+            tar_path = os.path.join(resources_folder, tar_file)
+            command = f"tar -xvf {tar_path} -C ./"
+            subprocess.run(command, shell=True, check=True)
 
         self.community_nodes = []
         for root, dirs, files in os.walk("."):
@@ -148,14 +156,14 @@ class StepsCommon:
                             port = node_name.split("_")[1]
                             status_node = StatusNode(name=node_name, port=port)
                             self.community_nodes.append({"node_uid": node_uid, "community_id": community_id, "status_node": status_node})
-                if node_limit and len(self.community_nodes) == node_limit:
-                    break
 
         # Start all nodes
         for _, community_node in enumerate(self.community_nodes):
             node_uid = community_node["node_uid"]
             status_node = community_node["status_node"]
             status_node.serve_account(node_uid)
+
+        delay(4)
 
         return self.community_nodes
 
