@@ -1,13 +1,11 @@
 # -*- coding: utf-8 -*-
 import inspect
 import glob
+import shutil
 from src.data_storage import DS
 from src.libs.custom_logger import get_custom_logger
 import os
 import pytest
-from datetime import datetime
-from uuid import uuid4
-from src.libs.common import attach_allure_file
 import src.env_vars as env_vars
 
 
@@ -40,20 +38,21 @@ def set_allure_env_variables():
 @pytest.fixture(scope="function", autouse=True)
 def attach_logs_on_fail(request, clear_open_nodes):
     yield
-    test_name = request.node.name.lower()
-    class_name = request.node.cls.__name__.lower() if request.node.cls else ""
-
-    if "community" in test_name or "community" in class_name:
-        logger.warn(
-            f"Skipping log attachment for {class_name}.{test_name} due to Community tests generating very large log files. Rerun test locally to capture the logs"
-        )
-        return
-
     if env_vars.RUNNING_IN_CI and hasattr(request.node, "rep_call") and request.node.rep_call.failed:
         logger.debug(f"Running fixture teardown: {inspect.currentframe().f_code.co_name}")
-        logger.debug("Test failed, attempting to attach logs to the allure reports")
+        test_name = request.node.name.lower()
+        class_name = request.node.cls.__name__.lower() if request.node.cls else ""
+        logger.debug("Test failed, attempting to rename and move logs to the test_results folder")
+
+        test_results_dir = "test_results"
+        if not os.path.exists(test_results_dir):
+            os.makedirs(test_results_dir)
+
         for file in glob.glob("*.log"):
-            attach_allure_file(file)
+            new_file_name = f"{class_name}_{test_name}_{os.path.basename(file)}"
+            new_file_path = os.path.join(test_results_dir, new_file_name)
+            shutil.move(file, new_file_path)
+            logger.debug(f"Moved log file {file} to {new_file_path}")
 
 
 @pytest.fixture(scope="function", autouse=True)
