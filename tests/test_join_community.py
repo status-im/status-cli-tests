@@ -68,7 +68,7 @@ class TestJoinCommunity(StepsCommon):
             self.test_join_community_baseline()
 
     def test_join_community_with_node_pause(self):
-        self.setup_community_nodes()
+        self.setup_community_nodes(node_limit=1)
         community_id = self.community_nodes[0]["community_id"]
         community_node = self.community_nodes[0]["status_node"]
         with self.node_pause(community_node):
