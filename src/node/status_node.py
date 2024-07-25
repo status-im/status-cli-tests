@@ -1,6 +1,7 @@
 import os
 import random
 import shutil
+import signal
 import string
 import subprocess
 import re
@@ -29,6 +30,7 @@ class StatusNode:
         self.log_thread = None
         self.capture_logs = True
         self.logs = []
+        self.pid = None
 
     def start(self, capture_logs=True):
         self.capture_logs = capture_logs
@@ -38,6 +40,7 @@ class StatusNode:
             command += ["-a", self.pubkey]
 
         self.process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
+        self.pid = self.process.pid
         if self.capture_logs:
             self._capture_logs()
         self.api = StatusNodeRPC(self.port, self.name)
@@ -77,6 +80,16 @@ class StatusNode:
                 except Exception as ex:
                     logger.warning(f"Couldn't delete node dir {node_dir} because of {str(ex)}")
             self.process = None
+
+    def pause_process(self):
+        if self.pid:
+            logger.info(f"Pausing node with pid: {self.pid}")
+            os.kill(self.pid, signal.SIGTSTP)
+
+    def resume_process(self):
+        if self.pid:
+            logger.info(f"Resuming node with pid: {self.pid}")
+            os.kill(self.pid, signal.SIGCONT)
 
     def clear_logs(self):
         log_name = f"{self.name}.log"
@@ -150,9 +163,11 @@ class StatusNode:
         params = [{"membership": 3, "name": name, "color": "#ffffff", "description": name}]
         return self.api.send_rpc_request("wakuext_createCommunity", params)
 
+    @retry(stop=stop_after_delay(20), wait=wait_fixed(0.1), reraise=True)
+    # wakuext_fetchCommunity times out sometimes so that's why we need this retry mechanism
     def fetch_community(self, community_key):
         params = [{"communityKey": community_key, "waitForResponse": True, "tryDatabase": True}]
-        return self.api.send_rpc_request("wakuext_fetchCommunity", params)
+        return self.api.send_rpc_request("wakuext_fetchCommunity", params, timeout=2)
 
     def request_to_join_community(self, community_id):
         params = [{"communityId": community_id}]

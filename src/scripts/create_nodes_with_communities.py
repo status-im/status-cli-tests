@@ -5,7 +5,10 @@ from src.node.status_node import StatusNode
 
 num_communities = 10
 root_folder = "."  # Set your root folder path here
-archive_path = os.path.join(root_folder, "resources/nodes.tar")
+resources_folder = os.path.join(root_folder, "resources")
+
+# Ensure the resources folder exists
+os.makedirs(resources_folder, exist_ok=True)
 
 for i in range(num_communities):
     port = str(6130 + i)
@@ -30,8 +33,9 @@ for i in range(num_communities):
     if os.path.exists(old_folder_path):
         os.rename(old_folder_path, new_folder_path)
 
-# Archive all folders starting with 'test-0x'
-with tarfile.open(archive_path, "w") as tar:
-    for item in os.listdir(root_folder):
-        if item.startswith("test-0x") and os.path.isdir(os.path.join(root_folder, item)):
-            tar.add(os.path.join(root_folder, item), arcname=item)
+    # Archive the renamed folder
+    archive_name = f"{new_folder_name}.tar"
+    archive_path = os.path.join(resources_folder, archive_name)
+
+    with tarfile.open(archive_path, "w") as tar:
+        tar.add(new_folder_path, arcname=new_folder_name)

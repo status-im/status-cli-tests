@@ -63,6 +63,16 @@ class StepsCommon:
             logger.debug(f"Exiting context manager: add_low_bandwith")
             subprocess.Popen("sudo tc qdisc del dev eth0 root", shell=True)
 
+    @contextmanager
+    def node_pause(self, node):
+        logger.debug("Entering context manager: node_pause")
+        node.pause_process()
+        try:
+            yield
+        finally:
+            logger.debug(f"Exiting context manager: node_pause")
+            node.resume_process()
+
     def send_with_timestamp(self, send_method, id, message):
         timestamp = datetime.now().strftime("%H:%M:%S")
         response = send_method(id, message)
@@ -118,10 +128,19 @@ class StepsCommon:
             self.community_id_list.append(community_id)
         return self.community_id_list
 
-    def setup_community_nodes(self):
-        # Extract the tar file
-        command = "tar -xvf resources/nodes.tar -C ./"
-        subprocess.run(command, shell=True, check=True)
+    def setup_community_nodes(self, node_limit=None):
+        resources_folder = "./resources"
+        tar_files = [f for f in os.listdir(resources_folder) if f.endswith(".tar")]
+
+        # Use node_limit if you just need a limited number of nodes
+        if node_limit is not None:
+            tar_files = tar_files[:node_limit]
+
+        # Extract the nodes from the tar file
+        for tar_file in tar_files:
+            tar_path = os.path.join(resources_folder, tar_file)
+            command = f"tar -xvf {tar_path} -C ./"
+            subprocess.run(command, shell=True, check=True)
 
         self.community_nodes = []
         for root, dirs, files in os.walk("."):
@@ -143,6 +162,8 @@ class StepsCommon:
             node_uid = community_node["node_uid"]
             status_node = community_node["status_node"]
             status_node.serve_account(node_uid)
+
+        delay(4)
 
         return self.community_nodes
 

@@ -66,3 +66,24 @@ class TestJoinCommunity(StepsCommon):
         self.setup_community_nodes()
         with self.add_low_bandwith():
             self.test_join_community_baseline()
+
+    def test_join_community_with_node_pause(self):
+        self.setup_community_nodes(node_limit=1)
+        community_id = self.community_nodes[0]["community_id"]
+        community_node = self.community_nodes[0]["status_node"]
+        with self.node_pause(community_node):
+            self.first_node.fetch_community(community_id)
+            response_to_join = self.first_node.request_to_join_community(community_id)
+            target_community = [
+                existing_community for existing_community in response_to_join["result"]["communities"] if existing_community["id"] == community_id
+            ][0]
+            initial_members = len(target_community["members"])
+            request_to_join_id = response_to_join["result"]["requestsToJoinCommunity"][0]["id"]
+            delay(10)
+        response_accept_to_join = community_node.accept_request_to_join_community(request_to_join_id)
+        target_community = [
+            existing_community for existing_community in response_accept_to_join["result"]["communities"] if existing_community["id"] == community_id
+        ][0]
+        assert (
+            len(target_community["members"]) == initial_members + 1
+        ), "Comunity doesn't have correct number of members so second node didn't managed to join"

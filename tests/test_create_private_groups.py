@@ -1,3 +1,4 @@
+from uuid import uuid4
 import pytest
 from src.env_vars import DELAY_BETWEEN_MESSAGES, NUM_MESSAGES
 from src.libs.common import delay
@@ -59,3 +60,11 @@ class TestCreatePrivateGroups(StepsCommon):
         self.accept_contact_request()
         with self.add_low_bandwith():
             self.test_create_group_chat_baseline()
+
+    def test_create_group_with_node_pause(self):
+        self.accept_contact_request()
+        with self.node_pause(self.second_node):
+            group_name = str(uuid4())
+            self.first_node.create_group_chat_with_members([self.second_node_pubkey], group_name)
+            delay(10)
+        assert self.second_node.wait_for_logs([group_name])
