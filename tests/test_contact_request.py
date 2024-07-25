@@ -1,6 +1,7 @@
 import os
 from uuid import uuid4
 from src.env_vars import NUM_CONTACT_REQUESTS
+from src.libs.common import delay
 from src.node.status_node import StatusNode
 from src.steps.common import StepsCommon
 
@@ -56,4 +57,5 @@ class TestContacRequest(StepsCommon):
         with self.node_pause(self.second_node):
             message = str(uuid4())
             self.first_node.send_contact_request(self.second_node_pubkey, message)
+            delay(10)
         assert self.second_node.wait_for_logs([message])

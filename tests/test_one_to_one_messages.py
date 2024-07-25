@@ -62,18 +62,18 @@ class TestOneToOneMessages(StepsCommon):
         with self.add_low_bandwith():
             self.test_one_to_one_message_baseline()
 
-    def test_one_to_one_message_with_node_pause_few_seconds(self):
+    def test_one_to_one_message_with_node_pause_5_seconds(self):
         self.accept_contact_request()
         with self.node_pause(self.first_node):
             message = str(uuid4())
             self.second_node.send_message(self.first_node_pubkey, message)
+            delay(5)
         assert self.first_node.wait_for_logs([message])
 
     def test_one_to_one_message_with_node_pause_30_seconds(self):
         self.accept_contact_request()
         with self.node_pause(self.first_node):
-            delay(15)
             message = str(uuid4())
             self.second_node.send_message(self.first_node_pubkey, message)
-            delay(15)
+            delay(30)
         assert self.first_node.wait_for_logs([message])

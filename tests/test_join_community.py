@@ -79,7 +79,7 @@ class TestJoinCommunity(StepsCommon):
             ][0]
             initial_members = len(target_community["members"])
             request_to_join_id = response_to_join["result"]["requestsToJoinCommunity"][0]["id"]
-        delay(2)
+            delay(10)
         response_accept_to_join = community_node.accept_request_to_join_community(request_to_join_id)
         target_community = [
             existing_community for existing_community in response_accept_to_join["result"]["communities"] if existing_community["id"] == community_id
