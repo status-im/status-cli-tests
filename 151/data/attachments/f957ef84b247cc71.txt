@@ -1,0 +1,38 @@
+[35mDEBUG   [0m src.steps.common:common.py:26 Running fixture setup: start_2_nodes
+[32mINFO    [0m src.node.status_node:status_node.py:38 Starting node with command: ['./status-cli', 'serve', '-n', 'first_node', '-p', '59030']
+[35mDEBUG   [0m src.libs.common:common.py:15 Sleeping for 2 seconds
+[35mDEBUG   [0m src.node.status_node:status_node.py:64 FIRST_NODE - 2024-08-03T00:51:37.491Z	INFO	status-cli/serve.go:34	Running serve command, with:
+[35mDEBUG   [0m src.node.status_node:status_node.py:64 FIRST_NODE - -name first_node
+[35mDEBUG   [0m src.node.status_node:status_node.py:64 FIRST_NODE - -add
+[35mDEBUG   [0m src.node.status_node:status_node.py:64 FIRST_NODE - -port 59030
+[35mDEBUG   [0m src.node.status_node:status_node.py:64 FIRST_NODE - -interactive false
+[35mDEBUG   [0m src.node.status_node:status_node.py:64 FIRST_NODE - -light false
+[35mDEBUG   [0m src.node.status_node:status_node.py:64 FIRST_NODE - -api-modules waku,wakuext,wakuv2,permissions,eth
+[35mDEBUG   [0m src.node.status_node:status_node.py:64 FIRST_NODE - -telemetry-server-url
+[35mDEBUG   [0m src.node.status_node:status_node.py:64 FIRST_NODE - -debug false
+[35mDEBUG   [0m src.node.status_node:status_node.py:64 FIRST_NODE - -fleet status.staging
+[35mDEBUG   [0m src.node.status_node:status_node.py:64 FIRST_NODE - -help false
+[35mDEBUG   [0m src.node.status_node:status_node.py:64 FIRST_NODE - 
+[35mDEBUG   [0m src.node.status_node:status_node.py:64 FIRST_NODE - 2024-08-03T00:51:37.492Z	INFO	first_node	status-cli/util.go:56	starting messenger
+[32mINFO    [0m src.node.status_node:status_node.py:38 Starting node with command: ['./status-cli', 'serve', '-n', 'second_node', '-p', '37850']
+[35mDEBUG   [0m src.libs.common:common.py:15 Sleeping for 2 seconds
+[35mDEBUG   [0m src.node.status_node:status_node.py:64 SECOND_NODE - 2024-08-03T00:51:39.503Z	INFO	status-cli/serve.go:34	Running serve command, with:
+[35mDEBUG   [0m src.node.status_node:status_node.py:64 SECOND_NODE - -name second_node
+[35mDEBUG   [0m src.node.status_node:status_node.py:64 SECOND_NODE - -add
+[35mDEBUG   [0m src.node.status_node:status_node.py:64 SECOND_NODE - -port 37850
+[35mDEBUG   [0m src.node.status_node:status_node.py:64 SECOND_NODE - -interactive false
+[35mDEBUG   [0m src.node.status_node:status_node.py:64 SECOND_NODE - -light false
+[35mDEBUG   [0m src.node.status_node:status_node.py:64 SECOND_NODE - -api-modules waku,wakuext,wakuv2,permissions,eth
+[35mDEBUG   [0m src.node.status_node:status_node.py:64 SECOND_NODE - -telemetry-server-url
+[35mDEBUG   [0m src.node.status_node:status_node.py:64 SECOND_NODE - -debug false
+[35mDEBUG   [0m src.node.status_node:status_node.py:64 SECOND_NODE - -fleet status.staging
+[35mDEBUG   [0m src.node.status_node:status_node.py:64 SECOND_NODE - -help false
+[35mDEBUG   [0m src.node.status_node:status_node.py:64 SECOND_NODE - 
+[35mDEBUG   [0m src.node.status_node:status_node.py:64 SECOND_NODE - 2024-08-03T00:51:39.503Z	INFO	second_node	status-cli/util.go:56	starting messenger
+[35mDEBUG   [0m src.node.status_node:status_node.py:64 FIRST_NODE - 2024-08-03T00:51:40.211Z	INFO	first_node	status-cli/util.go:69	account created, key UID: 0xf4c65b103d7eda9c13f60c74593b2fdc3170fa6520cd57de90537165fb5da1a2
+[35mDEBUG   [0m src.node.status_node:status_node.py:64 FIRST_NODE - 2024-08-03T00:51:40.230Z	INFO	first_node	status-cli/util.go:94	messenger started, public key: 0x049b091b18d52a4c89e96d5e2a3a760be2b0d4589b19906deb491a7c980570fc7e9f01ea700382a96a515f3e64230c88fcad41f46cb438c9f6329ec1b8aece825c
+[35mDEBUG   [0m src.node.status_node:status_node.py:64 SECOND_NODE - 2024/08/03 00:51:43 listen tcp 127.0.0.1:37850: bind: address already in use
+[35mDEBUG   [0m src.node.status_node:status_node.py:64 FIRST_NODE - 2024-08-03T00:51:45.231Z	INFO	first_node	status-cli/serve.go:100	retrieve messages...
+[35mDEBUG   [0m tests.conftest:conftest.py:62 Running fixture teardown: clear_open_nodes
+[32mINFO    [0m src.node.status_node:status_node.py:72 Stopping node with name: first_node
+[32mINFO    [0m src.node.status_node:status_node.py:72 Stopping node with name: second_node
