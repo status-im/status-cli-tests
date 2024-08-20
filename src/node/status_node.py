@@ -170,7 +170,7 @@ class StatusNode:
         return self.api.send_rpc_request("wakuext_fetchCommunity", params, timeout=2)
 
     def request_to_join_community(self, community_id):
-        params = [{"communityId": community_id}]
+        params = [{"communityId": community_id, "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}]
         return self.api.send_rpc_request("wakuext_requestToJoinCommunity", params)
 
     def accept_request_to_join_community(self, request_to_join_id):
