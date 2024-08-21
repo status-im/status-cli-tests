@@ -163,11 +163,11 @@ class StatusNode:
         params = [{"membership": 3, "name": name, "color": "#ffffff", "description": name}]
         return self.api.send_rpc_request("wakuext_createCommunity", params)
 
-    @retry(stop=stop_after_delay(20), wait=wait_fixed(0.1), reraise=True)
+    @retry(stop=stop_after_delay(30), wait=wait_fixed(0.1), reraise=True)
     # wakuext_fetchCommunity times out sometimes so that's why we need this retry mechanism
     def fetch_community(self, community_key):
         params = [{"communityKey": community_key, "waitForResponse": True, "tryDatabase": True}]
-        return self.api.send_rpc_request("wakuext_fetchCommunity", params, timeout=2)
+        return self.api.send_rpc_request("wakuext_fetchCommunity", params, timeout=10)
 
     def request_to_join_community(self, community_id):
         params = [{"communityId": community_id, "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}]
