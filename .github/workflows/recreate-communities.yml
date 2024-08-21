@@ -63,6 +63,8 @@ jobs:
       run: |
         git config --local user.name "GitHub Actions"
         git config --local user.email "actions@github.com"
+        git fetch origin master
+        git checkout master
         git add resources/
         git commit -m "Recreate communities"
         git push origin master
