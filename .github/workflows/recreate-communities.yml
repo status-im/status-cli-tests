@@ -1,0 +1,68 @@
+name: Recreate Communities
+
+on:
+  schedule:
+    - cron:  '0 0 21 * *'
+  workflow_dispatch:
+  pull_request:
+
+env:
+  FORCE_COLOR: "1"
+
+jobs:
+
+  recreate-communities:
+    name: recreate-communities
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+
+    - uses: actions/checkout@v4
+
+    - uses: actions/setup-python@v4
+      with:
+        python-version: '3.12'
+        cache: 'pip' 
+  
+    - run: pip install -r requirements.txt
+
+    - name: Checkout status-go repository
+      uses: actions/checkout@v4
+      with:
+        repository: status-im/status-go
+        path: status-go
+
+    - name: Set up Go
+      uses: actions/setup-go@v4
+      with:
+        go-version: '1.21'
+
+    - name: Install dependencies
+      run: |
+        cd status-go
+        go mod tidy
+        go mod vendor
+
+    - name: Build status-cli binary
+      run: |
+        cd status-go/cmd/status-cli
+        go build
+
+    - name: Copy status-cli binary to test repo root
+      run: cp status-go/cmd/status-cli/status-cli .
+
+    - name: Delete all contents from resources folder
+      run: rm -rf resources/*
+
+    - name: Run Python script to create new files
+      run: python src/scripts/create_nodes_with_communities.py
+
+    - name: Commit and push new files to master
+      run: |
+        git config --local user.name "GitHub Actions"
+        git config --local user.email "actions@github.com"
+        git add resources/
+        git commit -m "Recreate communities"
+        git push origin master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
