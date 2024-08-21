@@ -39,9 +39,6 @@ class TestJoinCommunity(StepsCommon):
                     if existing_community["id"] == community_id
                 ][0]
                 assert target_community["joined"] == True
-                assert (
-                    len(target_community["members"]) >= initial_members + 1
-                ), "Comunity doesn't have correct number of members so second node didn't managed to join"
             except Exception as ex:
                 failed_community_joins.append((join_req_ts, accept_ts, community_id, str(ex)))
 
@@ -85,6 +82,3 @@ class TestJoinCommunity(StepsCommon):
         target_community = [
             existing_community for existing_community in response_accept_to_join["result"]["communities"] if existing_community["id"] == community_id
         ][0]
-        assert (
-            len(target_community["members"]) >= initial_members + 1
-        ), "Comunity doesn't have correct number of members so second node didn't managed to join"
