@@ -25,9 +25,7 @@ class TestLeaveCommunity(StepsCommon):
                     for existing_community in response_accept_to_join["result"]["communities"]
                     if existing_community["id"] == community_id
                 ][0]
-                assert (
-                    len(target_community["members"]) == initial_members
-                ), "Comunity doesn't have the initial number of members after join and leave, so leave probably failed"
+                assert target_community["joined"] == False
             except Exception as ex:
                 failed_community_leave.append((leave_ts, community_id, str(ex)))
 
