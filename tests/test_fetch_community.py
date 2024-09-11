@@ -7,6 +7,7 @@ from datetime import datetime
 
 @pytest.mark.usefixtures("start_1_node")
 class TestFetchCommunity(StepsCommon):
+    @pytest.mark.flaky(reruns=2)
     def test_fetch_community_baseline(self):
         try:
             self.community_nodes

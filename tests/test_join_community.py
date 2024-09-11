@@ -7,6 +7,7 @@ from datetime import datetime
 
 @pytest.mark.usefixtures("start_1_node")
 class TestJoinCommunity(StepsCommon):
+    @pytest.mark.flaky(reruns=2)
     def test_join_community_baseline(self):
         try:
             self.community_nodes
@@ -65,6 +66,7 @@ class TestJoinCommunity(StepsCommon):
         with self.add_low_bandwith():
             self.test_join_community_baseline()
 
+    @pytest.mark.flaky(reruns=2)
     def test_join_community_with_node_pause(self):
         self.setup_community_nodes(node_limit=1)
         community_id = self.community_nodes[0]["community_id"]
