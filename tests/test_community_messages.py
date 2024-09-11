@@ -10,7 +10,7 @@ class TestCommunityMessages(StepsCommon):
     @pytest.mark.flaky(reruns=2)
     def test_community_messages_baseline(self):
         try:
-            self.community_nodes
+            assert self.community_nodes
         except:
             self.setup_community_nodes(node_limit=1)
             self.join_created_communities()

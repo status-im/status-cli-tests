@@ -20,6 +20,7 @@ class StepsCommon:
         self.first_node.start()
         self.first_node.wait_fully_started()
         self.first_node_pubkey = self.first_node.get_pubkey()
+        self.community_nodes = []
 
     @pytest.fixture(scope="function", autouse=False)
     def start_2_nodes(self):
