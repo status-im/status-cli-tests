@@ -19,7 +19,19 @@ class StatusNodeRPC:
             params = []
         payload = {"jsonrpc": "2.0", "method": method, "params": params, "id": 1}
         logger.debug(f"Node: {self.node_name} sends request at address: {self.base_url} with payload: {json.dumps(payload)}")
-        response = requests.post(self.base_url, headers={"Content-Type": "application/json"}, data=json.dumps(payload), timeout=timeout)
-        logger.debug(f"Received response: {response.text}")
-        assert "result" in response.json()
-        return response.json()
+
+        try:
+            response = requests.post(self.base_url, headers={"Content-Type": "application/json"}, data=json.dumps(payload), timeout=timeout)
+            logger.debug(f"Received response: {response.text}")
+            response.raise_for_status()
+            assert "result" in response.json(), "Response does not contain 'result' key."
+            return response.json()
+
+        except requests.exceptions.ReadTimeout:
+            error_message = f"Request to {self.base_url} usig method {method} timed out after {timeout} seconds. Node: {self.node_name}"
+            logger.error(error_message)
+            raise RuntimeError(error_message)
+
+        except requests.exceptions.RequestException as e:
+            logger.error(f"An error occurred: {str(e)}")
+            raise

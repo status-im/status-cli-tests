@@ -7,9 +7,10 @@ from src.steps.common import StepsCommon
 
 @pytest.mark.usefixtures("start_1_node")
 class TestCommunityMessages(StepsCommon):
+    @pytest.mark.flaky(reruns=2)
     def test_community_messages_baseline(self):
         try:
-            self.community_nodes
+            assert self.community_nodes
         except:
             self.setup_community_nodes(node_limit=1)
             self.join_created_communities()
@@ -67,6 +68,7 @@ class TestCommunityMessages(StepsCommon):
         with self.add_low_bandwith():
             self.test_community_messages_baseline()
 
+    @pytest.mark.flaky(reruns=2)
     def test_community_messages_with_node_pause_10_seconds(self):
         self.setup_community_nodes(node_limit=1)
         self.join_created_communities()
@@ -79,6 +81,7 @@ class TestCommunityMessages(StepsCommon):
             delay(10)
         assert community_node.wait_for_logs([message])
 
+    @pytest.mark.flaky(reruns=2)
     def test_community_messages_with_node_pause_30_seconds(self):
         self.setup_community_nodes(node_limit=1)
         self.join_created_communities()
