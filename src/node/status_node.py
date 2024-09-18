@@ -163,6 +163,12 @@ class StatusNode:
         params = [{"membership": 3, "name": name, "color": "#ffffff", "description": name}]
         return self.api.send_rpc_request("wakuext_createCommunity", params)
 
+    def set_community_shard(self, community_id, index=128, private_key=None):
+        params = [{"communityId": community_id, "shard": {"cluster": 16, "index": index}}]
+        if private_key is not None:
+            params[0]["shard"]["privateKey"] = private_key
+        return self.api.send_rpc_request("wakuext_setCommunityShard", params)
+
     @retry(stop=stop_after_delay(30), wait=wait_fixed(0.1), reraise=True)
     # wakuext_fetchCommunity times out sometimes so that's why we need this retry mechanism
     def fetch_community(self, community_key):
