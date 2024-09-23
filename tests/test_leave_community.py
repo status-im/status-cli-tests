@@ -8,9 +8,7 @@ from datetime import datetime
 class TestLeaveCommunity(StepsCommon):
     @pytest.mark.flaky(reruns=2)
     def test_leave_community_baseline(self):
-        try:
-            self.community_nodes
-        except:
+        if not self.community_nodes:
             self.setup_community_nodes()
             self.join_created_communities()
 

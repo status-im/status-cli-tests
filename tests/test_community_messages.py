@@ -9,9 +9,7 @@ from src.steps.common import StepsCommon
 class TestCommunityMessages(StepsCommon):
     @pytest.mark.flaky(reruns=2)
     def test_community_messages_baseline(self):
-        try:
-            assert self.community_nodes
-        except:
+        if not self.community_nodes:
             self.setup_community_nodes(node_limit=1)
             self.join_created_communities()
 
