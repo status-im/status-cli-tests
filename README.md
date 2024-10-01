@@ -19,11 +19,21 @@ pytest -k "test_one_to_one_with_latency" (for single test)
 ``` 
 
 
-
 ## CI
 
 - Test runs via github actions
 <!-- - [Allure Test Reports](https://status-im.github.io/status-cli-tests/49/) are published via github pages -->
+
+## Create communities for the tests
+
+We pre create communities for the tests to avoid crowding the network with test data. If you need to re-create them, you can do so with the script:
+
+```shell
+source .venv/bin/activate
+PYTHONPATH=. python src/scripts/create_nodes_with_communities.py
+```
+
+Then delete the old communities in the `resources` folder and commit the new ones.
 
 ## License
 
