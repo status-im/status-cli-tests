@@ -31,20 +31,14 @@ jobs:
 
     - name: Set up Nix
       uses: cachix/install-nix-action@v27
-    
-    - name: Cache Nix store
-      uses: nix-community/cache-nix-action@v5
-      with:
-        primary-key: nix-${{ runner.os }}-${{ hashFiles('**/*.nix') }}
-        restore-prefixes-first-match: nix-${{ runner.os }}-
-      
+
     - name: Build status-cli
       run: |
         cd status-go
         make status-cli
 
     - name: Copy status-cli binary to test repo root
-      run: cp build/bin/status-cli .
+      run: cp status-go/build/bin/status-cli .
 
     - name: Run tests
       run: |

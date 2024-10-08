@@ -39,7 +39,7 @@ class StepsCommon:
         logger.debug("Entering context manager: add_latency")
         subprocess.Popen("sudo tc qdisc add dev eth0 root netem delay 1s 100ms distribution normal", shell=True)
         try:
-            yield
+            yield lambda: subprocess.Popen("sudo tc qdisc del dev eth0 root", shell=True)
         finally:
             logger.debug(f"Exiting context manager: add_latency")
             subprocess.Popen("sudo tc qdisc del dev eth0 root", shell=True)
@@ -49,7 +49,7 @@ class StepsCommon:
         logger.debug("Entering context manager: add_packet_loss")
         subprocess.Popen("sudo tc qdisc add dev eth0 root netem loss 50%", shell=True)
         try:
-            yield
+            yield lambda: subprocess.Popen("sudo tc qdisc del dev eth0 root netem", shell=True)
         finally:
             logger.debug(f"Exiting context manager: add_packet_loss")
             subprocess.Popen("sudo tc qdisc del dev eth0 root netem", shell=True)
@@ -59,7 +59,7 @@ class StepsCommon:
         logger.debug("Entering context manager: add_low_bandwith")
         subprocess.Popen("sudo tc qdisc add dev eth0 root tbf rate 1kbit burst 1kbit", shell=True)
         try:
-            yield
+            yield lambda: subprocess.Popen("sudo tc qdisc del dev eth0 root", shell=True)
         finally:
             logger.debug(f"Exiting context manager: add_low_bandwith")
             subprocess.Popen("sudo tc qdisc del dev eth0 root", shell=True)
