@@ -31,6 +31,13 @@ jobs:
 
     - name: Set up Nix
       uses: cachix/install-nix-action@v27
+    
+    - name: Cache Nix store
+      uses: nix-community/cache-nix-action@v5
+      with:
+        key: ${{ runner.os }}-nix-${{ hashFiles('**/flake.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-nix-
       
     - name: Build status-cli
       run: |
@@ -38,7 +45,7 @@ jobs:
         make status-cli
 
     - name: Copy status-cli binary to test repo root
-      run: cp status-go/cmd/status-cli/status-cli .
+      run: cp build/bin/status-cli .
 
     - name: Run tests
       run: |
