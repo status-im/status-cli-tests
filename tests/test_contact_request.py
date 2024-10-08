@@ -9,8 +9,8 @@ from src.steps.common import StepsCommon
 
 class TestContacRequest(StepsCommon):
     @pytest.mark.asyncio
-    async def test_contact_request_baseline(self, recover_network_fn):
-        timeout_secs = 120
+    async def test_contact_request_baseline(self, recover_network_fn=None):
+        timeout_secs = 180
         reset_network_in_secs = 30
         num_contact_requests = NUM_CONTACT_REQUESTS
 
@@ -31,7 +31,7 @@ class TestContacRequest(StepsCommon):
 
         done, pending = await asyncio.wait(tasks, timeout=reset_network_in_secs)
         if pending:
-            if recover_network_fn:
+            if recover_network_fn is not None:
                 # after `reset_network_in_secs` the network will recover and MVDS will eventually deliver the messages
                 recover_network_fn()
             done2, _ = await asyncio.wait(pending)

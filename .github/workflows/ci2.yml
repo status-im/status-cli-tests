@@ -28,15 +28,6 @@ jobs:
       with:
         repository: status-im/status-go
         path: status-go
-
-    - name: Set up Nix
-      uses: cachix/install-nix-action@v27
-    
-    - name: Cache Nix store
-      uses: nix-community/cache-nix-action@v5
-      with:
-        primary-key: nix-${{ runner.os }}-${{ hashFiles('**/*.nix') }}
-        restore-prefixes-first-match: nix-${{ runner.os }}-
       
     - name: Build status-cli
       run: |
