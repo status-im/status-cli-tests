@@ -1,3 +1,4 @@
+import asyncio
 import os
 import random
 import shutil
@@ -136,6 +137,22 @@ class StatusNode:
             if all_found:
                 return True
             delay(0.5)
+        return False  # Return False if not all logs were found within the timeout period
+
+    async def wait_for_logs_async(self, strings=None, timeout=10):
+        if not isinstance(strings, list):
+            raise ValueError("strings must be a list")
+        start_time = time.time()
+        while time.time() - start_time < timeout:
+            all_found = True
+            for string in strings:
+                logs = self.search_logs(string=string)
+                if not logs:  # If any string is not found
+                    all_found = False
+                    break
+            if all_found:
+                return True
+            await asyncio.sleep(0.5)  # Use asyncio.sleep for non-blocking delay
         return False  # Return False if not all logs were found within the timeout period
 
     def waku_info(self):
