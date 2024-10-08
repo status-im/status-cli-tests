@@ -35,9 +35,8 @@ jobs:
     - name: Cache Nix store
       uses: nix-community/cache-nix-action@v5
       with:
-        key: ${{ runner.os }}-nix-${{ hashFiles('**/flake.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-nix-
+        primary-ke: ${{ runner.os }}-nix-${{ hashFiles('shell.nix') }}
+        restore-prefixes-first-match: ${{ runner.os }}-nix
       
     - name: Build status-cli
       run: |
