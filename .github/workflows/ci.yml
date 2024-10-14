@@ -31,24 +31,16 @@ jobs:
         repository: status-im/status-go
         path: status-go
 
-    - name: Set up Go
-      uses: actions/setup-go@v4
-      with:
-        go-version: '1.21'
+    - name: Set up Nix
+      uses: cachix/install-nix-action@v27
 
-    - name: Install dependencies
+    - name: Build status-cli
       run: |
         cd status-go
-        go mod tidy
-        go mod vendor
-
-    - name: Build status-cli binary
-      run: |
-        cd status-go/cmd/status-cli
-        go build
+        make status-cli
 
     - name: Copy status-cli binary to test repo root
-      run: cp status-go/cmd/status-cli/status-cli .
+      run: cp status-go/build/bin/status-cli .
 
     - name: Run tests
       run: |
