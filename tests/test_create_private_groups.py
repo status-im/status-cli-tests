@@ -45,21 +45,7 @@ class TestCreatePrivateGroups(StepsCommon):
                 f"{len(missing_private_groups)} private groups out of {num_private_groups} were not created: " + "\n".join(formatted_missing_groups)
             )
 
-    def test_create_group_chat_with_latency(self):
-        self.accept_contact_request()
-        # we want to set latency only on the group creation requests
-        with self.add_latency():
-            self.test_create_group_chat_baseline()
-
-    def test_create_group_chat_with_packet_loss(self):
-        self.accept_contact_request()
-        with self.add_packet_loss():
-            self.test_create_group_chat_baseline()
-
-    def test_create_group_chat_with_low_bandwith(self):
-        self.accept_contact_request()
-        with self.add_low_bandwith():
-            self.test_create_group_chat_baseline()
+    #  for creating private group we don't have realiability protocol, therefore skipping the tests for latency, packet loss and low bandwith
 
     def test_create_group_with_node_pause(self):
         self.accept_contact_request()

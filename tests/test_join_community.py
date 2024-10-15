@@ -25,7 +25,7 @@ class TestJoinCommunity(StepsCommon):
             request_to_join_id = response_to_join["result"]["requestsToJoinCommunity"][0]["id"]
             community_join_requests.append((community_id, request_to_join_id, timestamp, community_node["status_node"], initial_members))
 
-        delay(4)
+        delay(10)
 
         failed_community_joins = []
         for community_id, request_to_join_id, join_req_ts, status_node, initial_members in community_join_requests:
