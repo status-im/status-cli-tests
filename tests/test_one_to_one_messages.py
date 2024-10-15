@@ -65,17 +65,20 @@ class TestOneToOneMessages(StepsCommon):
                 f"{len(missing_messages)} messages out of {num_messages} were not received: " + "\n".join(formatted_missing_messages)
             )
 
+    @pytest.mark.asyncio
     async def test_one_to_one_message_with_latency(self):
         self.accept_contact_request()
         # we want to set latency only on the message sending requests
         with self.add_latency() as recover_network_fn:
             await self.test_one_to_one_message_baseline(recover_network_fn)
 
+    @pytest.mark.asyncio
     async def test_one_to_one_message_with_packet_loss(self):
         self.accept_contact_request()
         with self.add_packet_loss() as recover_network_fn:
             await self.test_one_to_one_message_baseline(recover_network_fn)
 
+    @pytest.mark.asyncio
     async def test_one_to_one_message_with_low_bandwith(self):
         self.accept_contact_request()
         with self.add_low_bandwith() as recover_network_fn:
