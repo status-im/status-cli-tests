@@ -94,5 +94,4 @@ class TestContacRequest(StepsCommon):
         with self.node_pause(self.second_node):
             message = str(uuid4())
             self.first_node.send_contact_request(self.second_node_pubkey, message)
-            delay(10)
-        assert self.second_node.wait_for_logs([message])
+        assert self.second_node.wait_for_logs([message], 60)

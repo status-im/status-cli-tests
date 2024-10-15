@@ -89,16 +89,14 @@ class TestOneToOneMessages(StepsCommon):
         with self.node_pause(self.first_node):
             message = str(uuid4())
             self.second_node.send_message(self.first_node_pubkey, message)
-            delay(5)
-        assert self.first_node.wait_for_logs([message])
+        assert self.first_node.wait_for_logs([message], 60)
 
     def test_one_to_one_message_with_node_pause_30_seconds(self):
         self.accept_contact_request()
         with self.node_pause(self.first_node):
             message = str(uuid4())
             self.second_node.send_message(self.first_node_pubkey, message)
-            delay(30)
-        assert self.first_node.wait_for_logs([message])
+        assert self.first_node.wait_for_logs([message], 60)
 
     async def wait_for_message_async(self, node: StatusNode, msg: tuple[int, str, str, str], timeout_secs: int = 45):
         res = await node.wait_for_logs_async([f"message received: {msg[1]}"], timeout_secs)

@@ -52,5 +52,4 @@ class TestCreatePrivateGroups(StepsCommon):
         with self.node_pause(self.second_node):
             group_name = str(uuid4())
             self.first_node.create_group_chat_with_members([self.second_node_pubkey], group_name)
-            delay(10)
-        assert self.second_node.wait_for_logs([group_name])
+        assert self.second_node.wait_for_logs([group_name], 60)

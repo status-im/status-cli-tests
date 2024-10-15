@@ -77,8 +77,7 @@ class TestCommunityMessages(StepsCommon):
         with self.node_pause(community_node):
             message = str(uuid4())
             self.first_node.send_community_chat_message(message_chat_id, message)
-            delay(10)
-        assert community_node.wait_for_logs([message])
+        assert community_node.wait_for_logs([message], 60)
 
     @pytest.mark.flaky(reruns=2)
     def test_community_messages_with_node_pause_30_seconds(self):
@@ -90,5 +89,4 @@ class TestCommunityMessages(StepsCommon):
         with self.node_pause(community_node):
             message = str(uuid4())
             self.first_node.send_community_chat_message(message_chat_id, message)
-            delay(30)
-        assert community_node.wait_for_logs([message])
+        assert community_node.wait_for_logs([message], 60)

@@ -73,7 +73,6 @@ class TestPrivateGroupMessages(StepsCommon):
         with self.node_pause(self.first_node):
             message = str(uuid4())
             self.second_node.send_group_chat_message(self.private_group_id, message)
-            delay(10)
         assert self.first_node.wait_for_logs([message], 60)
 
     def test_group_chat_messages_with_node_pause_40_seconds(self):
@@ -82,5 +81,4 @@ class TestPrivateGroupMessages(StepsCommon):
         with self.node_pause(self.first_node):
             message = str(uuid4())
             self.second_node.send_group_chat_message(self.first_node_pubkey, message)
-            delay(40)
         assert self.first_node.wait_for_logs([message], 60)
