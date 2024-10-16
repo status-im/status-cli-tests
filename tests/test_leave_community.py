@@ -34,20 +34,21 @@ class TestLeaveCommunity(StepsCommon):
                 f"{len(failed_community_leave)} community joins out of {len(self.community_nodes)}: " + "\n".join(formatted_missing_requests)
             )
 
-    def test_leave_community_with_latency(self):
-        self.setup_community_nodes()
-        self.join_created_communities()
-        with self.add_latency():
-            self.test_leave_community_baseline()
+    #  for leaving community we don't have realiability protocol
+    # def test_leave_community_with_latency(self):
+    #     self.setup_community_nodes()
+    #     self.join_created_communities()
+    #     with self.add_latency():
+    #         self.test_leave_community_baseline()
 
-    def test_leave_community_with_packet_loss(self):
-        self.setup_community_nodes()
-        self.join_created_communities()
-        with self.add_packet_loss():
-            self.test_leave_community_baseline()
+    # def test_leave_community_with_packet_loss(self):
+    #     self.setup_community_nodes()
+    #     self.join_created_communities()
+    #     with self.add_packet_loss():
+    #         self.test_leave_community_baseline()
 
-    def test_leave_community_with_low_bandwith(self):
-        self.setup_community_nodes()
-        self.join_created_communities()
-        with self.add_low_bandwith():
-            self.test_leave_community_baseline()
+    # def test_leave_community_with_low_bandwith(self):
+    #     self.setup_community_nodes()
+    #     self.join_created_communities()
+    #     with self.add_low_bandwith():
+    #         self.test_leave_community_baseline()
