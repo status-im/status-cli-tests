@@ -1,0 +1,265 @@
+[32mINFO    [0m root:rpc.py:52 Sending POST request to url http://127.0.0.1:7536/statusgo/CallRPC with data: {
+    "id": 13,
+    "jsonrpc": "2.0",
+    "method": "wakuext_contacts"
+}
+[32mINFO    [0m root:rpc.py:56 Got response: {
+    "id": 13,
+    "jsonrpc": "2.0",
+    "result": [
+        {
+            "IsSyncing": false,
+            "Removed": false,
+            "active": true,
+            "added": true,
+            "address": "0x43f570ff4adecfc96c58a574bc322a080252e20f",
+            "alias": "zQ3...U1Y5LP",
+            "bio": "",
+            "blocked": false,
+            "compressedKey": "zQ3shhkTLwS4pn9MY56HjDq6AmLYtPWjJ5StsL6xr1nU1Y5LP",
+            "contactRequestLocalClock": 1736431268031,
+            "contactRequestLocalState": 2,
+            "contactRequestRemoteClock": 1736431266002,
+            "contactRequestRemoteState": 3,
+            "contactRequestState": 1,
+            "customizationColor": "primary",
+            "displayName": "DISP_NAME_pwVFT6ilFL",
+            "emojiHash": [
+                "\ud83d\udcdc",
+                "\ud83e\udd3d",
+                "\ud83d\udd75\ud83c\udffd\u200d\u2640\ufe0f",
+                "\ud83e\uddd7\u200d\u2642\ufe0f",
+                "\ud83e\udd37\u200d\u2640\ufe0f",
+                "\ud83c\udf1d",
+                "\ud83d\udc49\ud83c\udffe",
+                "\ud83e\udd1a\ud83c\udfff",
+                "\ud83c\udfc7",
+                "\ud83e\uddd1\u200d\ud83c\udf3e",
+                "\ud83d\ude95",
+                "\ud83e\udd9c",
+                "\ud83d\udc72\ud83c\udffd",
+                "\ud83c\udf53"
+            ],
+            "ensVerified": false,
+            "hasAddedUs": true,
+            "id": "0x042e3367c7138dfa1454474ef13147826827a315674e046cf7c47da9b7169857ec459a25bd579048ec0c876e6da8cc4743941836f465dad07ca8bbc2eaa4e43387",
+            "identicon": "",
+            "images": null,
+            "lastUpdated": 0,
+            "lastUpdatedLocally": 1736431268029,
+            "mutual": true,
+            "primaryName": "DISP_NAME_pwVFT6ilFL",
+            "trustStatus": 0,
+            "verificationStatus": 0
+        }
+    ]
+}
+[32mINFO    [0m root:test_cases.py:186 Entering context manager: node_pause
+[32mINFO    [0m root:status_backend.py:285 Container tests-functional-status-backend-1736431259971 paused.
+[32mINFO    [0m root:rpc.py:52 Sending POST request to url http://127.0.0.1:7594/statusgo/CallRPC with data: {
+    "id": 13,
+    "jsonrpc": "2.0",
+    "method": "wakuext_createGroupChatWithMembers",
+    "params": [
+        null,
+        "private_group_c66efe9c-6818-43b5-a587-ed7987973d5d",
+        [
+            "0x04780e90592edebf424f2b45247c5955d2773182bb2ff5060de21b8726a7d8984fc57676a7a284dafb3e41bb96df6894f364c2508e289e50ac815ef8a2d8a88354"
+        ]
+    ]
+}
+[32mINFO    [0m root:rpc.py:56 Got response: {
+    "id": 13,
+    "jsonrpc": "2.0",
+    "result": {
+        "chats": [
+            {
+                "ReadMessagesAtClockValue": 0,
+                "active": true,
+                "chatType": 3,
+                "color": "#d37ef4",
+                "deletedAtClockValue": 0,
+                "description": "",
+                "emoji": "",
+                "highlight": true,
+                "id": "9caef787-c104-4c92-9014-3b5e93d5c091-0x042e3367c7138dfa1454474ef13147826827a315674e046cf7c47da9b7169857ec459a25bd579048ec0c876e6da8cc4743941836f465dad07ca8bbc2eaa4e43387",
+                "identicon": "",
+                "joined": 1736431280185,
+                "lastClockValue": 1736431280186,
+                "lastMessage": null,
+                "members": [
+                    {
+                        "admin": true,
+                        "id": "0x042e3367c7138dfa1454474ef13147826827a315674e046cf7c47da9b7169857ec459a25bd579048ec0c876e6da8cc4743941836f465dad07ca8bbc2eaa4e43387"
+                    },
+                    {
+                        "admin": false,
+                        "id": "0x04780e90592edebf424f2b45247c5955d2773182bb2ff5060de21b8726a7d8984fc57676a7a284dafb3e41bb96df6894f364c2508e289e50ac815ef8a2d8a88354"
+                    }
+                ],
+                "membershipUpdateEvents": [
+                    {
+                        "chatId": "9caef787-c104-4c92-9014-3b5e93d5c091-0x042e3367c7138dfa1454474ef13147826827a315674e046cf7c47da9b7169857ec459a25bd579048ec0c876e6da8cc4743941836f465dad07ca8bbc2eaa4e43387",
+                        "clockValue": 1736431280185,
+                        "color": "#d37ef4",
+                        "from": "0x042e3367c7138dfa1454474ef13147826827a315674e046cf7c47da9b7169857ec459a25bd579048ec0c876e6da8cc4743941836f465dad07ca8bbc2eaa4e43387",
+                        "name": "private_group_c66efe9c-6818-43b5-a587-ed7987973d5d",
+                        "rawPayload": "CLnA+trEMhoycHJpdmF0ZV9ncm91cF9jNjZlZmU5Yy02ODE4LTQzYjUtYTU4Ny1lZDc5ODc5NzNkNWQgASoHI2QzN2VmNA==",
+                        "signature": "ta5/zZoPEMvnFCzWKvdhlTdvHdt/GW0iO85VTB31MrAUhPuEQ30/0YGlY4mPO/l7DWXPBgjQceJpfY/BuSaagQA=",
+                        "type": 1
+                    },
+                    {
+                        "chatId": "9caef787-c104-4c92-9014-3b5e93d5c091-0x042e3367c7138dfa1454474ef13147826827a315674e046cf7c47da9b7169857ec459a25bd579048ec0c876e6da8cc4743941836f465dad07ca8bbc2eaa4e43387",
+                        "clockValue": 1736431280186,
+                        "from": "0x042e3367c7138dfa1454474ef13147826827a315674e046cf7c47da9b7169857ec459a25bd579048ec0c876e6da8cc4743941836f465dad07ca8bbc2eaa4e43387",
+                        "members": [
+                            "0x04780e90592edebf424f2b45247c5955d2773182bb2ff5060de21b8726a7d8984fc57676a7a284dafb3e41bb96df6894f364c2508e289e50ac815ef8a2d8a88354"
+                        ],
+                        "rawPayload": "CLrA+trEMhKEATB4MDQ3ODBlOTA1OTJlZGViZjQyNGYyYjQ1MjQ3YzU5NTVkMjc3MzE4MmJiMmZmNTA2MGRlMjFiODcyNmE3ZDg5ODRmYzU3Njc2YTdhMjg0ZGFmYjNlNDFiYjk2ZGY2ODk0ZjM2NGMyNTA4ZTI4OWU1MGFjODE1ZWY4YTJkOGE4ODM1NCAD",
+                        "signature": "Z62VRysWD0nQ5u8ldxTh27jLVlVneAW1Yz4HTl3rx304409RB2hfsnpsTLqzMRpMzN9Kx5CCo8i7Y0FjV5Y89QE=",
+                        "type": 3
+                    }
+                ],
+                "muteTill": "0001-01-01T00:00:00Z",
+                "muted": false,
+                "name": "private_group_c66efe9c-6818-43b5-a587-ed7987973d5d",
+                "syncedFrom": 1736431280,
+                "syncedTo": 1736431280,
+                "timestamp": 1736431280185,
+                "unviewedMentionsCount": 0,
+                "unviewedMessagesCount": 0,
+                "viewersCanPostReactions": false
+            }
+        ],
+        "discordOldestMessageTimestamp": 0,
+        "messages": [
+            {
+                "alias": "",
+                "chatId": "9caef787-c104-4c92-9014-3b5e93d5c091-0x042e3367c7138dfa1454474ef13147826827a315674e046cf7c47da9b7169857ec459a25bd579048ec0c876e6da8cc4743941836f465dad07ca8bbc2eaa4e43387",
+                "clock": 1736431280186,
+                "compressedKey": "zQ3shhkTLwS4pn9MY56HjDq6AmLYtPWjJ5StsL6xr1nU1Y5LP",
+                "contentType": 6,
+                "displayName": "",
+                "emojiHash": [
+                    "\ud83d\udcdc",
+                    "\ud83e\udd3d",
+                    "\ud83d\udd75\ud83c\udffd\u200d\u2640\ufe0f",
+                    "\ud83e\uddd7\u200d\u2642\ufe0f",
+                    "\ud83e\udd37\u200d\u2640\ufe0f",
+                    "\ud83c\udf1d",
+                    "\ud83d\udc49\ud83c\udffe",
+                    "\ud83e\udd1a\ud83c\udfff",
+                    "\ud83c\udfc7",
+                    "\ud83e\uddd1\u200d\ud83c\udf3e",
+                    "\ud83d\ude95",
+                    "\ud83e\udd9c",
+                    "\ud83d\udc72\ud83c\udffd",
+                    "\ud83c\udf53"
+                ],
+                "ensName": "",
+                "from": "0x042e3367c7138dfa1454474ef13147826827a315674e046cf7c47da9b7169857ec459a25bd579048ec0c876e6da8cc4743941836f465dad07ca8bbc2eaa4e43387",
+                "id": "0x7ca646571bc6489beb14cb741cf9ec1a0d40a490900e6e663cd94662fca77cec",
+                "identicon": "",
+                "lineCount": 0,
+                "localChatId": "9caef787-c104-4c92-9014-3b5e93d5c091-0x042e3367c7138dfa1454474ef13147826827a315674e046cf7c47da9b7169857ec459a25bd579048ec0c876e6da8cc4743941836f465dad07ca8bbc2eaa4e43387",
+                "mentions": [
+                    "0x042e3367c7138dfa1454474ef13147826827a315674e046cf7c47da9b7169857ec459a25bd579048ec0c876e6da8cc4743941836f465dad07ca8bbc2eaa4e43387",
+                    "0x04780e90592edebf424f2b45247c5955d2773182bb2ff5060de21b8726a7d8984fc57676a7a284dafb3e41bb96df6894f364c2508e289e50ac815ef8a2d8a88354"
+                ],
+                "messageType": 4,
+                "parsedText": [
+                    {
+                        "children": [
+                            {
+                                "literal": ""
+                            },
+                            {
+                                "literal": "0x042e3367c7138dfa1454474ef13147826827a315674e046cf7c47da9b7169857ec459a25bd579048ec0c876e6da8cc4743941836f465dad07ca8bbc2eaa4e43387",
+                                "type": "mention"
+                            },
+                            {
+                                "literal": " has added "
+                            },
+                            {
+                                "literal": "0x04780e90592edebf424f2b45247c5955d2773182bb2ff5060de21b8726a7d8984fc57676a7a284dafb3e41bb96df6894f364c2508e289e50ac815ef8a2d8a88354",
+                                "type": "mention"
+                            }
+                        ],
+                        "type": "paragraph"
+                    }
+                ],
+                "quotedMessage": null,
+                "replace": "",
+                "responseTo": "",
+                "rtl": false,
+                "seen": true,
+                "text": "@0x042e3367c7138dfa1454474ef13147826827a315674e046cf7c47da9b7169857ec459a25bd579048ec0c876e6da8cc4743941836f465dad07ca8bbc2eaa4e43387 has added @0x04780e90592edebf424f2b45247c5955d2773182bb2ff5060de21b8726a7d8984fc57676a7a284dafb3e41bb96df6894f364c2508e289e50ac815ef8a2d8a88354",
+                "timestamp": 1736431280189,
+                "whisperTimestamp": 1736431280189
+            },
+            {
+                "alias": "",
+                "chatId": "9caef787-c104-4c92-9014-3b5e93d5c091-0x042e3367c7138dfa1454474ef13147826827a315674e046cf7c47da9b7169857ec459a25bd579048ec0c876e6da8cc4743941836f465dad07ca8bbc2eaa4e43387",
+                "clock": 1736431280185,
+                "compressedKey": "zQ3shhkTLwS4pn9MY56HjDq6AmLYtPWjJ5StsL6xr1nU1Y5LP",
+                "contentType": 6,
+                "displayName": "",
+                "emojiHash": [
+                    "\ud83d\udcdc",
+                    "\ud83e\udd3d",
+                    "\ud83d\udd75\ud83c\udffd\u200d\u2640\ufe0f",
+                    "\ud83e\uddd7\u200d\u2642\ufe0f",
+                    "\ud83e\udd37\u200d\u2640\ufe0f",
+                    "\ud83c\udf1d",
+                    "\ud83d\udc49\ud83c\udffe",
+                    "\ud83e\udd1a\ud83c\udfff",
+                    "\ud83c\udfc7",
+                    "\ud83e\uddd1\u200d\ud83c\udf3e",
+                    "\ud83d\ude95",
+                    "\ud83e\udd9c",
+                    "\ud83d\udc72\ud83c\udffd",
+                    "\ud83c\udf53"
+                ],
+                "ensName": "",
+                "from": "0x042e3367c7138dfa1454474ef13147826827a315674e046cf7c47da9b7169857ec459a25bd579048ec0c876e6da8cc4743941836f465dad07ca8bbc2eaa4e43387",
+                "id": "0x15f202c2977a2a8fb2c55ab87365e9b918fbfbca7b84b10511f75a4a26e45dce",
+                "identicon": "",
+                "lineCount": 0,
+                "localChatId": "9caef787-c104-4c92-9014-3b5e93d5c091-0x042e3367c7138dfa1454474ef13147826827a315674e046cf7c47da9b7169857ec459a25bd579048ec0c876e6da8cc4743941836f465dad07ca8bbc2eaa4e43387",
+                "mentions": [
+                    "0x042e3367c7138dfa1454474ef13147826827a315674e046cf7c47da9b7169857ec459a25bd579048ec0c876e6da8cc4743941836f465dad07ca8bbc2eaa4e43387"
+                ],
+                "messageType": 4,
+                "parsedText": [
+                    {
+                        "children": [
+                            {
+                                "literal": ""
+                            },
+                            {
+                                "literal": "0x042e3367c7138dfa1454474ef13147826827a315674e046cf7c47da9b7169857ec459a25bd579048ec0c876e6da8cc4743941836f465dad07ca8bbc2eaa4e43387",
+                                "type": "mention"
+                            },
+                            {
+                                "literal": " created the group private_group_c66efe9c-6818-43b5-a587-ed7987973d5d"
+                            }
+                        ],
+                        "type": "paragraph"
+                    }
+                ],
+                "quotedMessage": null,
+                "replace": "",
+                "responseTo": "",
+                "rtl": false,
+                "seen": true,
+                "text": "@0x042e3367c7138dfa1454474ef13147826827a315674e046cf7c47da9b7169857ec459a25bd579048ec0c876e6da8cc4743941836f465dad07ca8bbc2eaa4e43387 created the group private_group_c66efe9c-6818-43b5-a587-ed7987973d5d",
+                "timestamp": 1736431280189,
+                "whisperTimestamp": 1736431280189
+            }
+        ],
+        "notifications": null
+    }
+}
+[32mINFO    [0m root:test_cases.py:191 Exiting context manager: node_pause
+[32mINFO    [0m root:status_backend.py:291 Container tests-functional-status-backend-1736431259971 unpaused.
+[32mINFO    [0m root:signals.py:111 Signal messages.new containing private_group_c66efe9c-6818-43b5-a587-ed7987973d5d is received in 1 seconds

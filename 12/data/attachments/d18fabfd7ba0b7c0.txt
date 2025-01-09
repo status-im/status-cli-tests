@@ -1,0 +1,497 @@
+[32mINFO    [0m root:status_backend.py:110 StatusBackend is healthy after 0.10690903663635254 seconds
+[32mINFO    [0m root:status_backend.py:123 Sending POST request to url http://127.0.0.1:7534/statusgo/InitializeApplication with data: {
+    "apiLogging": true,
+    "dataDir": "/usr/status-user",
+    "logEnabled": true,
+    "logLevel": "DEBUG"
+}
+[32mINFO    [0m root:signals.py:122 Connection opened
+[33mWARNING [0m websocket:_logging.py:66 websocket connected
+[32mINFO    [0m root:status_backend.py:126 Got response: b'{"accounts":null,"centralizedMetricsInfo":{"enabled":false,"userConfirmed":false}}'
+[32mINFO    [0m root:status_backend.py:132 Got response: b'{"accounts":null,"centralizedMetricsInfo":{"enabled":false,"userConfirmed":false}}'
+[32mINFO    [0m root:status_backend.py:123 Sending POST request to url http://127.0.0.1:7534/statusgo/CreateAccountAndLogin with data: {
+    "customizationColor": "primary",
+    "displayName": "DISP_NAME__DqRmoQ7P4",
+    "kdfIterations": 256000,
+    "logEnabled": true,
+    "logLevel": "DEBUG",
+    "password": "Strong12345",
+    "rootDataDir": "/usr/status-user"
+}
+[32mINFO    [0m root:status_backend.py:126 Got response: b'{"error":""}'
+[32mINFO    [0m root:status_backend.py:132 Got response: b'{"error":""}'
+[32mINFO    [0m root:signals.py:111 Signal node.login containing DISP_NAME__DqRmoQ7P4 is received in 5 seconds
+[32mINFO    [0m root:rpc.py:52 Sending POST request to url http://127.0.0.1:7534/statusgo/CallRPC with data: {
+    "id": 13,
+    "jsonrpc": "2.0",
+    "method": "wakuext_startMessenger"
+}
+[32mINFO    [0m root:rpc.py:56 Got response: {
+    "id": 13,
+    "jsonrpc": "2.0",
+    "result": {
+        "discordOldestMessageTimestamp": 0,
+        "mailservers": [
+            {
+                "addr": "/dns4/store-01.do-ams3.status.prod.status.im/tcp/30303/p2p/16Uiu2HAmAUdrQ3uwzuE4Gy4D56hX6uLKEeerJAnhKEHZ3DxF1EfT",
+                "custom": false,
+                "enr": "enr:-QEMuEAs8JmmyUI3b9v_ADqYtELHUYAsAMS21lA2BMtrzF86tVmyy9cCrhmzfHGHx_g3nybn7jIRybzXTGNj3C2KzrriAYJpZIJ2NIJpcISf3_Jeim11bHRpYWRkcnO4XAArNiZzdG9yZS0wMS5kby1hbXMzLnN0YXR1cy5wcm9kLnN0YXR1cy5pbQZ2XwAtNiZzdG9yZS0wMS5kby1hbXMzLnN0YXR1cy5wcm9kLnN0YXR1cy5pbQYBu94DgnJzjQAQBQABACAAQACAAQCJc2VjcDI1NmsxoQLfoaQH3oSYW59yxEBfeAZbltmUnC4BzYkHqer2VQMTyoN0Y3CCdl-DdWRwgiMohXdha3UyAw",
+                "fleet": "status.prod",
+                "id": "store-01.do-ams3.status.prod",
+                "name": ""
+            },
+            {
+                "addr": "/dns4/store-02.do-ams3.status.prod.status.im/tcp/30303/p2p/16Uiu2HAm9aDJPkhGxc2SFcEACTFdZ91Q5TJjp76qZEhq9iF59x7R",
+                "custom": false,
+                "enr": "enr:-QEMuEDuTfD47Hz_NXDwf7LJMf0qhjp3CQhZ9Fy0Ulp4XehtEzewBzmJCoe77hjno3khH8kX2B9B1DgbJuc2n32fMZvOAYJpZIJ2NIJpcISf3_Kaim11bHRpYWRkcnO4XAArNiZzdG9yZS0wMi5kby1hbXMzLnN0YXR1cy5wcm9kLnN0YXR1cy5pbQZ2XwAtNiZzdG9yZS0wMi5kby1hbXMzLnN0YXR1cy5wcm9kLnN0YXR1cy5pbQYBu94DgnJzjQAQBQABACAAQACAAQCJc2VjcDI1NmsxoQLSM62HmqGpZ382YM4CyI-MCIlkxMP7ZbOwqwRPvk9wsIN0Y3CCdl-DdWRwgiMohXdha3UyAw",
+                "fleet": "status.prod",
+                "id": "store-02.do-ams3.status.prod",
+                "name": ""
+            },
+            {
+                "addr": "/dns4/store-01.gc-us-central1-a.status.prod.status.im/tcp/30303/p2p/16Uiu2HAmMELCo218hncCtTvC2Dwbej3rbyHQcR8erXNnKGei7WPZ",
+                "custom": false,
+                "enr": "enr:-QEeuEA08-NJJDuKh6V8739MPl2G7ykaC0EWyUg21KtjQ1UtKxuE2qNy5uES2_bobr7sC5C4sS_-GhDVYMpOrM2IFc8KAYJpZIJ2NIJpcIQiqsAnim11bHRpYWRkcnO4bgA0Ni9zdG9yZS0wMS5nYy11cy1jZW50cmFsMS1hLnN0YXR1cy5wcm9kLnN0YXR1cy5pbQZ2XwA2Ni9zdG9yZS0wMS5nYy11cy1jZW50cmFsMS1hLnN0YXR1cy5wcm9kLnN0YXR1cy5pbQYBu94DgnJzjQAQBQABACAAQACAAQCJc2VjcDI1NmsxoQN_aBxNsOBrceDLyC75vBFRuzv_tWfaHG50Jc9DQztwkIN0Y3CCdl-DdWRwgiMohXdha3UyAw",
+                "fleet": "status.prod",
+                "id": "store-01.gc-us-central1-a.status.prod",
+                "name": ""
+            },
+            {
+                "addr": "/dns4/store-02.gc-us-central1-a.status.prod.status.im/tcp/30303/p2p/16Uiu2HAmJnVR7ZzFaYvciPVafUXuYGLHPzSUigqAmeNw9nJUVGeM",
+                "custom": false,
+                "enr": "enr:-QEeuECQiv4VvUk04UnU3wxKXgWvErYcGMgYU8aDuc8VvEt1km2GvcEBq-R9XT-loNL5PZjxGKzB1rDtCOQaFVYQtgPnAYJpZIJ2NIJpcIQiqpoCim11bHRpYWRkcnO4bgA0Ni9zdG9yZS0wMi5nYy11cy1jZW50cmFsMS1hLnN0YXR1cy5wcm9kLnN0YXR1cy5pbQZ2XwA2Ni9zdG9yZS0wMi5nYy11cy1jZW50cmFsMS1hLnN0YXR1cy5wcm9kLnN0YXR1cy5pbQYBu94DgnJzjQAQBQABACAAQACAAQCJc2VjcDI1NmsxoQNbEg1bkMJCBiD5Tje3Z_11R-kd9munZF0v4iiYZa1jgoN0Y3CCdl-DdWRwgiMohXdha3UyAw",
+                "fleet": "status.prod",
+                "id": "store-02.gc-us-central1-a.status.prod",
+                "name": ""
+            },
+            {
+                "addr": "/dns4/store-01.ac-cn-hongkong-c.status.prod.status.im/tcp/30303/p2p/16Uiu2HAm2M7xs7cLPc3jamawkEqbr7cUJX11uvY7LxQ6WFUdUKUT",
+                "custom": false,
+                "enr": "enr:-QEeuED6hfo5OQICpfwrjuG-qC8MMjw8bsLrF-xi8tY4nz3h7nl_KOXA2C1q7gXOzJ-bROP2ZzITdRlP0HN57jiBuim9AYJpZIJ2NIJpcIQI2kpJim11bHRpYWRkcnO4bgA0Ni9zdG9yZS0wMS5hYy1jbi1ob25na29uZy1jLnN0YXR1cy5wcm9kLnN0YXR1cy5pbQZ2XwA2Ni9zdG9yZS0wMS5hYy1jbi1ob25na29uZy1jLnN0YXR1cy5wcm9kLnN0YXR1cy5pbQYBu94DgnJzjQAQBQABACAAQACAAQCJc2VjcDI1NmsxoQJm10jdarzx9hcdhRKGfsAyS0Hc5pWj3yhyTvT5FIwKGIN0Y3CCdl-DdWRwgiMohXdha3UyAw",
+                "fleet": "status.prod",
+                "id": "store-01.ac-cn-hongkong-c.status.prod",
+                "name": ""
+            },
+            {
+                "addr": "/dns4/store-02.ac-cn-hongkong-c.status.prod.status.im/tcp/30303/p2p/16Uiu2HAm9CQhsuwPR54q27kNj9iaQVfyRzTGKrhFmr94oD8ujU6P",
+                "custom": false,
+                "enr": "enr:-QEeuEC0VBi0VMXNL4oQUfdAJL7RBXpWyB54TqUDt93Li3yuax4ohwMMIAmI6sg2jgH_HxgDRy5Ar-5CbMDW1EFxYFplAYJpZIJ2NIJpcIQI2nnoim11bHRpYWRkcnO4bgA0Ni9zdG9yZS0wMi5hYy1jbi1ob25na29uZy1jLnN0YXR1cy5wcm9kLnN0YXR1cy5pbQZ2XwA2Ni9zdG9yZS0wMi5hYy1jbi1ob25na29uZy1jLnN0YXR1cy5wcm9kLnN0YXR1cy5pbQYBu94DgnJzjQAQBQABACAAQACAAQCJc2VjcDI1NmsxoQLMncuu6pJ3DQRzYUqkB1PbaRxZXIGJi8waKbbBFbOSNIN0Y3CCdl-DdWRwgiMohXdha3UyAw",
+                "fleet": "status.prod",
+                "id": "store-02.ac-cn-hongkong-c.status.prod",
+                "name": ""
+            }
+        ],
+        "notifications": null
+    }
+}
+[32mINFO    [0m root:status_backend.py:110 StatusBackend is healthy after 0.006362438201904297 seconds
+[32mINFO    [0m root:status_backend.py:123 Sending POST request to url http://127.0.0.1:7559/statusgo/InitializeApplication with data: {
+    "apiLogging": true,
+    "dataDir": "/usr/status-user",
+    "logEnabled": true,
+    "logLevel": "DEBUG"
+}
+[32mINFO    [0m root:signals.py:122 Connection opened
+[33mWARNING [0m websocket:_logging.py:66 websocket connected
+[32mINFO    [0m root:status_backend.py:126 Got response: b'{"accounts":null,"centralizedMetricsInfo":{"enabled":false,"userConfirmed":false}}'
+[32mINFO    [0m root:status_backend.py:132 Got response: b'{"accounts":null,"centralizedMetricsInfo":{"enabled":false,"userConfirmed":false}}'
+[32mINFO    [0m root:status_backend.py:123 Sending POST request to url http://127.0.0.1:7559/statusgo/CreateAccountAndLogin with data: {
+    "customizationColor": "primary",
+    "displayName": "DISP_NAME_8QttAjrlPV",
+    "kdfIterations": 256000,
+    "logEnabled": true,
+    "logLevel": "DEBUG",
+    "password": "Strong12345",
+    "rootDataDir": "/usr/status-user"
+}
+[32mINFO    [0m root:status_backend.py:126 Got response: b'{"error":""}'
+[32mINFO    [0m root:status_backend.py:132 Got response: b'{"error":""}'
+[32mINFO    [0m root:signals.py:111 Signal node.login containing DISP_NAME_8QttAjrlPV is received in 6 seconds
+[32mINFO    [0m root:rpc.py:52 Sending POST request to url http://127.0.0.1:7559/statusgo/CallRPC with data: {
+    "id": 13,
+    "jsonrpc": "2.0",
+    "method": "wakuext_startMessenger"
+}
+[32mINFO    [0m root:rpc.py:56 Got response: {
+    "id": 13,
+    "jsonrpc": "2.0",
+    "result": {
+        "discordOldestMessageTimestamp": 0,
+        "mailservers": [
+            {
+                "addr": "/dns4/store-01.do-ams3.status.prod.status.im/tcp/30303/p2p/16Uiu2HAmAUdrQ3uwzuE4Gy4D56hX6uLKEeerJAnhKEHZ3DxF1EfT",
+                "custom": false,
+                "enr": "enr:-QEMuEAs8JmmyUI3b9v_ADqYtELHUYAsAMS21lA2BMtrzF86tVmyy9cCrhmzfHGHx_g3nybn7jIRybzXTGNj3C2KzrriAYJpZIJ2NIJpcISf3_Jeim11bHRpYWRkcnO4XAArNiZzdG9yZS0wMS5kby1hbXMzLnN0YXR1cy5wcm9kLnN0YXR1cy5pbQZ2XwAtNiZzdG9yZS0wMS5kby1hbXMzLnN0YXR1cy5wcm9kLnN0YXR1cy5pbQYBu94DgnJzjQAQBQABACAAQACAAQCJc2VjcDI1NmsxoQLfoaQH3oSYW59yxEBfeAZbltmUnC4BzYkHqer2VQMTyoN0Y3CCdl-DdWRwgiMohXdha3UyAw",
+                "fleet": "status.prod",
+                "id": "store-01.do-ams3.status.prod",
+                "name": ""
+            },
+            {
+                "addr": "/dns4/store-02.do-ams3.status.prod.status.im/tcp/30303/p2p/16Uiu2HAm9aDJPkhGxc2SFcEACTFdZ91Q5TJjp76qZEhq9iF59x7R",
+                "custom": false,
+                "enr": "enr:-QEMuEDuTfD47Hz_NXDwf7LJMf0qhjp3CQhZ9Fy0Ulp4XehtEzewBzmJCoe77hjno3khH8kX2B9B1DgbJuc2n32fMZvOAYJpZIJ2NIJpcISf3_Kaim11bHRpYWRkcnO4XAArNiZzdG9yZS0wMi5kby1hbXMzLnN0YXR1cy5wcm9kLnN0YXR1cy5pbQZ2XwAtNiZzdG9yZS0wMi5kby1hbXMzLnN0YXR1cy5wcm9kLnN0YXR1cy5pbQYBu94DgnJzjQAQBQABACAAQACAAQCJc2VjcDI1NmsxoQLSM62HmqGpZ382YM4CyI-MCIlkxMP7ZbOwqwRPvk9wsIN0Y3CCdl-DdWRwgiMohXdha3UyAw",
+                "fleet": "status.prod",
+                "id": "store-02.do-ams3.status.prod",
+                "name": ""
+            },
+            {
+                "addr": "/dns4/store-01.gc-us-central1-a.status.prod.status.im/tcp/30303/p2p/16Uiu2HAmMELCo218hncCtTvC2Dwbej3rbyHQcR8erXNnKGei7WPZ",
+                "custom": false,
+                "enr": "enr:-QEeuEA08-NJJDuKh6V8739MPl2G7ykaC0EWyUg21KtjQ1UtKxuE2qNy5uES2_bobr7sC5C4sS_-GhDVYMpOrM2IFc8KAYJpZIJ2NIJpcIQiqsAnim11bHRpYWRkcnO4bgA0Ni9zdG9yZS0wMS5nYy11cy1jZW50cmFsMS1hLnN0YXR1cy5wcm9kLnN0YXR1cy5pbQZ2XwA2Ni9zdG9yZS0wMS5nYy11cy1jZW50cmFsMS1hLnN0YXR1cy5wcm9kLnN0YXR1cy5pbQYBu94DgnJzjQAQBQABACAAQACAAQCJc2VjcDI1NmsxoQN_aBxNsOBrceDLyC75vBFRuzv_tWfaHG50Jc9DQztwkIN0Y3CCdl-DdWRwgiMohXdha3UyAw",
+                "fleet": "status.prod",
+                "id": "store-01.gc-us-central1-a.status.prod",
+                "name": ""
+            },
+            {
+                "addr": "/dns4/store-02.gc-us-central1-a.status.prod.status.im/tcp/30303/p2p/16Uiu2HAmJnVR7ZzFaYvciPVafUXuYGLHPzSUigqAmeNw9nJUVGeM",
+                "custom": false,
+                "enr": "enr:-QEeuECQiv4VvUk04UnU3wxKXgWvErYcGMgYU8aDuc8VvEt1km2GvcEBq-R9XT-loNL5PZjxGKzB1rDtCOQaFVYQtgPnAYJpZIJ2NIJpcIQiqpoCim11bHRpYWRkcnO4bgA0Ni9zdG9yZS0wMi5nYy11cy1jZW50cmFsMS1hLnN0YXR1cy5wcm9kLnN0YXR1cy5pbQZ2XwA2Ni9zdG9yZS0wMi5nYy11cy1jZW50cmFsMS1hLnN0YXR1cy5wcm9kLnN0YXR1cy5pbQYBu94DgnJzjQAQBQABACAAQACAAQCJc2VjcDI1NmsxoQNbEg1bkMJCBiD5Tje3Z_11R-kd9munZF0v4iiYZa1jgoN0Y3CCdl-DdWRwgiMohXdha3UyAw",
+                "fleet": "status.prod",
+                "id": "store-02.gc-us-central1-a.status.prod",
+                "name": ""
+            },
+            {
+                "addr": "/dns4/store-01.ac-cn-hongkong-c.status.prod.status.im/tcp/30303/p2p/16Uiu2HAm2M7xs7cLPc3jamawkEqbr7cUJX11uvY7LxQ6WFUdUKUT",
+                "custom": false,
+                "enr": "enr:-QEeuED6hfo5OQICpfwrjuG-qC8MMjw8bsLrF-xi8tY4nz3h7nl_KOXA2C1q7gXOzJ-bROP2ZzITdRlP0HN57jiBuim9AYJpZIJ2NIJpcIQI2kpJim11bHRpYWRkcnO4bgA0Ni9zdG9yZS0wMS5hYy1jbi1ob25na29uZy1jLnN0YXR1cy5wcm9kLnN0YXR1cy5pbQZ2XwA2Ni9zdG9yZS0wMS5hYy1jbi1ob25na29uZy1jLnN0YXR1cy5wcm9kLnN0YXR1cy5pbQYBu94DgnJzjQAQBQABACAAQACAAQCJc2VjcDI1NmsxoQJm10jdarzx9hcdhRKGfsAyS0Hc5pWj3yhyTvT5FIwKGIN0Y3CCdl-DdWRwgiMohXdha3UyAw",
+                "fleet": "status.prod",
+                "id": "store-01.ac-cn-hongkong-c.status.prod",
+                "name": ""
+            },
+            {
+                "addr": "/dns4/store-02.ac-cn-hongkong-c.status.prod.status.im/tcp/30303/p2p/16Uiu2HAm9CQhsuwPR54q27kNj9iaQVfyRzTGKrhFmr94oD8ujU6P",
+                "custom": false,
+                "enr": "enr:-QEeuEC0VBi0VMXNL4oQUfdAJL7RBXpWyB54TqUDt93Li3yuax4ohwMMIAmI6sg2jgH_HxgDRy5Ar-5CbMDW1EFxYFplAYJpZIJ2NIJpcIQI2nnoim11bHRpYWRkcnO4bgA0Ni9zdG9yZS0wMi5hYy1jbi1ob25na29uZy1jLnN0YXR1cy5wcm9kLnN0YXR1cy5pbQZ2XwA2Ni9zdG9yZS0wMi5hYy1jbi1ob25na29uZy1jLnN0YXR1cy5wcm9kLnN0YXR1cy5pbQYBu94DgnJzjQAQBQABACAAQACAAQCJc2VjcDI1NmsxoQLMncuu6pJ3DQRzYUqkB1PbaRxZXIGJi8waKbbBFbOSNIN0Y3CCdl-DdWRwgiMohXdha3UyAw",
+                "fleet": "status.prod",
+                "id": "store-02.ac-cn-hongkong-c.status.prod",
+                "name": ""
+            }
+        ],
+        "notifications": null
+    }
+}
+[32mINFO    [0m root:rpc.py:52 Sending POST request to url http://127.0.0.1:7559/statusgo/CallRPC with data: {
+    "id": 13,
+    "jsonrpc": "2.0",
+    "method": "wakuext_contacts"
+}
+[32mINFO    [0m root:rpc.py:56 Got response: {
+    "id": 13,
+    "jsonrpc": "2.0",
+    "result": null
+}
+[32mINFO    [0m root:rpc.py:52 Sending POST request to url http://127.0.0.1:7534/statusgo/CallRPC with data: {
+    "id": 13,
+    "jsonrpc": "2.0",
+    "method": "wakuext_sendContactRequest",
+    "params": [
+        {
+            "id": "0x042173edbfc6fcc779ad89e7f3fb0d26554181977df17d7d82d88e64de34e8a1221f027263b4ce43793789ebad4ea0055a89d2607f249450fa646613de4e94b494",
+            "message": "test_contact_request_1_24be4592-4073-4e33-a682-1ac9e7a1f4b3"
+        }
+    ]
+}
+[32mINFO    [0m root:rpc.py:56 Got response: {
+    "id": 13,
+    "jsonrpc": "2.0",
+    "result": {
+        "activityCenterNotifications": [
+            {
+                "accepted": false,
+                "albumMessages": null,
+                "author": "0x04265663e4d28686be42e65ed42f54ebc37380107721fd7393952772c527ae04f5a07af13edb925a41e13a95ca1b1bc216362fc964a4a34e1d4b9162335057b2a1",
+                "chatId": "0x042173edbfc6fcc779ad89e7f3fb0d26554181977df17d7d82d88e64de34e8a1221f027263b4ce43793789ebad4ea0055a89d2607f249450fa646613de4e94b494",
+                "communityId": "",
+                "contactVerificationStatus": 0,
+                "deleted": false,
+                "dismissed": false,
+                "id": "0x646be43c1704bc6210b70194a2a63d7c6502df3d834182c9d61de0babc991af7",
+                "installationId": "",
+                "lastMessage": null,
+                "membershipStatus": 0,
+                "message": {
+                    "alias": "Thirsty Quirky Cattle",
+                    "chatId": "0x042173edbfc6fcc779ad89e7f3fb0d26554181977df17d7d82d88e64de34e8a1221f027263b4ce43793789ebad4ea0055a89d2607f249450fa646613de4e94b494",
+                    "clock": 1736431200250,
+                    "compressedKey": "zQ3shhDm2LBq9Zkuxf9YxUHj1pRb51WLxoeCMCw3x3pEbXoyW",
+                    "contactRequestState": 1,
+                    "contentType": 11,
+                    "displayName": "DISP_NAME__DqRmoQ7P4",
+                    "emojiHash": [
+                        "\ud83e\udd35\ud83c\udffb\u200d\u2642\ufe0f",
+                        "\ud83c\udf6a",
+                        "\ud83d\udec0\ud83c\udffe",
+                        "\ud83e\udd83",
+                        "\ud83e\uddaf",
+                        "\ud83d\uddb2\ufe0f",
+                        "\ud83e\uddb8\ud83c\udffe",
+                        "\ud83e\udddb\ud83c\udffe",
+                        "\ud83c\udf30",
+                        "\ud83e\udd36\ud83c\udfff",
+                        "\ud83e\udd35\ud83c\udffe\u200d\u2642\ufe0f",
+                        "\ud83d\udc68\ud83c\udffb\u200d\ud83c\udf73",
+                        "\ud83e\uddd1\u200d\ud83e\udd1d\u200d\ud83e\uddd1",
+                        "\ud83e\udd38\u200d\u2642\ufe0f"
+                    ],
+                    "ensName": "",
+                    "from": "0x04265663e4d28686be42e65ed42f54ebc37380107721fd7393952772c527ae04f5a07af13edb925a41e13a95ca1b1bc216362fc964a4a34e1d4b9162335057b2a1",
+                    "id": "0x646be43c1704bc6210b70194a2a63d7c6502df3d834182c9d61de0babc991af7",
+                    "identicon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAhklEQVR4nOzWsQmEUBgE4TuxF7uxGsuwGruxGs3F4IEsDMt88UMcNvmnXwlDaAyhMYTGEJqakHn04X6cV/ZX3m3r8h95V7OIITSGKKRmEUNoDKH5fGuN3kLp79csYgiNIQqpWcQQGkNoYrdW+v1TzSKG0BiikJpFDKExhMYQGkNo7gAAAP//2LkYZVikQVoAAAAASUVORK5CYII=",
+                    "lineCount": 0,
+                    "localChatId": "0x042173edbfc6fcc779ad89e7f3fb0d26554181977df17d7d82d88e64de34e8a1221f027263b4ce43793789ebad4ea0055a89d2607f249450fa646613de4e94b494",
+                    "messageType": 1,
+                    "outgoingStatus": "sending",
+                    "parsedText": [
+                        {
+                            "children": [
+                                {
+                                    "literal": "test_contact_request_1_24be4592-4073-4e33-a682-1ac9e7a1f4b3"
+                                }
+                            ],
+                            "type": "paragraph"
+                        }
+                    ],
+                    "quotedMessage": null,
+                    "replace": "",
+                    "responseTo": "",
+                    "rtl": false,
+                    "seen": true,
+                    "text": "test_contact_request_1_24be4592-4073-4e33-a682-1ac9e7a1f4b3",
+                    "timestamp": 1736431200250,
+                    "whisperTimestamp": 1736431200250
+                },
+                "name": "zQ3...XoddSh",
+                "read": true,
+                "replyMessage": null,
+                "timestamp": 1736431200256,
+                "tokenData": null,
+                "type": 5,
+                "updatedAt": 1736431200256
+            }
+        ],
+        "activityCenterState": {
+            "hasSeen": true,
+            "updatedAt": 0
+        },
+        "chats": [
+            {
+                "ReadMessagesAtClockValue": 0,
+                "active": false,
+                "alias": "Bright Quiet Yaffle",
+                "chatType": 1,
+                "color": "",
+                "deletedAtClockValue": 0,
+                "description": "",
+                "emoji": "",
+                "highlight": true,
+                "id": "0x042173edbfc6fcc779ad89e7f3fb0d26554181977df17d7d82d88e64de34e8a1221f027263b4ce43793789ebad4ea0055a89d2607f249450fa646613de4e94b494",
+                "identicon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAl0lEQVR4nOzXwQmDQBBG4SSkl9xSXcpIdd6sRu/iwsi6+vh531Hm8hgY1tcjhCE0htAYQmMITUzIuzo4T/9l7/vn+3veMb8VsxFDaAyhKV+tlta1OWu+KmYjhtAYQtN9tVqOvql6xWzEEBpDaLqv1ug/xKqYjRhCYwjN5W+tUWI2YgiNIRokZiOG0BhCYwiNITRrAAAA//8jWh+jUCFWBwAAAABJRU5ErkJggg==",
+                "joined": 1736431200213,
+                "lastClockValue": 1736431200250,
+                "lastMessage": {
+                    "alias": "Thirsty Quirky Cattle",
+                    "chatId": "0x042173edbfc6fcc779ad89e7f3fb0d26554181977df17d7d82d88e64de34e8a1221f027263b4ce43793789ebad4ea0055a89d2607f249450fa646613de4e94b494",
+                    "clock": 1736431200250,
+                    "compressedKey": "zQ3shhDm2LBq9Zkuxf9YxUHj1pRb51WLxoeCMCw3x3pEbXoyW",
+                    "contactRequestState": 1,
+                    "contentType": 11,
+                    "displayName": "DISP_NAME__DqRmoQ7P4",
+                    "emojiHash": [
+                        "\ud83e\udd35\ud83c\udffb\u200d\u2642\ufe0f",
+                        "\ud83c\udf6a",
+                        "\ud83d\udec0\ud83c\udffe",
+                        "\ud83e\udd83",
+                        "\ud83e\uddaf",
+                        "\ud83d\uddb2\ufe0f",
+                        "\ud83e\uddb8\ud83c\udffe",
+                        "\ud83e\udddb\ud83c\udffe",
+                        "\ud83c\udf30",
+                        "\ud83e\udd36\ud83c\udfff",
+                        "\ud83e\udd35\ud83c\udffe\u200d\u2642\ufe0f",
+                        "\ud83d\udc68\ud83c\udffb\u200d\ud83c\udf73",
+                        "\ud83e\uddd1\u200d\ud83e\udd1d\u200d\ud83e\uddd1",
+                        "\ud83e\udd38\u200d\u2642\ufe0f"
+                    ],
+                    "ensName": "",
+                    "from": "0x04265663e4d28686be42e65ed42f54ebc37380107721fd7393952772c527ae04f5a07af13edb925a41e13a95ca1b1bc216362fc964a4a34e1d4b9162335057b2a1",
+                    "id": "0x646be43c1704bc6210b70194a2a63d7c6502df3d834182c9d61de0babc991af7",
+                    "identicon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAhklEQVR4nOzWsQmEUBgE4TuxF7uxGsuwGruxGs3F4IEsDMt88UMcNvmnXwlDaAyhMYTGEJqakHn04X6cV/ZX3m3r8h95V7OIITSGKKRmEUNoDKH5fGuN3kLp79csYgiNIQqpWcQQGkNoYrdW+v1TzSKG0BiikJpFDKExhMYQGkNo7gAAAP//2LkYZVikQVoAAAAASUVORK5CYII=",
+                    "lineCount": 0,
+                    "localChatId": "0x042173edbfc6fcc779ad89e7f3fb0d26554181977df17d7d82d88e64de34e8a1221f027263b4ce43793789ebad4ea0055a89d2607f249450fa646613de4e94b494",
+                    "messageType": 1,
+                    "outgoingStatus": "sending",
+                    "parsedText": [
+                        {
+                            "children": [
+                                {
+                                    "literal": "test_contact_request_1_24be4592-4073-4e33-a682-1ac9e7a1f4b3"
+                                }
+                            ],
+                            "type": "paragraph"
+                        }
+                    ],
+                    "quotedMessage": null,
+                    "replace": "",
+                    "responseTo": "",
+                    "rtl": false,
+                    "seen": true,
+                    "text": "test_contact_request_1_24be4592-4073-4e33-a682-1ac9e7a1f4b3",
+                    "timestamp": 1736431200250,
+                    "whisperTimestamp": 1736431200250
+                },
+                "members": null,
+                "membershipUpdateEvents": null,
+                "muteTill": "0001-01-01T00:00:00Z",
+                "muted": false,
+                "name": "0x042173",
+                "timestamp": 1736431200251,
+                "unviewedMentionsCount": 0,
+                "unviewedMessagesCount": 0,
+                "viewersCanPostReactions": false
+            }
+        ],
+        "contacts": [
+            {
+                "IsSyncing": false,
+                "Removed": false,
+                "active": false,
+                "added": true,
+                "address": "0xd5c164acc061667bb8571a81460c0a1e3153c7dc",
+                "alias": "zQ3...XoddSh",
+                "bio": "",
+                "blocked": false,
+                "compressedKey": "zQ3shPfNjo3hGU48iQKrz5hfJNghJBH2CiAUsSLamj1XoddSh",
+                "contactRequestLocalClock": 1736431200215,
+                "contactRequestLocalState": 2,
+                "contactRequestRemoteClock": 0,
+                "contactRequestRemoteState": 0,
+                "contactRequestState": 2,
+                "customizationColor": "blue",
+                "displayName": "",
+                "emojiHash": [
+                    "\ud83d\udc47\ud83c\udffc",
+                    "\ud83e\udd3e\ud83c\udffe\u200d\u2640\ufe0f",
+                    "\ud83c\ude02\ufe0f",
+                    "\ud83e\uddd1\u200d\ud83c\udfeb",
+                    "\ud83d\udc60",
+                    "\ud83d\udd87\ufe0f",
+                    "\ud83d\udc69\ud83c\udffb\u200d\ud83c\udf7c",
+                    "\ud83d\udc87\ud83c\udffd",
+                    "\ud83c\udf81",
+                    "\u231b",
+                    "\ud83d\udce2",
+                    "\ud83d\ude4b\u200d\u2640\ufe0f",
+                    "\ud83e\uddf3",
+                    "\ud83d\udc49\ud83c\udffc"
+                ],
+                "ensVerified": false,
+                "hasAddedUs": false,
+                "id": "0x042173edbfc6fcc779ad89e7f3fb0d26554181977df17d7d82d88e64de34e8a1221f027263b4ce43793789ebad4ea0055a89d2607f249450fa646613de4e94b494",
+                "identicon": "",
+                "images": null,
+                "lastUpdated": 0,
+                "lastUpdatedLocally": 1736431200215,
+                "mutual": false,
+                "primaryName": "zQ3...XoddSh",
+                "trustStatus": 0,
+                "verificationStatus": 0
+            }
+        ],
+        "discordOldestMessageTimestamp": 0,
+        "messages": [
+            {
+                "alias": "",
+                "chatId": "0x042173edbfc6fcc779ad89e7f3fb0d26554181977df17d7d82d88e64de34e8a1221f027263b4ce43793789ebad4ea0055a89d2607f249450fa646613de4e94b494",
+                "clock": 1736431200245,
+                "compressedKey": "zQ3shhDm2LBq9Zkuxf9YxUHj1pRb51WLxoeCMCw3x3pEbXoyW",
+                "contentType": 15,
+                "displayName": "",
+                "emojiHash": [
+                    "\ud83e\udd35\ud83c\udffb\u200d\u2642\ufe0f",
+                    "\ud83c\udf6a",
+                    "\ud83d\udec0\ud83c\udffe",
+                    "\ud83e\udd83",
+                    "\ud83e\uddaf",
+                    "\ud83d\uddb2\ufe0f",
+                    "\ud83e\uddb8\ud83c\udffe",
+                    "\ud83e\udddb\ud83c\udffe",
+                    "\ud83c\udf30",
+                    "\ud83e\udd36\ud83c\udfff",
+                    "\ud83e\udd35\ud83c\udffe\u200d\u2642\ufe0f",
+                    "\ud83d\udc68\ud83c\udffb\u200d\ud83c\udf73",
+                    "\ud83e\uddd1\u200d\ud83e\udd1d\u200d\ud83e\uddd1",
+                    "\ud83e\udd38\u200d\u2642\ufe0f"
+                ],
+                "ensName": "",
+                "from": "0x04265663e4d28686be42e65ed42f54ebc37380107721fd7393952772c527ae04f5a07af13edb925a41e13a95ca1b1bc216362fc964a4a34e1d4b9162335057b2a1",
+                "id": "0x8160787571d7c4970e401174a4747243b51e5c0c43ac3f184e1afbbd3fc901aa",
+                "identicon": "",
+                "lineCount": 0,
+                "localChatId": "0x042173edbfc6fcc779ad89e7f3fb0d26554181977df17d7d82d88e64de34e8a1221f027263b4ce43793789ebad4ea0055a89d2607f249450fa646613de4e94b494",
+                "messageType": 1,
+                "quotedMessage": null,
+                "replace": "",
+                "responseTo": "",
+                "rtl": false,
+                "seen": true,
+                "text": "You sent a contact request to @0x042173edbfc6fcc779ad89e7f3fb0d26554181977df17d7d82d88e64de34e8a1221f027263b4ce43793789ebad4ea0055a89d2607f249450fa646613de4e94b494",
+                "timestamp": 1736431200245,
+                "whisperTimestamp": 1736431200245
+            },
+            {
+                "alias": "",
+                "chatId": "0x042173edbfc6fcc779ad89e7f3fb0d26554181977df17d7d82d88e64de34e8a1221f027263b4ce43793789ebad4ea0055a89d2607f249450fa646613de4e94b494",
+                "clock": 1736431200250,
+                "compressedKey": "zQ3shhDm2LBq9Zkuxf9YxUHj1pRb51WLxoeCMCw3x3pEbXoyW",
+                "contactRequestState": 1,
+                "contentType": 11,
+                "displayName": "",
+                "emojiHash": [
+                    "\ud83e\udd35\ud83c\udffb\u200d\u2642\ufe0f",
+                    "\ud83c\udf6a",
+                    "\ud83d\udec0\ud83c\udffe",
+                    "\ud83e\udd83",
+                    "\ud83e\uddaf",
+                    "\ud83d\uddb2\ufe0f",
+                    "\ud83e\uddb8\ud83c\udffe",
+                    "\ud83e\udddb\ud83c\udffe",
+                    "\ud83c\udf30",
+                    "\ud83e\udd36\ud83c\udfff",
+                    "\ud83e\udd35\ud83c\udffe\u200d\u2642\ufe0f",
+                    "\ud83d\udc68\ud83c\udffb\u200d\ud83c\udf73",
+                    "\ud83e\uddd1\u200d\ud83e\udd1d\u200d\ud83e\uddd1",
+                    "\ud83e\udd38\u200d\u2642\ufe0f"
+                ],
+                "ensName": "",
+                "from": "0x04265663e4d28686be42e65ed42f54ebc37380107721fd7393952772c527ae04f5a07af13edb925a41e13a95ca1b1bc216362fc964a4a34e1d4b9162335057b2a1",
+                "gapParameters": {},
+                "id": "0x646be43c1704bc6210b70194a2a63d7c6502df3d834182c9d61de0babc991af7",
+                "identicon": "",
+                "lineCount": 0,
+                "localChatId": "0x042173edbfc6fcc779ad89e7f3fb0d26554181977df17d7d82d88e64de34e8a1221f027263b4ce43793789ebad4ea0055a89d2607f249450fa646613de4e94b494",
+                "messageType": 1,
+                "outgoingStatus": "sending",
+                "parsedText": [
+                    {
+                        "children": [
+                            {
+                                "literal": "test_contact_request_1_24be4592-4073-4e33-a682-1ac9e7a1f4b3"
+                            }
+                        ],
+                        "type": "paragraph"
+                    }
+                ],
+                "quotedMessage": null,
+                "replace": "",
+                "responseTo": "",
+                "rtl": false,
+                "seen": true,
+                "text": "test_contact_request_1_24be4592-4073-4e33-a682-1ac9e7a1f4b3",
+                "timestamp": 1736431200250,
+                "whisperTimestamp": 1736431200250
+            }
+        ],
+        "notifications": null
+    }
+}
+[32mINFO    [0m root:signals.py:111 Signal messages.new containing 0x646be43c1704bc6210b70194a2a63d7c6502df3d834182c9d61de0babc991af7 is received in 2 seconds
