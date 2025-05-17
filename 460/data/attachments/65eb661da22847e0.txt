@@ -1,0 +1,923 @@
+[35mDEBUG   [0m src.steps.common:common.py:18 Running fixture setup: start_1_node
+[32mINFO    [0m src.node.status_node:status_node.py:39 Starting node with command: ['./status-cli', 'serve', '-n', 'first_node', '-p', '37297']
+[35mDEBUG   [0m src.libs.common:common.py:15 Sleeping for 2 seconds
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - 2025-05-17T00:17:56.455Z	INFO	status-cli/serve.go:34	Running serve command, with:
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - -name first_node
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - -add
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - -port 37297
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - -interactive false
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - -light false
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - -api-modules waku,wakuext,wakuv2,permissions,eth
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - -telemetry-server-url
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - -debug false
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - -fleet status.staging
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - -help false
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - 
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - 2025-05-17T00:17:56.455Z	INFO	first_node	status-cli/util.go:54	starting messenger
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - INFO [05-17|00:17:58.676] Starting peer-to-peer node               instance=StatusIM/linux-amd64/go1.22.3
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:17:58.676] P2P server will be useless, neither dialing nor listening
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - INFO [05-17|00:17:58.680] New local node record                    seq=1,747,441,078,680 id=87b4e328e4042561 ip=127.0.0.1 udp=0 tcp=0
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - INFO [05-17|00:17:58.680] Started P2P networking                   self=enode://1dfb58b7c60bf1cfa738a616f270b2ad360caad5bbbd54a3649b50cc678b859d2f470a3429e39b266815e3b102e4729d2bf79c9d37d795450c37e98d3f904f13@127.0.0.1:0
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - ERROR[05-17|00:17:58.680] Unavailable modules in HTTP API list     unavailable=[wakuv2] available="[admin debug web3 eth rpcstats appmetrics appgeneral personal status pending ens communitytokens stickers updates settings accounts multiaccounts browsers permissions mailservers gif chat wallet waku wakuext localnotifications]"
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - INFO [05-17|00:17:58.681] HTTP server started                      endpoint=127.0.0.1:37297 auth=false prefix= cors= vhosts=
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - INFO [05-17|00:17:58.725] New local node record                    seq=1,747,441,078,706 id=ad808393e8e75b22 ip=10.1.0.84 udp=0 tcp=37621
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - INFO [05-17|00:17:58.726] New local node record                    seq=1,747,441,078,707 id=ad808393e8e75b22 ip=10.1.0.84 udp=48548 tcp=37621
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - INFO [05-17|00:17:58.728] New local node record                    seq=1,747,441,078,708 id=ad808393e8e75b22 ip=10.1.0.84 udp=48548 tcp=37621
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - 2025-05-17T00:17:59.183Z	INFO	first_node	status-cli/util.go:67	account created, key UID: 0x896a7b3bd826a5ab1351fd5affec17739f500f54822d73ddfb4fc4b00dfe4821
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - INFO [05-17|00:17:59.184] New local node record                    seq=1,747,441,078,709 id=ad808393e8e75b22 ip=10.1.0.84 udp=48548 tcp=37621
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - 2025-05-17T00:17:59.207Z	INFO	first_node	status-cli/util.go:90	messenger started, public key: 0x049e947622aba3f257fbb172de67c717393a1f58fd0720b163e18f606af8506dd40f4eaa142a6b749379fc3eff21220db4fc1bfa812c3ac04314d0b0f6ad239679
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - INFO [05-17|00:18:03.721] New local node record                    seq=1,747,441,078,710 id=ad808393e8e75b22 ip=20.57.46.45 udp=48548 tcp=48130
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - 2025-05-17T00:18:04.208Z	INFO	first_node	status-cli/serve.go:107	retrieve messages...
+[32mINFO    [0m src.node.status_node:status_node.py:52 Serving node with command: ['./status-cli', 'serve-account', '-n', '0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c_6132', '-kid', '0x317d1096e362af7561ea2f494e3cf3f715137ba7da24d801eea4ac7e10895318']
+[35mDEBUG   [0m src.libs.common:common.py:15 Sleeping for 2 seconds
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 0X02195F3912BCA1C5B6EA510D10A67F6C6AEBA77702A48591A9C98240931603971C_6132 - 2025-05-17T00:18:04.324Z	INFO	status-cli/serve.go:34	Running serve-account command, with:
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 0X02195F3912BCA1C5B6EA510D10A67F6C6AEBA77702A48591A9C98240931603971C_6132 - -name 0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c_6132
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 0X02195F3912BCA1C5B6EA510D10A67F6C6AEBA77702A48591A9C98240931603971C_6132 - -key-uid 0x317d1096e362af7561ea2f494e3cf3f715137ba7da24d801eea4ac7e10895318
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 0X02195F3912BCA1C5B6EA510D10A67F6C6AEBA77702A48591A9C98240931603971C_6132 - -interactive false
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 0X02195F3912BCA1C5B6EA510D10A67F6C6AEBA77702A48591A9C98240931603971C_6132 - -add
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 0X02195F3912BCA1C5B6EA510D10A67F6C6AEBA77702A48591A9C98240931603971C_6132 - -debug false
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 0X02195F3912BCA1C5B6EA510D10A67F6C6AEBA77702A48591A9C98240931603971C_6132 - -help false
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 0X02195F3912BCA1C5B6EA510D10A67F6C6AEBA77702A48591A9C98240931603971C_6132 - 
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 0X02195F3912BCA1C5B6EA510D10A67F6C6AEBA77702A48591A9C98240931603971C_6132 - 2025-05-17T00:18:04.324Z	INFO	0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c_6132	status-cli/util.go:54	starting messenger
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 0X02195F3912BCA1C5B6EA510D10A67F6C6AEBA77702A48591A9C98240931603971C_6132 - INFO [05-17|00:18:04.373] Starting peer-to-peer node               instance=StatusIM/linux-amd64/go1.22.3
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 0X02195F3912BCA1C5B6EA510D10A67F6C6AEBA77702A48591A9C98240931603971C_6132 - WARN [05-17|00:18:04.373] P2P server will be useless, neither dialing nor listening
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 0X02195F3912BCA1C5B6EA510D10A67F6C6AEBA77702A48591A9C98240931603971C_6132 - INFO [05-17|00:18:04.381] New local node record                    seq=1,737,419,587,417 id=a3e6d7f2cfadb3c4 ip=127.0.0.1 udp=0 tcp=0
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 0X02195F3912BCA1C5B6EA510D10A67F6C6AEBA77702A48591A9C98240931603971C_6132 - INFO [05-17|00:18:04.381] Started P2P networking                   self=enode://aad0dc447a381566b4aa3dc121ad9ba5674e454f820fcda769e16c748042a1e278d4c98d22a4e518f933d8135d897befd8ecfe65c0f92930c9606e794e24e381@127.0.0.1:0
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 0X02195F3912BCA1C5B6EA510D10A67F6C6AEBA77702A48591A9C98240931603971C_6132 - ERROR[05-17|00:18:04.381] Unavailable modules in HTTP API list     unavailable=[wakuv2] available="[admin debug web3 eth rpcstats appmetrics appgeneral personal status pending ens communitytokens stickers updates settings accounts multiaccounts browsers permissions mailservers gif chat wallet waku wakuext localnotifications]"
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 0X02195F3912BCA1C5B6EA510D10A67F6C6AEBA77702A48591A9C98240931603971C_6132 - INFO [05-17|00:18:04.382] HTTP server started                      endpoint=127.0.0.1:6132 auth=false prefix= cors= vhosts=
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 0X02195F3912BCA1C5B6EA510D10A67F6C6AEBA77702A48591A9C98240931603971C_6132 - INFO [05-17|00:18:04.425] New local node record                    seq=1,747,441,084,408 id=6b3b8339485cd508 ip=10.1.0.84 udp=0 tcp=36225
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 0X02195F3912BCA1C5B6EA510D10A67F6C6AEBA77702A48591A9C98240931603971C_6132 - INFO [05-17|00:18:04.427] New local node record                    seq=1,747,441,084,409 id=6b3b8339485cd508 ip=10.1.0.84 udp=41079 tcp=36225
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 0X02195F3912BCA1C5B6EA510D10A67F6C6AEBA77702A48591A9C98240931603971C_6132 - INFO [05-17|00:18:04.429] New local node record                    seq=1,747,441,084,410 id=6b3b8339485cd508 ip=10.1.0.84 udp=41079 tcp=36225
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 0X02195F3912BCA1C5B6EA510D10A67F6C6AEBA77702A48591A9C98240931603971C_6132 - 2025-05-17T00:18:04.579Z	INFO	0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c_6132	status-cli/util.go:61	existing account, key UID: 0x317d1096e362af7561ea2f494e3cf3f715137ba7da24d801eea4ac7e10895318
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 0X02195F3912BCA1C5B6EA510D10A67F6C6AEBA77702A48591A9C98240931603971C_6132 - INFO [05-17|00:18:04.579] New local node record                    seq=1,747,441,084,411 id=6b3b8339485cd508 ip=10.1.0.84 udp=41079 tcp=36225
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 0X02195F3912BCA1C5B6EA510D10A67F6C6AEBA77702A48591A9C98240931603971C_6132 - 2025-05-17T00:18:04.599Z	INFO	0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c_6132	status-cli/util.go:90	messenger started, public key: 0x041389374bcaf9a1c36230942c58f4e3968c0a2472bfa9041916414f11d228a3b0605c6ede03ff65463fe8a22126d1f2c750991f03bdf352eeb6442611e2b87aa1
+[35mDEBUG   [0m src.libs.common:common.py:15 Sleeping for 4 seconds
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - INFO [05-17|00:18:08.722] New local node record                    seq=1,747,441,078,711 id=ad808393e8e75b22 ip=20.57.46.45 udp=48548 tcp=48128
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 0X02195F3912BCA1C5B6EA510D10A67F6C6AEBA77702A48591A9C98240931603971C_6132 - INFO [05-17|00:18:09.422] New local node record                    seq=1,747,441,084,412 id=6b3b8339485cd508 ip=20.57.46.45 udp=41079 tcp=48128
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 0X02195F3912BCA1C5B6EA510D10A67F6C6AEBA77702A48591A9C98240931603971C_6132 - 2025-05-17T00:18:09.599Z	INFO	0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c_6132	status-cli/serve.go:107	retrieve messages...
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_fetchCommunity", "params": [{"communityKey": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "waitForResponse": true, "tryDatabase": true}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - INFO [05-17|00:18:13.721] New local node record                    seq=1,747,441,078,712 id=ad808393e8e75b22 ip=20.57.46.45 udp=48548 tcp=48128
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"result":null}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:14.292] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:49826 reqid=1 duration="233.486µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:14.395] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:49832 reqid=1 duration="225.642µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:14.497] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:49838 reqid=1 duration="219.51µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:14.599] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:49850 reqid=1 duration="182.49µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:14.705] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:49860 reqid=1 duration="173.314µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:14.807] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:49864 reqid=1 duration="192.64µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:14.909] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:49872 reqid=1 duration="198.201µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:15.011] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:49880 reqid=1 duration="200.946µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:15.113] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:49896 reqid=1 duration="166.151µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:15.216] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:49910 reqid=1 duration="190.406µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:15.318] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:49914 reqid=1 duration="182.261µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:15.420] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:49916 reqid=1 duration="190.676µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:15.522] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:49926 reqid=1 duration="184.675µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:15.624] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:49930 reqid=1 duration="165.259µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:15.726] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:49946 reqid=1 duration="156.994µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:15.828] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:49948 reqid=1 duration="172.472µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:15.930] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:49956 reqid=1 duration="161.552µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:16.032] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:49966 reqid=1 duration="208.349µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:16.134] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:49972 reqid=1 duration="180.547µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:16.237] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:49980 reqid=1 duration="165.378µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:16.339] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:49996 reqid=1 duration="165.89µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:16.441] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:50012 reqid=1 duration="158.516µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:16.543] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:50024 reqid=1 duration="187.771µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:16.645] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:50034 reqid=1 duration="162.063µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:16.747] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:50046 reqid=1 duration="174.917µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:16.850] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:50056 reqid=1 duration="163.666µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:16.952] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:50060 reqid=1 duration="189.394µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:17.054] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:50074 reqid=1 duration="239.829µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:17.156] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:50090 reqid=1 duration="175.598µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:17.258] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:50104 reqid=1 duration="188.523µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:17.361] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:50116 reqid=1 duration="239.167µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:17.463] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:50132 reqid=1 duration="164.708µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:17.565] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:50134 reqid=1 duration="163.757µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:17.667] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:50148 reqid=1 duration="171.01µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:17.769] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:50152 reqid=1 duration="167.894µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:17.871] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:50166 reqid=1 duration="223.979µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:17.973] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:50170 reqid=1 duration="156.393µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:18.075] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:50186 reqid=1 duration="205.915µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:18.178] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:50192 reqid=1 duration="211.074µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:18.280] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:50198 reqid=1 duration="178.524µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:18.382] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:50206 reqid=1 duration="224.559µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:18.485] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:50220 reqid=1 duration="238.345µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:18.587] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:50224 reqid=1 duration="237.234µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:18.690] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:50226 reqid=1 duration="252.753µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:18.793] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:50236 reqid=1 duration="261.899µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:18.895] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:50252 reqid=1 duration="200.415µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:18.997] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:50268 reqid=1 duration="178.393µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:19.099] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:50280 reqid=1 duration="204.182µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:19.202] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:50294 reqid=1 duration="205.884µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:19.304] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:50306 reqid=1 duration="249.286µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:19.406] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:50320 reqid=1 duration="169.327µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:19.508] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:50334 reqid=1 duration="157.354µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:19.610] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40644 reqid=1 duration="158.446µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:19.712] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40646 reqid=1 duration="180.827µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:19.814] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40652 reqid=1 duration="195.866µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:19.917] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40656 reqid=1 duration="177.251µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:20.019] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40666 reqid=1 duration="177.893µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:20.121] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40682 reqid=1 duration="174.997µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:20.223] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40686 reqid=1 duration="194.243µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:20.325] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40702 reqid=1 duration="161.963µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:20.427] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40714 reqid=1 duration="173.173µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:20.529] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40724 reqid=1 duration="212.417µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:20.631] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40732 reqid=1 duration="153.797µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:20.733] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40748 reqid=1 duration="170.298µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:20.835] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40764 reqid=1 duration="219.28µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:20.937] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40768 reqid=1 duration="181.72µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:21.040] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40774 reqid=1 duration="285.855µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:21.142] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40776 reqid=1 duration="199.663µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:21.244] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40786 reqid=1 duration="162.173µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:21.346] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40790 reqid=1 duration="164.958µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:21.448] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40798 reqid=1 duration="156.903µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:21.550] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40806 reqid=1 duration="263.432µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:21.653] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40820 reqid=1 duration="205.574µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:21.755] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40822 reqid=1 duration="196.708µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:21.857] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40826 reqid=1 duration="168.726µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:21.960] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40838 reqid=1 duration="216.685µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:22.062] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40844 reqid=1 duration="243.425µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:22.164] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40860 reqid=1 duration="175.798µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:22.266] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40866 reqid=1 duration="153.137µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:22.368] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40868 reqid=1 duration="168.264µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:22.470] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40876 reqid=1 duration="170.339µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:22.572] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40890 reqid=1 duration="170.438µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:22.674] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40898 reqid=1 duration="154.478µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:22.777] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40906 reqid=1 duration="186.558µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:22.879] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40912 reqid=1 duration="151.544µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:22.981] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40926 reqid=1 duration="189.695µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:23.083] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40928 reqid=1 duration="202.829µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:23.185] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40940 reqid=1 duration="202.618µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:23.287] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40942 reqid=1 duration="134.201µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:23.389] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40950 reqid=1 duration="159.288µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:23.491] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40958 reqid=1 duration="172.282µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:23.593] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40968 reqid=1 duration="164.858µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:23.695] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40976 reqid=1 duration="154.619µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:23.797] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40992 reqid=1 duration="187.771µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:23.899] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40996 reqid=1 duration="164.858µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:24.001] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:41008 reqid=1 duration="160.771µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:24.104] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:41022 reqid=1 duration="203.821µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:24.206] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:41028 reqid=1 duration="191.959µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:37297 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:24.308] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:41036 reqid=1 duration="183.763µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+[35mDEBUG   [0m tests.conftest:conftest.py:42 Running fixture teardown: save_node_logs_on_fail
+[35mDEBUG   [0m tests.conftest:conftest.py:45 Test failed, attempting to rename and move logs to the test_results folder
+[35mDEBUG   [0m tests.conftest:conftest.py:55 Moved log file first_node.log to test_results/testcommunitymessages_test_community_messages_with_node_pause_10_seconds_first_node.log
+[35mDEBUG   [0m tests.conftest:conftest.py:55 Moved log file 0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c_6132.log to test_results/testcommunitymessages_test_community_messages_with_node_pause_10_seconds_0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c_6132.log
+[35mDEBUG   [0m tests.conftest:conftest.py:62 Running fixture teardown: clear_open_nodes
+[32mINFO    [0m src.node.status_node:status_node.py:73 Stopping node with name: first_node
+[32mINFO    [0m src.node.status_node:status_node.py:73 Stopping node with name: 0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c_6132
+[35mDEBUG   [0m src.steps.common:common.py:18 Running fixture setup: start_1_node
+[32mINFO    [0m src.node.status_node:status_node.py:39 Starting node with command: ['./status-cli', 'serve', '-n', 'first_node', '-p', '10918']
+[35mDEBUG   [0m src.libs.common:common.py:15 Sleeping for 2 seconds
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - 2025-05-17T00:18:24.417Z	INFO	status-cli/serve.go:34	Running serve command, with:
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - -name first_node
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - -add
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - -port 10918
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - -interactive false
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - -light false
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - -api-modules waku,wakuext,wakuv2,permissions,eth
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - -telemetry-server-url
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - -debug false
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - -fleet status.staging
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - -help false
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - 
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - 2025-05-17T00:18:24.417Z	INFO	first_node	status-cli/util.go:54	starting messenger
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - INFO [05-17|00:18:26.640] Starting peer-to-peer node               instance=StatusIM/linux-amd64/go1.22.3
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:26.640] P2P server will be useless, neither dialing nor listening
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - INFO [05-17|00:18:26.645] New local node record                    seq=1,747,441,106,645 id=88b5257890215026 ip=127.0.0.1 udp=0 tcp=0
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - INFO [05-17|00:18:26.645] Started P2P networking                   self=enode://d11e992bdbcbb57c8c3b3b1debf1df5f3c38602685cca41af3cb61dc1c235eb752cda09ea040dec660c83c08bfd92da21a7494fc57bb435ae00842017178d2a4@127.0.0.1:0
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - ERROR[05-17|00:18:26.646] Unavailable modules in HTTP API list     unavailable=[wakuv2] available="[admin debug web3 eth rpcstats appmetrics appgeneral personal status pending ens communitytokens stickers updates settings accounts multiaccounts browsers permissions mailservers gif chat wallet waku wakuext localnotifications]"
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - INFO [05-17|00:18:26.646] HTTP server started                      endpoint=127.0.0.1:10918 auth=false prefix= cors= vhosts=
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - INFO [05-17|00:18:26.691] New local node record                    seq=1,747,441,106,672 id=f86eecfe695b5edd ip=10.1.0.84 udp=0 tcp=33209
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - INFO [05-17|00:18:26.692] New local node record                    seq=1,747,441,106,673 id=f86eecfe695b5edd ip=10.1.0.84 udp=57618 tcp=33209
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - INFO [05-17|00:18:26.694] New local node record                    seq=1,747,441,106,674 id=f86eecfe695b5edd ip=10.1.0.84 udp=57618 tcp=33209
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - 2025-05-17T00:18:27.147Z	INFO	first_node	status-cli/util.go:67	account created, key UID: 0x333da9d6dbe07c3e57f2dbe906e25349c279a133d75f2c80c40a2827e7ee27ea
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - INFO [05-17|00:18:27.148] New local node record                    seq=1,747,441,106,675 id=f86eecfe695b5edd ip=10.1.0.84 udp=57618 tcp=33209
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - 2025-05-17T00:18:27.176Z	INFO	first_node	status-cli/util.go:90	messenger started, public key: 0x04e58bccecff8d970d8895971013aea984cb76f0da19b9e69cef49a6e63574c1f30d0e57dcba88722f8af69723496eea6137a832b13f1d5edc723270973ea12470
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - INFO [05-17|00:18:31.685] New local node record                    seq=1,747,441,106,676 id=f86eecfe695b5edd ip=20.57.46.45 udp=57618 tcp=48129
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - 2025-05-17T00:18:32.176Z	INFO	first_node	status-cli/serve.go:107	retrieve messages...
+[32mINFO    [0m src.node.status_node:status_node.py:52 Serving node with command: ['./status-cli', 'serve-account', '-n', '0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c_6132', '-kid', '0x317d1096e362af7561ea2f494e3cf3f715137ba7da24d801eea4ac7e10895318']
+[35mDEBUG   [0m src.libs.common:common.py:15 Sleeping for 2 seconds
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 0X02195F3912BCA1C5B6EA510D10A67F6C6AEBA77702A48591A9C98240931603971C_6132 - 2025-05-17T00:18:32.281Z	INFO	status-cli/serve.go:34	Running serve-account command, with:
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 0X02195F3912BCA1C5B6EA510D10A67F6C6AEBA77702A48591A9C98240931603971C_6132 - -name 0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c_6132
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 0X02195F3912BCA1C5B6EA510D10A67F6C6AEBA77702A48591A9C98240931603971C_6132 - -key-uid 0x317d1096e362af7561ea2f494e3cf3f715137ba7da24d801eea4ac7e10895318
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 0X02195F3912BCA1C5B6EA510D10A67F6C6AEBA77702A48591A9C98240931603971C_6132 - -interactive false
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 0X02195F3912BCA1C5B6EA510D10A67F6C6AEBA77702A48591A9C98240931603971C_6132 - -add
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 0X02195F3912BCA1C5B6EA510D10A67F6C6AEBA77702A48591A9C98240931603971C_6132 - -debug false
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 0X02195F3912BCA1C5B6EA510D10A67F6C6AEBA77702A48591A9C98240931603971C_6132 - -help false
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 0X02195F3912BCA1C5B6EA510D10A67F6C6AEBA77702A48591A9C98240931603971C_6132 - 
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 0X02195F3912BCA1C5B6EA510D10A67F6C6AEBA77702A48591A9C98240931603971C_6132 - 2025-05-17T00:18:32.281Z	INFO	0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c_6132	status-cli/util.go:54	starting messenger
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 0X02195F3912BCA1C5B6EA510D10A67F6C6AEBA77702A48591A9C98240931603971C_6132 - INFO [05-17|00:18:32.330] Starting peer-to-peer node               instance=StatusIM/linux-amd64/go1.22.3
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 0X02195F3912BCA1C5B6EA510D10A67F6C6AEBA77702A48591A9C98240931603971C_6132 - WARN [05-17|00:18:32.330] P2P server will be useless, neither dialing nor listening
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 0X02195F3912BCA1C5B6EA510D10A67F6C6AEBA77702A48591A9C98240931603971C_6132 - INFO [05-17|00:18:32.338] New local node record                    seq=1,737,419,587,417 id=a3e6d7f2cfadb3c4 ip=127.0.0.1 udp=0 tcp=0
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 0X02195F3912BCA1C5B6EA510D10A67F6C6AEBA77702A48591A9C98240931603971C_6132 - INFO [05-17|00:18:32.338] Started P2P networking                   self=enode://aad0dc447a381566b4aa3dc121ad9ba5674e454f820fcda769e16c748042a1e278d4c98d22a4e518f933d8135d897befd8ecfe65c0f92930c9606e794e24e381@127.0.0.1:0
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 0X02195F3912BCA1C5B6EA510D10A67F6C6AEBA77702A48591A9C98240931603971C_6132 - ERROR[05-17|00:18:32.338] Unavailable modules in HTTP API list     unavailable=[wakuv2] available="[admin debug web3 eth rpcstats appmetrics appgeneral personal status pending ens communitytokens stickers updates settings accounts multiaccounts browsers permissions mailservers gif chat wallet waku wakuext localnotifications]"
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 0X02195F3912BCA1C5B6EA510D10A67F6C6AEBA77702A48591A9C98240931603971C_6132 - INFO [05-17|00:18:32.339] HTTP server started                      endpoint=127.0.0.1:6132 auth=false prefix= cors= vhosts=
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 0X02195F3912BCA1C5B6EA510D10A67F6C6AEBA77702A48591A9C98240931603971C_6132 - INFO [05-17|00:18:32.395] New local node record                    seq=1,747,441,112,373 id=fdd0f832e081ae79 ip=10.1.0.84 udp=45917 tcp=43857
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 0X02195F3912BCA1C5B6EA510D10A67F6C6AEBA77702A48591A9C98240931603971C_6132 - INFO [05-17|00:18:32.398] New local node record                    seq=1,747,441,112,374 id=fdd0f832e081ae79 ip=10.1.0.84 udp=45917 tcp=43857
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 0X02195F3912BCA1C5B6EA510D10A67F6C6AEBA77702A48591A9C98240931603971C_6132 - 2025-05-17T00:18:32.552Z	INFO	0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c_6132	status-cli/util.go:61	existing account, key UID: 0x317d1096e362af7561ea2f494e3cf3f715137ba7da24d801eea4ac7e10895318
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 0X02195F3912BCA1C5B6EA510D10A67F6C6AEBA77702A48591A9C98240931603971C_6132 - INFO [05-17|00:18:32.553] New local node record                    seq=1,747,441,112,375 id=fdd0f832e081ae79 ip=10.1.0.84 udp=45917 tcp=43857
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 0X02195F3912BCA1C5B6EA510D10A67F6C6AEBA77702A48591A9C98240931603971C_6132 - 2025-05-17T00:18:32.573Z	INFO	0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c_6132	status-cli/util.go:90	messenger started, public key: 0x041389374bcaf9a1c36230942c58f4e3968c0a2472bfa9041916414f11d228a3b0605c6ede03ff65463fe8a22126d1f2c750991f03bdf352eeb6442611e2b87aa1
+[35mDEBUG   [0m src.libs.common:common.py:15 Sleeping for 4 seconds
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 0X02195F3912BCA1C5B6EA510D10A67F6C6AEBA77702A48591A9C98240931603971C_6132 - INFO [05-17|00:18:37.389] New local node record                    seq=1,747,441,112,376 id=fdd0f832e081ae79 ip=20.57.46.45 udp=45917 tcp=48128
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 0X02195F3912BCA1C5B6EA510D10A67F6C6AEBA77702A48591A9C98240931603971C_6132 - 2025-05-17T00:18:37.573Z	INFO	0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c_6132	status-cli/serve.go:107	retrieve messages...
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_fetchCommunity", "params": [{"communityKey": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "waitForResponse": true, "tryDatabase": true}], "id": 1}
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"result":null}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:45.284] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:59606 reqid=1 duration="201.737µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:45.386] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:59620 reqid=1 duration="142.046µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:45.488] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:59636 reqid=1 duration="165.509µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:45.591] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:59642 reqid=1 duration="165.59µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:45.692] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:59644 reqid=1 duration="136.084µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:45.795] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:59646 reqid=1 duration="193.532µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:45.899] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:59650 reqid=1 duration="191.908µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:46.001] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:59656 reqid=1 duration="134.041µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:46.103] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:59672 reqid=1 duration="162.514µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:46.205] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:59682 reqid=1 duration="155.681µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:46.307] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:59698 reqid=1 duration="174.466µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:46.409] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:59710 reqid=1 duration="171.791µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:46.511] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:59714 reqid=1 duration="165.139µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:46.613] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:59718 reqid=1 duration="172.833µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:46.715] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:59726 reqid=1 duration="140.703µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:46.817] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:59740 reqid=1 duration="156.172µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:46.919] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:59744 reqid=1 duration="144.48µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:47.021] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:59756 reqid=1 duration="154.529µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:47.124] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:59762 reqid=1 duration="148.257µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:47.225] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:59774 reqid=1 duration="137.347µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:47.327] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:59788 reqid=1 duration="146.625µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:47.429] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:59794 reqid=1 duration="147.776µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:47.531] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:59804 reqid=1 duration="162.333µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:47.633] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:59816 reqid=1 duration="136.315µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:47.735] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:59820 reqid=1 duration="133.71µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:47.838] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:59834 reqid=1 duration="210.343µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:47.939] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:59836 reqid=1 duration="134.411µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:48.041] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:59852 reqid=1 duration="140.002µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:48.143] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:59866 reqid=1 duration="143.548µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:48.245] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:59868 reqid=1 duration="154.088µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:48.348] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:59880 reqid=1 duration="250.748µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:48.450] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:59896 reqid=1 duration="215.342µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:48.552] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:59912 reqid=1 duration="175.819µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:48.655] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:59922 reqid=1 duration="206.466µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:48.757] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:59924 reqid=1 duration="147.565µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:48.859] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:59930 reqid=1 duration="142.657µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:48.961] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:59946 reqid=1 duration="221.474µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:49.064] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:59952 reqid=1 duration="262.34µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:49.166] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:59956 reqid=1 duration="219.65µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:49.269] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:59966 reqid=1 duration="250.088µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:49.371] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:59972 reqid=1 duration="265.536µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:49.474] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:59980 reqid=1 duration="204.913µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:49.576] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40616 reqid=1 duration="182.27µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:49.679] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40620 reqid=1 duration="213.238µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:49.781] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40636 reqid=1 duration="210.042µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:49.884] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40650 reqid=1 duration="249.176µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:49.986] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40660 reqid=1 duration="225.691µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:50.089] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40670 reqid=1 duration="246.44µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:50.192] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40680 reqid=1 duration="166.731µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:50.294] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40692 reqid=1 duration="245.589µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:50.397] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40698 reqid=1 duration="265.246µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:50.499] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40714 reqid=1 duration="213.85µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:50.604] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40720 reqid=1 duration="328.273µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:50.707] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40736 reqid=1 duration="253.193µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:50.809] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40738 reqid=1 duration="224.389µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:50.912] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40740 reqid=1 duration="252.953µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:51.014] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40754 reqid=1 duration="216.063µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:51.117] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40758 reqid=1 duration="219.69µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:51.219] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40764 reqid=1 duration="181.599µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:51.321] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40780 reqid=1 duration="170.078µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:51.424] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40786 reqid=1 duration="180.206µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:51.526] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40788 reqid=1 duration="207.016µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:51.628] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40796 reqid=1 duration="170.799µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:51.730] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40798 reqid=1 duration="229.358µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:51.832] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40806 reqid=1 duration="169.497µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:51.935] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40816 reqid=1 duration="255.908µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:52.038] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40820 reqid=1 duration="266.828µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:52.140] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40836 reqid=1 duration="166.521µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:52.242] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40852 reqid=1 duration="168.425µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:52.345] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40854 reqid=1 duration="164.978µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:52.447] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40866 reqid=1 duration="186.739µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:52.549] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40868 reqid=1 duration="175.678µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:52.652] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40882 reqid=1 duration="239.217µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:52.755] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40888 reqid=1 duration="206.877µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:52.857] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40896 reqid=1 duration="217.586µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:52.960] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40904 reqid=1 duration="143.668µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:53.062] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40914 reqid=1 duration="125.635µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:53.164] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40926 reqid=1 duration="165.429µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:53.266] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40936 reqid=1 duration="132.828µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:53.368] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40946 reqid=1 duration="159.598µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:53.470] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40962 reqid=1 duration="141.084µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:53.572] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40966 reqid=1 duration="139.692µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:53.674] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40978 reqid=1 duration="147.485µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:53.776] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40980 reqid=1 duration="134.752µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:53.878] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40982 reqid=1 duration="138.508µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:53.980] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:40990 reqid=1 duration="174.856µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:54.082] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:41004 reqid=1 duration="136.214µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:54.184] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:41010 reqid=1 duration="154.669µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:54.286] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:41022 reqid=1 duration="198.1µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:54.388] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:41036 reqid=1 duration="159.007µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:54.490] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:41052 reqid=1 duration="158.427µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:54.592] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:41058 reqid=1 duration="167.904µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:54.694] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:41064 reqid=1 duration="144.379µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:54.796] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:41076 reqid=1 duration="184.766µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:54.898] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:41088 reqid=1 duration="204.001µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:55.000] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:41104 reqid=1 duration="169.918µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:55.102] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:41118 reqid=1 duration="143.147µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:55.205] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:41120 reqid=1 duration="176.52µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:21 Node: first_node sends request at address: http://127.0.0.1:10918 with payload: {"jsonrpc": "2.0", "method": "wakuext_requestToJoinCommunity", "params": [{"communityId": "0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c", "addressesToReveal": ["fakeaddress"], "airdropAddress": "fakeaddress"}], "id": 1}
+[35mDEBUG   [0m src.node.status_node:status_node.py:65 FIRST_NODE - WARN [05-17|00:18:55.307] Served wakuext_requestToJoinCommunity    conn=127.0.0.1:41132 reqid=1 duration="162.223µs" err="community not found"
+[35mDEBUG   [0m src.node.rpc_client:rpc_client.py:25 Received response: {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"community not found"}}
+[35mDEBUG   [0m tests.conftest:conftest.py:42 Running fixture teardown: save_node_logs_on_fail
+[35mDEBUG   [0m tests.conftest:conftest.py:45 Test failed, attempting to rename and move logs to the test_results folder
+[35mDEBUG   [0m tests.conftest:conftest.py:55 Moved log file first_node.log to test_results/testcommunitymessages_test_community_messages_with_node_pause_10_seconds_first_node.log
+[35mDEBUG   [0m tests.conftest:conftest.py:55 Moved log file 0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c_6132.log to test_results/testcommunitymessages_test_community_messages_with_node_pause_10_seconds_0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c_6132.log
+[35mDEBUG   [0m tests.conftest:conftest.py:62 Running fixture teardown: clear_open_nodes
+[32mINFO    [0m src.node.status_node:status_node.py:73 Stopping node with name: first_node
+[32mINFO    [0m src.node.status_node:status_node.py:73 Stopping node with name: 0x02195f3912bca1c5b6ea510d10a67f6c6aeba77702a48591a9c98240931603971c_6132
