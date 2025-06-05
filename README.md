@@ -1,3 +1,5 @@
+This repository is **deprecated** — status-go is now tested via the [Status Backend](https://github.com/status-im/status-go/tree/develop/cmd/status-backend); ongoing efforts continue [here](https://github.com/status-im/status-go/tree/develop/tests-functional).
+
 # status-cli-tests
 
 Status cli tool tests with focus on reliability under [unreliable network conditions](https://github.com/status-im/status-go/issues/5144).
